@@ -25,16 +25,20 @@ public class CommandResult {
     /** The application should show schedule. */
     private final boolean showSchedule;
 
+    /** The application should show payroll. */
+    private final boolean showPayroll;
+
     /**
      * Constructs a {@code CommandResult} with the specified fields.
      */
     public CommandResult(String feedbackToUser, boolean showHelp, boolean exit,
-                         boolean showContacts, boolean showSchedule) {
+                         boolean showContacts, boolean showSchedule, boolean showPayroll) {
         this.feedbackToUser = requireNonNull(feedbackToUser);
         this.showHelp = showHelp;
         this.exit = exit;
         this.showContacts = showContacts;
         this.showSchedule = showSchedule;
+        this.showPayroll = showPayroll;
     }
 
     /**
@@ -42,7 +46,7 @@ public class CommandResult {
      * {@code showHelp} and {@code exit} fields, and other fields set to their default value.
      */
     public CommandResult(String feedbackToUser, boolean showHelp, boolean exit) {
-        this(feedbackToUser, showHelp, exit, false, false);
+        this(feedbackToUser, showHelp, exit, false, false, false);
     }
 
     /**
@@ -50,7 +54,7 @@ public class CommandResult {
      * and other fields set to their default value.
      */
     public CommandResult(String feedbackToUser) {
-        this(feedbackToUser, false, false, false, false);
+        this(feedbackToUser, false, false, false, false, false);
     }
 
     public String getFeedbackToUser() {
@@ -71,6 +75,10 @@ public class CommandResult {
 
     public boolean isShowSchedule() {
         return showSchedule;
+    }
+
+    public boolean isShowPayroll() {
+        return showPayroll;
     }
 
     @Override

@@ -20,6 +20,7 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.ReadOnlyUserPrefs;
+import seedu.address.model.person.PayrollWrapper;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
 import seedu.address.model.schedule.Schedule;
@@ -208,6 +209,16 @@ public class ScheduleCommandTest {
         public void unarchivePerson(Person personToUnarchive, Person unarchivedPerson) {
             throw new AssertionError("This method should not be called.");
         }
+
+        @Override
+        public void generatePayroll(LocalDate startDate, LocalDate endDate) {
+            throw new AssertionError("This method should not be called.");
+        };
+
+        @Override
+        public ObservableList<PayrollWrapper> getPayrollList() {
+            throw new AssertionError("This method should not be called.");
+        };
     }
 
     private class ModelStubWithGetPersonByPhoneNumber extends ModelStub {

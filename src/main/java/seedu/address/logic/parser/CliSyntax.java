@@ -15,4 +15,6 @@ public class CliSyntax {
     public static final Prefix PREFIX_BANKDETAILS = new Prefix("-b ");
     public static final Prefix PREFIX_TAG = new Prefix("-t ");
     public static final Prefix PREFIX_HOURS = new Prefix("-hours");
+    public static final Prefix PREFIX_STARTDATE = new Prefix("-sd ");
+    public static final Prefix PREFIX_ENDDATE = new Prefix("-ed ");
 }

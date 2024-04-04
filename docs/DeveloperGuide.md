@@ -336,7 +336,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 | Priority | As a …​                                                        | I want to …​                                       | So that I can…​                                                       |
 |----------|----------------------------------------------------------------|----------------------------------------------------|-----------------------------------------------------------------------|
-| `* *`    | new user                                                       | see a tutorial and usage instructions              | familiarise with BistroBoss' features                                 |
+| `* *`    | new user                                                       | see a tutorial and usage instructions              | familiarise with FnBuddy' features                                 |
 | `* * *`  | user                                                           | add an employee contact with banking details       | quickly access the employee's banking details for salary disbursement |
 | `* * *`  | user                                                           | delete an employee contact                         | remove entries that I no longer need                                  |
 | `* * *`  | user                                                           | view all employee contacts                         |                                                                       |
@@ -353,16 +353,16 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Use cases
 
-(For all use cases below, the **System** is the `BistroBoss` and the **Actor** is the `user`, unless specified otherwise)
+(For all use cases below, the **System** is the `FnBuddy` and the **Actor** is the `user`, unless specified otherwise)
 
 **Use case: Add an employee**
 
 **MSS**
 
 1.  User requests to add employee contact
-2.  BistroBoss requests contact information of employee
+2.  FnBuddy requests contact information of employee
 3.  User provides required information
-4.  BistroBoss adds the employee contact
+4.  FnBuddy adds the employee contact
 
    Use case ends.
 
@@ -370,7 +370,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 3a. The given contact information is invalid.
 
-    * 3a1. BistroBoss shows an error message.
+    * 3a1. FnBuddy shows an error message.
 
       Use case resumes at step 2.
 
@@ -379,23 +379,23 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to delete an employee contact
-2.  BistroBoss requests employee contact 
+2.  FnBuddy requests employee contact 
 3.  User provides required information
-4.  BistroBoss deletes the employee contact
+4.  FnBuddy deletes the employee contact
 
     Use case ends.
 
 **Extensions**
 
 * 2a. The contact book is empty.
-    * 2a1. BistroBoss shows an error message.
+    * 2a1. FnBuddy shows an error message.
 
         Use case ends
 
 
 * 3a. The given contact information is invalid.
 
-    * 3a1. BistroBoss shows an error message.
+    * 3a1. FnBuddy shows an error message.
 
       Use case resumes at step 2.
 
@@ -404,14 +404,14 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to list all employee contacts
-2.  BistroBoss lists all employee contacts
+2.  FnBuddy lists all employee contacts
 
     Use case ends.
 
 **Extensions**
 
 * 2a. The contact book is empty.
-    * 2a1. BistroBoss shows an error message.
+    * 2a1. FnBuddy shows an error message.
 
       Use case ends
 
@@ -420,23 +420,23 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to add employee's work hours
-2.  BistroBoss requests employee contact and work hours
+2.  FnBuddy requests employee contact and work hours
 3.  User provides required information
-4.  BistroBoss tracks the employee's work hours
+4.  FnBuddy tracks the employee's work hours
 
     Use case ends.
 
 **Extensions**
 
 * 2a. The contact book is empty.
-    * 2a1. BistroBoss shows an error message.
+    * 2a1. FnBuddy shows an error message.
 
       Use case ends
 
 
 * 3a. The given contact information or working hours is invalid.
 
-    * 3a1. BistroBoss shows an error message.
+    * 3a1. FnBuddy shows an error message.
 
       Use case resumes at step 2.
 

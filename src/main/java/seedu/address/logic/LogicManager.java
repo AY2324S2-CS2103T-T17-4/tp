@@ -16,6 +16,7 @@ import seedu.address.logic.parser.AddressBookParser;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.Model;
 import seedu.address.model.ReadOnlyAddressBook;
+import seedu.address.model.person.PayrollWrapper;
 import seedu.address.model.person.Person;
 import seedu.address.model.schedule.ScheduleDate;
 import seedu.address.storage.Storage;
@@ -72,6 +73,11 @@ public class LogicManager implements Logic {
     @Override
     public Set<ScheduleDate> getScheduleDates() {
         return model.getScheduleDates();
+    }
+
+    @Override
+    public ObservableList<PayrollWrapper> getPayrollList() {
+        return model.getPayrollList();
     }
 
     @Override

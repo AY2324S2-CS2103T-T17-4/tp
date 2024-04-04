@@ -183,6 +183,12 @@ public class MainWindow extends UiPart<Stage> {
     }
 
     @FXML
+    private void handleShowPayroll() {
+        PayrollListPanel payrollListPanel = new PayrollListPanel(logic.getPayrollList());
+        personListPanelPlaceholder.getChildren().add(payrollListPanel.getRoot());
+    }
+
+    @FXML
     private void handleShowCalendar() {
         Calendar calendar = new Calendar(logic.getScheduleDates());
         personListPanelPlaceholder.getChildren().add(calendar.getRoot());
@@ -217,6 +223,10 @@ public class MainWindow extends UiPart<Stage> {
 
             if (commandResult.isShowSchedule()) {
                 handleShowCalendar();
+            }
+
+            if (commandResult.isShowPayroll()) {
+                handleShowPayroll();
             }
 
             return commandResult;

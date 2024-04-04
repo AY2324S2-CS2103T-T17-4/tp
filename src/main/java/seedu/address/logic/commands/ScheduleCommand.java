@@ -46,7 +46,7 @@ public class ScheduleCommand extends Command {
         }
         model.addPersonToSchedule(person, date);
         return new CommandResult(String.format(MESSAGE_SUCCESS, person.getName().value, date), false, false,
-                false, true);
+                false, true, false);
     }
 
     @Override

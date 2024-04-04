@@ -5,14 +5,19 @@ import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.nio.file.Path;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.function.Predicate;
 import java.util.logging.Logger;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
+import seedu.address.model.person.PayrollWrapper;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
 import seedu.address.model.schedule.Schedule;
@@ -30,6 +35,8 @@ public class ModelManager implements Model {
     private final Schedule schedule;
     private final FilteredList<Person> filteredPersons;
 
+    private final ObservableList<PayrollWrapper> payrolls;
+
     /**
      * Initializes a ModelManager with the given addressBook and userPrefs.
      */
@@ -43,6 +50,7 @@ public class ModelManager implements Model {
         this.userPrefs = new UserPrefs(userPrefs);
         this.schedule = schedule;
         filteredPersons = new FilteredList<>(this.addressBook.getPersonList());
+        payrolls = FXCollections.observableArrayList();
     }
 
     public ModelManager() {
@@ -156,6 +164,25 @@ public class ModelManager implements Model {
     public void removePersonFromSchedule(Person person, LocalDate date) {
         requireAllNonNull(person, date);
         schedule.deletePerson(person, date);
+    }
+
+    //=========== Payroll  ===================================================================================
+
+    @Override
+    public void generatePayroll(LocalDate startDate, LocalDate endDate) {
+        requireAllNonNull(startDate, endDate);
+        payrolls.clear();
+        List<PayrollWrapper> newPayrolls = new ArrayList<>();
+        Map<Person, Double> hoursWorked = schedule.getHoursWorked(startDate, endDate);
+        for (Map.Entry<Person, Double> entry : hoursWorked.entrySet()) {
+            newPayrolls.add(new PayrollWrapper(entry.getKey(), entry.getValue()));
+        }
+        payrolls.setAll(newPayrolls);
+    }
+
+    @Override
+    public ObservableList<PayrollWrapper> getPayrollList() {
+        return payrolls;
     }
 
     //=========== Filtered Person List Accessors =============================================================

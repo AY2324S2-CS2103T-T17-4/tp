@@ -180,8 +180,6 @@ public class LogicManagerTest {
             AddCommand.COMMAND_WORD + FIRSTNAME_DESC_AMY + LASTNAME_DESC_AMY + PHONE_DESC_AMY
                 + SEX_DESC_AMY + PAYRATE_DESC_AMY + BANKDETAILS_DESC_AMY + ADDRESS_DESC_AMY;
         Person expectedPerson = new PersonBuilder(AMY).withTags().withArchiveStatus(false).build();
-        System.out.println(expectedPerson.toString());
-        System.out.println(addCommand);
         ModelManager expectedModel = new ModelManager();
         expectedModel.addPerson(expectedPerson);
         assertCommandFailure(addCommand, CommandException.class, expectedMessage, expectedModel);

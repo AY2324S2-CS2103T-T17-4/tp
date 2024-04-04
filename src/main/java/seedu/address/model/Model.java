@@ -7,6 +7,7 @@ import java.util.function.Predicate;
 
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
+import seedu.address.model.person.PayrollWrapper;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
 import seedu.address.model.schedule.Schedule;
@@ -140,4 +141,15 @@ public interface Model {
     void archivePerson(Person personToArchive, Person archivedPerson);
 
     void unarchivePerson(Person personToUnarchive, Person unarchivedPerson);
+    /**
+     * Generates the payroll for the specified period.
+     * @param startDate The start date of the period.
+     * @param endDate The end date of the period.
+     */
+    void generatePayroll(LocalDate startDate, LocalDate endDate);
+
+    /**
+     * Returns the payroll list.
+     */
+    ObservableList<PayrollWrapper> getPayrollList();
 }

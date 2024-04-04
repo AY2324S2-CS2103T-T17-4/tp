@@ -1,6 +1,7 @@
 package seedu.address.model.schedule;
 
 import java.time.LocalDate;
+import java.util.Map;
 import java.util.Set;
 
 import seedu.address.model.person.Person;
@@ -33,4 +34,10 @@ public interface Schedule {
      * Resets the existing data of this {@code Schedule} with {@code newData}.
      */
     void resetData(Schedule newData);
+
+
+    /**
+     * Returns the number of hours worked by each person in the schedule between the given dates.
+     */
+    Map<Person, Double> getHoursWorked(LocalDate startDate, LocalDate endDate);
 }
