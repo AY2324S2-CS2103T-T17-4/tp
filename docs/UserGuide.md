@@ -169,8 +169,7 @@ Example:
 
 Adds a person in FnBuddy to the schedule on a specified date.
 
-Format: `schedule PHONE_NUMBER DATE` where \
-`DATE` is in the format `YYYY-MM-DD`.
+Format: `schedule PHONE_NUMBER DATE` where `DATE` is in the format `YYYY-MM-DD`.
 
 Example:
 - `schedule 91860934 2024-04-01` Adds the person with the phone number 91860934 to the schedule on 4th April 2024.
@@ -179,8 +178,7 @@ Example:
 
 Removes a person in FnBuddy from the schedule on a specified date.
 
-Format: `unschedule PHONE_NUMBER DATE` where \
-`DATE` is in the format `YYYY-MM-DD`.
+Format: `unschedule PHONE_NUMBER DATE` where `DATE` is in the format `YYYY-MM-DD`.
 
 Example:
 - `unschedule 91860934 2024-04-01` Removes the person with the phone number 91860934 from the schedule on 4th April 2024.
