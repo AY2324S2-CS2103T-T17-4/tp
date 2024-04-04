@@ -29,7 +29,6 @@ public class PayrollListPanel extends UiPart<Region> {
         @Override
         protected void updateItem(PayrollWrapper payroll, boolean empty) {
             super.updateItem(payroll, empty);
-
             if (empty || payroll == null) {
                 setGraphic(null);
                 setText(null);

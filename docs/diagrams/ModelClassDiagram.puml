@@ -25,6 +25,7 @@ Class Sex
 Class Phone
 Class HoursWorked
 Class Tag
+Class PayrollWrapper
 
 Class I #FFFFFF
 }
@@ -38,6 +39,7 @@ Model .right.> ReadOnlyUserPrefs
 Model .left.> ReadOnlyAddressBook
 ModelManager -left-> "1" AddressBook
 ModelManager -right-> "1" UserPrefs
+PayrollWrapper -down-> "1" Person
 ScheduleManager .up.|> Schedule
 ModelManager -down-> "1" ScheduleManager
 UserPrefs .up.|> ReadOnlyUserPrefs
@@ -67,4 +69,5 @@ BankDetails -[hidden]right-> HoursWorked
 
 
 ModelManager --> "~* filtered" Person
+ModelManager --> "~* filtered" PayrollWrapper
 @enduml
