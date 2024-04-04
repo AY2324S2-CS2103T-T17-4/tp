@@ -17,7 +17,7 @@ This user guide is tailored specifically for restaurant managers who are respons
     - [Locating a person by name: `find`](#locating-a-person-by-name-find)
     - [Clear all contacts: `clear`](#clear-all-contacts-clear)
     - [Exiting the program: `exit`](#exiting-the-program-exit)
-    - [Saving the data](#saving-the-data)
+    - [Archiving the person: `archive/unarchive`](#saving-the-data)
     - [Retrieving payroll: `payroll`](#retrieving-payroll-payroll)
     - [Schedule employees: `schedule`](#schedule-employees-schedule)
 - [Known issues](#known-issues)
@@ -74,11 +74,16 @@ Example:
 - `add -fn John -ln Doe -p 91860934 -s m -pr 20.50 -a 123 Main St, City`
 - `add -fn Jane -ln Smith -p 98765432 -s f -pr 25.50 -a 432 Orchard Road -b 123456789 -t waiter -t bartender`
 
-### Listing all persons `list`
+### Listing contacts `list`
 
-Shows a list of all persons in FnBuddy.
+Shows a list of contacts in FnBuddy depending on which you'd like to view.
 
-Format: `list`
+Format: `list LIST_TYPE`
+
+Example:
+- `list all` shows all contacts in FnBuddy.
+- `list main` shows all un-archived contacts in FnBuddy.
+- `list archive` shows all archived contacts in FnBuddy.
 
 ### Deleting a person `delete`
 
@@ -133,9 +138,24 @@ Exits the program.
 
 Format: `exit`
 
-### Saving the data
+### Archiving the person `archive`
 
-FnBuddy data is stored in the hard disk automatically after any command that changes the data. Rest assured, there is no need to save manually.
+Archive's the person's contact so that it is hidden from the main list of contacts.
+
+Format: `archive PHONE_NUMBER`
+
+Example:
+- `archive 91860934` archives the person with the number 91860934 from FnBuddy's main list of contacts.
+
+
+### Un-archiving the person `unarchive`
+
+Un-archive's the person's contact so that it is shown in the main list of contacts.
+
+Format: `unarchive PHONE_NUMBER`
+
+Example:
+- `unarchive 91860934` un-archives the person with the number 91860934 from FnBuddy's main list of contacts.
 
 ### Retrieving payroll `payroll`
 
@@ -144,6 +164,11 @@ Coming soon!
 ### Schedule employees `schedule`
 
 Coming soon!
+
+### Saving the data
+
+FnBuddy data is stored in the hard disk automatically after any command that changes the data. Rest assured, there is no need to save manually.
+
 
 ## Known issues
 
