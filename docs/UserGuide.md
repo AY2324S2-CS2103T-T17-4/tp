@@ -147,7 +147,6 @@ Format: `archive PHONE_NUMBER`
 Example:
 - `archive 91860934` archives the person with the number 91860934 from FnBuddy's main list of contacts.
 
-
 ### Un-archiving the person `unarchive`
 
 Un-archive's the person's contact so that it is shown in the main list of contacts.
@@ -168,7 +167,21 @@ Example:
 
 ### Schedule employees `schedule`
 
-Coming soon!
+Adds a person in FnBuddy to the schedule on a specified date.
+
+Format: `schedule PHONE_NUMBER DATE` where `DATE` is in the format `YYYY-MM-DD`.
+
+Example:
+- `schedule 91860934 2024-04-01` Adds the person with the phone number 91860934 to the schedule on 4th April 2024.
+
+### Unschedule employees `unschedule`
+
+Removes a person in FnBuddy from the schedule on a specified date.
+
+Format: `unschedule PHONE_NUMBER DATE` where `DATE` is in the format `YYYY-MM-DD`.
+
+Example:
+- `unschedule 91860934 2024-04-01` Removes the person with the phone number 91860934 from the schedule on 4th April 2024.
 
 ### Saving the data
 
@@ -195,15 +208,17 @@ FnBuddy data is stored in the hard disk automatically after any command that cha
     - A: Click on the help button at the top left of the application’s window for a commands list dropdown.
 
 - **Q: Can I list down an employee with more than 2 names?**
-    - A: As FnBuddy only supports the FIRST_NAME LAST_NAME format, the best solution currently is to list the middle name with either the first or the last. Example: Chua Xun Hao can be saved as -fn Xun Hao -ln Chua.
+    - A: As FnBuddy only supports the `FIRST_NAME` `LAST_NAME` format, the best solution currently is to list the middle name with either the first or the last. Example: Chua Xun Hao can be saved as `-fn Xun Hao -ln Chua`.
 
 - **Q: My employee uses a foreign phone number, how can that be reflected in the app?**
-    - A: FnBuddy does not currently support phone number region differentiation and only supports 8-digit inputs after the -p flag. In future updates, we will add contact regions as a feature.
+    - A: FnBuddy does not currently support phone number region differentiation and only supports 8-digit inputs after the `-p` flag. In future updates, we will add contact regions as a feature.
 
 - **Q: Do I need to provide all the details of an employee when creating the contact?**
     - A: No, optional details do not need to be added and can be edited into the contact later on if required. Refer to the add contact feature to view which details are compulsory and optional.
 
 ## Command summary
+
+Here's the updated table with the new features added:
 
 | Command | Description | Format | Examples |
 |---------|-------------|--------|----------|
@@ -215,3 +230,8 @@ FnBuddy data is stored in the hard disk automatically after any command that cha
 | **Locating a person by name** | Finds persons whose names contain any of the given keywords. | `find KEYWORD [MORE_KEYWORDS]` | `find john tan` |
 | **Clear all contacts** | Delete all employee contacts. | `clear` | - |
 | **Exiting the program** | Exits the program. | `exit` | - |
+| **Archiving a person** | Archives the person's contact so that it is hidden from the main list of contacts. | `archive PHONE_NUMBER` | `archive 91860934` |
+| **Un-archiving a person** | Un-archives the person's contact so that it is shown in the main list of contacts. | `unarchive PHONE_NUMBER` | `unarchive 91860934` |
+| **Retrieving payroll** | Retrieve employee's payroll for a given start and end date. | `payroll -sd START_DATE -ed END_DATE` | `payroll -sd 2024-04-01 -ed 2024-04-30` |
+| **Schedule employees** | Adds a person in FnBuddy to the schedule on a specified date. | `schedule PHONE_NUMBER DATE` | `schedule 91860934 2024-04-01` |
+| **Unschedule employees** | Removes a person in FnBuddy from the schedule on a specified date. | `unschedule PHONE_NUMBER DATE` | `unschedule 91860934 2024-04-01` |

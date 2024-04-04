@@ -57,6 +57,7 @@ HelpWindow --|> UiPart
 
 PersonCard ..> Model
 PayrollCard ..> Model
+Calendar ..> Model
 UiManager -right-> Logic
 MainWindow -left-> Logic
 
