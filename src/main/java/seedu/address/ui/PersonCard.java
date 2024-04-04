@@ -59,8 +59,8 @@ public class PersonCard extends UiPart<Region> {
             Label payRate = new Label(person.getPayRate().toString());
             Label address = new Label(person.getAddress().value);
             Label bankDetails = new Label(person.getBankDetails().value);
-            Label hoursWorked = new Label(person.getWorkHours().toString());
-            vBox.getChildren().addAll(new Label[]{sex, payRate, address, bankDetails, hoursWorked});
+            // Label hoursWorked = new Label(person.getWorkHours().toString());
+            vBox.getChildren().addAll(new Label[]{sex, payRate, address, bankDetails});
         }
     }
 

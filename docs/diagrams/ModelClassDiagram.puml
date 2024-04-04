@@ -37,6 +37,7 @@ AddressBook .up.|> ReadOnlyAddressBook
 ModelManager .up.|> Model
 Model .right.> ReadOnlyUserPrefs
 Model .left.> ReadOnlyAddressBook
+Model .right.> Schedule
 ModelManager -left-> "1" AddressBook
 ModelManager -right-> "1" UserPrefs
 PayrollWrapper -down-> "1" Person
@@ -66,7 +67,6 @@ Sex -[hidden]right-> EmploymentType
 EmploymentType -[hidden]right-> Address
 Address -[hidden]right-> BankDetails
 BankDetails -[hidden]right-> HoursWorked
-
 
 ModelManager --> "~* filtered" Person
 ModelManager --> "~* filtered" PayrollWrapper
