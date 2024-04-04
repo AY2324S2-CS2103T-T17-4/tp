@@ -161,6 +161,7 @@ Example:
 
 Retrieve employee's payroll for a given start and end date
 
+Format: `payroll -sd yyyy-mm-dd -ed yyyy-mm-dd`
 Example:
 - `payroll -sd 2024-04-01 -ed 2024-04-30` calculates the payroll of all employees that has worked within 1st April 2024 and 30th April 2024.
 
