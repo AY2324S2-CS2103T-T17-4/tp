@@ -145,7 +145,7 @@ Coming soon!
 
 Adds a person in FnBuddy to the schedule on a specified date.
 
-Format: `schedule PHONE_NUMBER DATE`
+Format: `schedule PHONE_NUMBER DATE` where \
 `DATE` is in the format `YYYY-MM-DD`.
 
 Example:
@@ -155,7 +155,7 @@ Example:
 
 Removes a person in FnBuddy from the schedule on a specified date.
 
-Format: `unschedule PHONE_NUMBER DATE`
+Format: `unschedule PHONE_NUMBER DATE` where \
 `DATE` is in the format `YYYY-MM-DD`.
 
 Example:
@@ -199,5 +199,6 @@ Example:
 | **Editing a person** | Edits an existing person in FnBuddy. | `edit PHONE_NUMBER [-fn FIRST_NAME] [-ln LAST_NAME] [-p PHONE_NUMBER] [-s SEX] [-pr PAY_RATE] [-a ADDRESS] [-b BANK_DETAILS] [-t TAG]...` | `edit 91860934 -a Room 504 Marina Bay Sands -pr 25`<br>`edit 98765432 -t` |
 | **Clocking an employee's working hours** | Saves the number of hours worked by an employee to FnBuddy. | `hours PHONE_NUMBER HOURS_WORKED` | `hours 12345678 50` |
 | **Locating a person by name** | Finds persons whose names contain any of the given keywords. | `find KEYWORD [MORE_KEYWORDS]` | `find john tan` |
+| **Clear all contacts** | Delete all employee contacts. | `clear` | - |
 | **Clear all contacts** | Delete all employee contacts. | `clear` | - |
 | **Exiting the program** | Exits the program. | `exit` | - |
