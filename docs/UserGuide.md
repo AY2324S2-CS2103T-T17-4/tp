@@ -208,10 +208,10 @@ FnBuddy data is stored in the hard disk automatically after any command that cha
     - A: Click on the help button at the top left of the application’s window for a commands list dropdown.
 
 - **Q: Can I list down an employee with more than 2 names?**
-    - A: As FnBuddy only supports the FIRST_NAME LAST_NAME format, the best solution currently is to list the middle name with either the first or the last. Example: Chua Xun Hao can be saved as -fn Xun Hao -ln Chua.
+    - A: As FnBuddy only supports the `FIRST_NAME` `LAST_NAME` format, the best solution currently is to list the middle name with either the first or the last. Example: Chua Xun Hao can be saved as `-fn Xun Hao -ln Chua`.
 
 - **Q: My employee uses a foreign phone number, how can that be reflected in the app?**
-    - A: FnBuddy does not currently support phone number region differentiation and only supports 8-digit inputs after the -p flag. In future updates, we will add contact regions as a feature.
+    - A: FnBuddy does not currently support phone number region differentiation and only supports 8-digit inputs after the `-p` flag. In future updates, we will add contact regions as a feature.
 
 - **Q: Do I need to provide all the details of an employee when creating the contact?**
     - A: No, optional details do not need to be added and can be edited into the contact later on if required. Refer to the add contact feature to view which details are compulsory and optional.
