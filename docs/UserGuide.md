@@ -167,6 +167,8 @@ Format: `payroll -sd START_DATE -ed END_DATE` where `START_DATE` and `END_DATE` 
 Example:
 - `payroll -sd 2024-04-01 -ed 2024-04-30` calculates the payroll of all employees that has worked within 1st April 2024 and 30th April 2024.
 
+Note: Employee's payroll is calculated by multiplying 8 to their respective `PAY_RATE`. We are assuming each shift is 8 hours.
+
 ### Schedule employees `schedule`
 
 Adds a person in FnBuddy to the schedule on a specified date.
