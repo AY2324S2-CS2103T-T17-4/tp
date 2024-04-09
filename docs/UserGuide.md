@@ -120,7 +120,7 @@ Finds persons whose names contain any of the given keywords.
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
 Example:
-- `find john tan` returns John Doe and Henry Tan.
+- `find tan` returns all contacts with name containing `tan`.
 
 ![Find UI](./images/Find_UI.png)
 
