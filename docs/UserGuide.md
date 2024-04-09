@@ -140,9 +140,9 @@ Format: `archive PHONE_NUMBER`
 Example:
 - `archive 91860934` archives the person with the number 91860934 from FnBuddy's main list of contacts.
 
-### Un-archiving the person `unarchive`
+### Unarchive the person `unarchive`
 
-Un-archive's the person's contact so that it is shown in the main list of contacts.
+Unarchive the person's contact so that it is shown in the main list of contacts.
 
 Format: `unarchive PHONE_NUMBER`
 
