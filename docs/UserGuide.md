@@ -106,15 +106,6 @@ Example:
 - `edit 91860934 -a Room 504, Marina Bay Sands -pr 25` Edits the address of the person with the phone number 91860934 to Room 504 Marina Bay Sands, and their pay rate to 25 dollars per hour, respectively.
 - `edit 98765432 -t` Clears all existing tags from the person with the phone number 98765432.
 
-### Clocking an employee’s working hours `hours`
-
-Saves the number of hours worked by an employee to FnBuddy.
-
-Format: `hours PHONE_NUMBER HOURS_WORKED`
-
-Example:
-- `hours 12345678 50`
-
 ### Locating a person by name `find`
 
 Finds persons whose names contain any of the given keywords.
@@ -230,7 +221,6 @@ Here's the updated table with the new features added:
 | **Listing all persons** | Shows a list of all persons in FnBuddy. | `list` | 1. `list all`<br/> 2. `list archive` <br/> 3. `list main`                                                                                                                           |
 | **Deleting a person** | Deletes the specified person from FnBuddy. | `delete PHONE_NUMBER` | `delete 91860934`                                                                                                                                                                   |
 | **Editing a person** | Edits an existing person in FnBuddy. | `edit PHONE_NUMBER [-fn FIRST_NAME] [-ln LAST_NAME] [-p PHONE_NUMBER] [-s SEX] [-pr PAY_RATE] [-a ADDRESS] [-b BANK_DETAILS] [-t TAG]...` | `edit 91860934 -a Room 504 Marina Bay Sands -pr 25`<br>`edit 98765432 -t`                                                                                                           |
-| **Clocking an employee's working hours** | Saves the number of hours worked by an employee to FnBuddy. | `hours PHONE_NUMBER HOURS_WORKED` | `hours 12345678 50`                                                                                                                                                                 |
 | **Locating a person by name** | Finds persons whose names contain any of the given keywords. | `find KEYWORD [MORE_KEYWORDS]` | `find john tan`                                                                                                                                                                     |
 | **Clear all contacts** | Delete all employee contacts. | `clear` | -                                                                                                                                                                                   |
 | **Exiting the program** | Exits the program. | `exit` | -                                                                                                                                                                                   |
