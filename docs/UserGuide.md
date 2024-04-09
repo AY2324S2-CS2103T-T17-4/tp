@@ -156,7 +156,7 @@ Retrieve employee's payroll for a given start and end date
 Format: `payroll -sd START_DATE -ed END_DATE` where `START_DATE` and `END_DATE` are in the format `YYYY-MM-DD`.
 
 Example:
-- `payroll -sd 2024-04-01 -ed 2024-04-30` calculates the payroll of all employees that has worked within 1st April 2024 and 30th April 2024.
+- `payroll -sd 2024-04-01 -ed 2024-04-30` calculates the payroll of all employees that have worked within 1st April 2024 and 30th April 2024.
 
 Note: Employee's payroll is calculated by multiplying 8 to their respective `PAY_RATE`. We are assuming each shift is 8 hours.
 
