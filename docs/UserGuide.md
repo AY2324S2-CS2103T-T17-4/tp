@@ -133,7 +133,7 @@ Format: `exit`
 
 ### Archiving the person `archive`
 
-Archive's the person's contact so that it is hidden from the main list of contacts.
+Archives the person's contact so that it is hidden from the main list of contacts.
 
 Format: `archive PHONE_NUMBER`
 
