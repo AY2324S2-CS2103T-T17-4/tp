@@ -193,6 +193,29 @@ FnBuddy data is stored in the hard disk automatically after any command that cha
 1. When using multiple screens, if you move the application to a secondary screen and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
    a. Alternatively, for Windows users, you can press Shift and right-click the program icon on the taskbar, Select Move, and use your left or right arrow keys to move the window until the window appears.
 
+## Glossary
+
+- **CLI** - Command Line Interface
+    - A text-based interface used to interact with software applications. In the context of this application, the 
+      CLI is used to input commands to manage employee contacts. You can type commands into the command box as shown 
+      below.
+      |![CLI](./images/CommandBox.png)|
+      |:------------------------------:|
+      |            *Command Box used to input commands*             |
+- **GUI** - Graphical User Interface
+    - A visual interface that allows users to interact with software applications using graphical elements such as 
+      windows, buttons, and icons. In the context of this application, the GUI provides a visual representation of 
+      the employee contacts and allows users to interact with the application using buttons and text fields. However,
+      our GUI is not as feature-rich as traditional GUI applications and is designed to be used in conjunction with 
+      the CLI to provide the full functionality of the application.
+      |![GUI](./images/Ui.png)|
+      |:------------------------------:|
+      |            *How the app displays information*             |
+- **FnBuddy** - The name of the application
+- **Employee** - A person who works part-time at a restaurant
+- **Contact** - A record of an employee in FnBuddy
+- **Payroll** - The total amount of money paid to employees for their work
+
 ## FAQ
 
 - **Q: How is the FnBuddy’s data stored?**
