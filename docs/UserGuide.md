@@ -74,7 +74,7 @@ Example:
 - `add -fn John -ln Doe -p 91860934 -s m -pr 20.50 -a 123 Main St, City`
 - `add -fn Jane -ln Smith -p 98765432 -s f -pr 25.50 -a 432 Orchard Road -b 123456789 -t waiter -t bartender`
 
-Note: All contacts added are compressed to only show`FIRST_NAME`, `LAST_NAME`and `PHONE_NUMBER` by default. To view all of the contact's information, simply click on the contact to expand.
+Note: All contacts added are compressed to only show `FIRST_NAME`, `LAST_NAME` and `PHONE_NUMBER` by default. To view all of the contact's information, simply click on the contact to expand.
 
 ### Listing contacts `list`
 
