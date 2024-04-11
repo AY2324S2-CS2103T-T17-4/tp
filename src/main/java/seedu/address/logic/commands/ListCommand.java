@@ -16,9 +16,9 @@ public class ListCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": List all persons in either the archived or"
             + " unarchived list.\n"
-            + "Example: " + COMMAND_WORD + "archive"
-            + "Example: " + COMMAND_WORD + "main"
-            + "Example: " + COMMAND_WORD + "all";
+            + "Example: " + COMMAND_WORD + " archive"
+            + "Example: " + COMMAND_WORD + " main"
+            + "Example: " + COMMAND_WORD + " all";
     public static final String MESSAGE_SUCCESS = "Listed all employees";
 
     private final String keyword;

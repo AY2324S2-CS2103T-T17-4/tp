@@ -24,6 +24,7 @@ import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.person.Address;
+import seedu.address.model.person.ArchiveStatus;
 import seedu.address.model.person.BankDetails;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.PayRate;
@@ -91,9 +92,10 @@ public class EditCommand extends Command {
         BankDetails updatedBankDetails = editPersonDescriptor.getBankDetails().orElse(personToEdit.getBankDetails());
         WorkHours updatedWorkHours = editPersonDescriptor.getHoursWorked().orElse(personToEdit.getWorkHours());
         Set<Tag> updatedTags = editPersonDescriptor.getTags().orElse(personToEdit.getTags());
+        ArchiveStatus archiveStatus = personToEdit.getArchiveStatus();
 
         return new Person(updatedFirstName, updatedLastName, updatedPhone, updatedSex, updatedPayRate,
-            updatedAddress, updatedBankDetails, updatedWorkHours, updatedTags, personToEdit.getArchiveStatus());
+            updatedAddress, updatedBankDetails, updatedWorkHours, updatedTags, archiveStatus);
     }
 
     @Override
@@ -121,7 +123,6 @@ public class EditCommand extends Command {
         }
 
         model.setPerson(personToEdit, editedPerson);
-        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
         return new CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS, Messages.format(editedPerson)));
     }
 
