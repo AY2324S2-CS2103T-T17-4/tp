@@ -57,7 +57,8 @@ information, and work schedules, ensuring efficient communication and accurate p
 
 Some example commands you can try:
 
-- `add -fn Javier -ln Tan -p 98749874 -s m -pr 10.5 -a 123 Street -b 420053040` : Adds a contact named Javier Tan to
+- `add -fn Javier -ln Tan -p 98749874 -s m -pr 10.5 -a 123 Street -b posb 420053040` : Adds a contact named Javier Tan
+  to
   FnBuddy.
 - `list` : Lists all contacts.
 - `delete 98749874` : Deletes the contact associated with the phone number 98749874 from FnBuddy.
@@ -96,7 +97,7 @@ Format: `add -fn FIRST_NAME -ln LAST_NAME -p PHONE_NUMBER -s SEX -pr PAY_RATE -a
 Example:
 
 - `add -fn John -ln Doe -p 91860934 -s m -pr 20.50 -a 123 Main St, City`
-- `add -fn Jane -ln Smith -p 98765432 -s f -pr 25.50 -a 432 Orchard Road -b 123456789 -t waiter -t bartender`
+- `add -fn Jane -ln Smith -p 98765432 -s f -pr 25.50 -a 432 Orchard Road -b posb 123456789 -t waiter -t bartender`
 
 ### Listing contacts `list`
 
@@ -273,7 +274,7 @@ Here's the updated table with the new features added:
 | **Deleting a person**                    | Deletes the specified person from FnBuddy.                                         | `delete PHONE_NUMBER`                                                                                                                     | `delete 91860934`                                                                                                                                                                    |
 | **Editing a person**                     | Edits an existing person in FnBuddy.                                               | `edit PHONE_NUMBER [-fn FIRST_NAME] [-ln LAST_NAME] [-p PHONE_NUMBER] [-s SEX] [-pr PAY_RATE] [-a ADDRESS] [-b BANK_DETAILS] [-t TAG]...` | `edit 91860934 -a Room 504 Marina Bay Sands -pr 25`<br>`edit 98765432 -t`                                                                                                            |
 | **Clocking an employee's working hours** | Saves the number of hours worked by an employee to FnBuddy.                        | `hours PHONE_NUMBER HOURS_WORKED`                                                                                                         | `hours 12345678 50`                                                                                                                                                                  |
-| **Locating a person by name**            | Finds persons whose names contain any of the given keywords.                       | `find KEYWORD [MORE_KEYWORDS]`                                                                                                            | `find john tan`                                                                                                                                                                      |
+| **Locating a person by name**            | Finds persons whose names match any of the given keywords.                         | `find KEYWORD [MORE_KEYWORDS]`                                                                                                            | `find john tan`                                                                                                                                                                      |
 | **Clear all contacts**                   | Delete all employee contacts.                                                      | `clear`                                                                                                                                   | -                                                                                                                                                                                    |
 | **Exiting the program**                  | Exits the program.                                                                 | `exit`                                                                                                                                    | -                                                                                                                                                                                    |
 | **Archiving a person**                   | Archives the person's contact so that it is hidden from the main list of contacts. | `archive PHONE_NUMBER`                                                                                                                    | `archive 91860934`                                                                                                                                                                   |
