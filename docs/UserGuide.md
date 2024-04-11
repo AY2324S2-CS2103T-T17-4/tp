@@ -44,7 +44,6 @@ Some example commands you can try:
 - `add -fn Javier -ln Tan -p 98749874 -s m -pr 10.5 -a 123 Street -b 420053040` : Adds a contact named Javier Tan to FnBuddy.
 - `list` : Lists all contacts.
 - `delete 98749874` : Deletes the contact associated with the phone number 98749874 from FnBuddy.
-- `view Javier Tan` : View Javier Tan’s contact and all associated information in the address book.
 - `edit 91234567 -a NUS` : Edits the address of the contact associated with phone number 91234567 to NUS.
 - `hours 91234567 50` : Saves the number of hours worked by the employee.
 - `find james` : Searches the address book for a person whose name matches “james”.
