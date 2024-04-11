@@ -191,6 +191,11 @@ Example:
 
 FnBuddy data is stored in the hard disk automatically after any command that changes the data. Rest assured, there is no need to save manually.
 
+## Pages
+There are 3 main pages in the application:
+1. **Main Page** - This page shows all the contacts in the application. You can view the details of each contact by clicking on the contact.
+2. **Payroll Page** - This page shows the payroll of all employees for a given date range. You can view the details of each contact by clicking on the contact.
+3. **Schedule Page** - This page shows the schedule of all employees for a given date. You can view the details of each contact by clicking on the contact.
 
 ## Known issues
 
