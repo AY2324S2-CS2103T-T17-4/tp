@@ -16,7 +16,7 @@ This user guide is tailored specifically for restaurant managers who are respons
     - [Locating a person by name: `find`](#locating-a-person-by-name-find)
     - [Clear all contacts: `clear`](#clear-all-contacts-clear)
     - [Exiting the program: `exit`](#exiting-the-program-exit)
-    - [Archiving the person: `archive/unarchive`](#saving-the-data)
+    - [Archiving/Unarchive the person: `archive/unarchive`](#archiving-the-person-archive)
     - [Retrieving payroll: `payroll`](#retrieving-payroll-payroll)
     - [Schedule employees: `schedule`](#schedule-employees-schedule)
 - [Known issues](#known-issues)
