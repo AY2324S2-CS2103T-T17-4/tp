@@ -51,12 +51,12 @@
                                     <StackPane fx:id="commandBoxPlaceholder" />
                                 </children>
                             </VBox>
-                            <VBox fx:id="personList" minWidth="400.0">
+                            <VBox fx:id="personList" minWidth="850.0">
                                 <padding>
                                     <Insets bottom="10" left="10" right="10" top="10" />
                                 </padding>
                                 <children>
-                                    <StackPane fx:id="personListPanelPlaceholder" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="850.0" VBox.vgrow="ALWAYS" />
+                                    <StackPane fx:id="personListPanelPlaceholder" minHeight="600.0" minWidth="850.0" prefHeight="600.0" prefWidth="850.0" VBox.vgrow="ALWAYS" />
                                 </children>
                             </VBox>
                         </items>
