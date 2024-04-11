@@ -104,6 +104,10 @@ Example:
 - `edit 91860934 -a Room 504, Marina Bay Sands -pr 25` Edits the address of the person with the phone number 91860934 to Room 504 Marina Bay Sands, and their pay rate to 25 dollars per hour, respectively.
 - `edit 98765432 -t` Clears all existing tags from the person with the phone number 98765432.
 
+Note:
+- At least one field to edit must be provided.
+- Only contacts currently visible in the list can be edited.
+
 ### Clocking an employee’s working hours `hours`
 
 Saves the number of hours worked by an employee to FnBuddy.
