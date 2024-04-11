@@ -144,7 +144,7 @@ Example:
 
 ### Locating a person by name `find`
 
-Finds persons whose names contain any of the given keywords.
+Finds persons whose names match any of the given keywords.
 
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
@@ -219,7 +219,7 @@ Format: `unschedule PHONE_NUMBER DATE` where `DATE` is in the format `YYYY-MM-DD
 Example:
 
 - `unschedule 91860934 2024-04-01` Removes the person with the phone number 91860934 from the schedule on 4th April
-  2024.
+    2024.
 
 ### Saving the data
 
