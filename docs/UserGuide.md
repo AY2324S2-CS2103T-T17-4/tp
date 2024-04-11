@@ -37,7 +37,10 @@ FnBuddy is an innovative employee contact management application designed specif
 3. Copy the file to the folder you want to use as the home folder for your FnBuddy.
 4. Open a command terminal, cd (change directory) into the folder you put the jar file in, and use the `java -jar fnbuddy.jar` command to run the application.
 5. A GUI similar to the one below should appear in a few seconds. Note how the app contains some sample data.
-![UI](./images/Ui.png)
+
+|![UI](./images/Ui.png)|
+|------------------------------|
+|            *FnBuddy GUI*             |
 6. Type the command in the command box and press Enter to execute it. e.g., typing `help` and pressing Enter will open the help window.
 
 Some example commands you can try:
@@ -208,8 +211,9 @@ There are 3 main pages in the application:
     - A text-based interface used to interact with software applications. In the context of this application, the 
       CLI is used to input commands to manage employee contacts. You can type commands into the command box as shown 
       below.
+
       |![CLI](./images/CommandBox.png)|
-      |:------------------------------:|
+      |------------------------------|
       |            *Command Box used to input commands*             |
 - **GUI** - Graphical User Interface
     - A visual interface that allows users to interact with software applications using graphical elements such as 
@@ -217,9 +221,10 @@ There are 3 main pages in the application:
       the employee contacts and allows users to interact with the application using buttons and text fields. However,
       our GUI is not as feature-rich as traditional GUI applications and is designed to be used in conjunction with 
       the CLI to provide the full functionality of the application.
-      |![GUI](./images/Ui.png)|
-      |:------------------------------:|
-      |            *How the app displays information*             |
+
+      | ![GUI](./images/Ui.png)                               |
+      |-------------------------------------------------------|
+      | *How the app displays information in the FnBuddy GUI* |
 - **FnBuddy** - The name of the application
 - **Employee** - A person who works part-time at a restaurant
 - **Contact** - A record of an employee in FnBuddy
