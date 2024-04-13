@@ -222,12 +222,12 @@ public class AddCommandParserTest {
 
         // invalid tag
         assertParseFailure(parser, FIRSTNAME_DESC_BOB + LASTNAME_DESC_BOB + PHONE_DESC_BOB
-                + SEX_DESC_BOB + PAYRATE_DESC_BOB + ADDRESS_DESC_BOB
-                + INVALID_TAG_DESC + VALID_TAG_COOK, Tag.MESSAGE_CONSTRAINTS);
+            + SEX_DESC_BOB + PAYRATE_DESC_BOB + ADDRESS_DESC_BOB
+            + INVALID_TAG_DESC + VALID_TAG_COOK, Tag.MESSAGE_CONSTRAINTS);
 
         // two invalid values, only first invalid value reported
         assertParseFailure(parser, INVALID_FIRSTNAME_DESC + LASTNAME_DESC_BOB + PHONE_DESC_BOB
-                + SEX_DESC_BOB + INVALID_PAYRATE_DESC,
+                + SEX_DESC_BOB + INVALID_PAYRATE_DESC + ADDRESS_DESC_BOB,
             Name.MESSAGE_CONSTRAINTS);
 
         // non-empty preamble
