@@ -168,7 +168,7 @@ before editing that particular contact.
 
 ### Locating a person by name `find`
 
-Finds persons whose names match any of the given keywords.
+Finds persons whose names match any of the given keywords. The search is case-insensitive.
 
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
