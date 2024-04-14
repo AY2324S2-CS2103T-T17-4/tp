@@ -35,7 +35,7 @@ FnBuddy is an innovative employee contact management application designed specif
 2. Download the latest fnbuddy.jar from [here](https://github.com/AY2324S2-CS2103T-T17-4/tp/releases/tag/v1.2).
 3. Copy the file to the folder you want to use as the home folder for your FnBuddy.
 4. Open a command terminal, cd (change directory) into the folder you put the jar file in, and use the `java -jar fnbuddy.jar` command to run the application.
-5. A GUI similar to the one below should appear in a few seconds. Note how the app contains some sample data.
+5. A GUI similar to the one below should appear in a few seconds. Note how the app contains some sample data. The list of contacts displayed at startup is the main list of unarchived contacts. More details in the [Features](#Features) section below.
    ![UI](./images/Ui.png)
 6. Type the command in the command box and press Enter to execute it. e.g., typing `help` and pressing Enter will open the help window.
 
@@ -59,7 +59,7 @@ Refer to the [Features](#Features) section below for details of each command.
 - Items in square brackets are optional. e.g., `-fn FIRST_NAME -ln LAST_NAME [-t TAG]` can be used as `-fn Javier -ln Tan -t/waiter` or as `-fn Javier -ln Tan`.
 - Items with `…` after them can be used multiple times, including zero times. e.g., `[-t TAG]…` can be used as `-t cook -t waiter -t dishwasher`, etc.
 - Parameters can be in any order. e.g., if the command specifies `-fn FIRST_NAME -ln LAST_NAME`, `-ln LAST_NAME -fn FIRST_NAME` is also acceptable.
-- Extraneous parameters for commands that do not take in parameters (such as help, list, exit, and clear) will be ignored. e.g., if the command specifies `help 123`, it will be interpreted as `help`.
+- Extraneous parameters for commands that do not take in parameters (such as help, exit, and clear) will be ignored. e.g., if the command specifies `help 123`, it will be interpreted as `help`.
 - If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines, as space characters surrounding line-breaks may be omitted when copied over to the application.
 
 ### Adding a person `add`
@@ -84,6 +84,8 @@ Example:
 - `list all` shows all contacts in FnBuddy.
 - `list main` shows all un-archived contacts in FnBuddy.
 - `list archive` shows all archived contacts in FnBuddy.
+
+Note: If unexpected extraneous parameters are added such as `list main 123`, the command will default to `list all`.
 
 ### Deleting a person `delete`
 
