@@ -85,7 +85,7 @@ Example:
 - `list main` shows all un-archived contacts in FnBuddy.
 - `list archive` shows all archived contacts in FnBuddy.
 
-Note: If unexpected extraneous parameters are added such as `list main 123`, the command will default to `list all`.
+Note: If unexpected extraneous parameters are added such as `list main 123`, the command will default to `list all`. (eg. you are currently viewing `list all` and want to switch to `list archive`, but typed `list archivee` instead, there will be no visible change on the GUI as it has defaulted to `list all`.)
 
 ### Deleting a person `delete`
 
@@ -187,6 +187,8 @@ FnBuddy data is stored in the hard disk automatically after any command that cha
 
 1. When using multiple screens, if you move the application to a secondary screen and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
    a. Alternatively, for Windows users, you can press Shift and right-click the program icon on the taskbar, Select Move, and use your left or right arrow keys to move the window until the window appears.
+2. The same feedback message 'listed all employees' produced by the application when the list commands (`list all`, `list main`, `list archive`) are inputted is used. The current universal feedback message does not provide the user with enough information about which list they are viewing.
+There is currently no remedy for this flaw, and it is set to be a future enhancement.
 
 ## Planned Enhancements
 
@@ -198,6 +200,9 @@ current only way to access all the details of a contact.
 ### Enhancements to Archive Feature
 - Making the archive status of each person visible to the user on each contact card. This is to improve the usability of the archive feature and
 add more differentiation to archived and unarchived contacts, which is currently only differentiated by which list (list main OR list archive) they are viewing.
+
+### More Informative List Command Feedback
+- To provide more informative feedback to the user when they use the list command, we will be updating the feedback messages to display the list type that the user is currently viewing. This will help the user to know which list they are currently viewing, as the current feedback message is the same for all list commands.
 
 ## FAQ
 
