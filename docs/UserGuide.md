@@ -316,6 +316,12 @@ add more differentiation to archived and unarchived contacts, which is currently
 ### More Informative List Command Feedback
 - To provide more informative feedback to the user when they use the list command, we will be updating the feedback messages to display the list type that the user is currently viewing. This will help the user to know which list they are currently viewing, as the current feedback message is the same for all list commands.
 
+### Enhancements to Scheduling and Payroll Feature
+- Currently, the payroll feature calculates the payroll based on the pay rate of the employee and the number of 
+  hours worked. We will be adding a feature to allow the user to modify the number of hours worked by the employee 
+  (currently using only the schedule feature), which will be used to calculate the payroll. This will provide more 
+  flexibility to the user and allow them to input the number of hours worked by the employee, which can be used to calculate the payroll more accurately.
+
 ## Glossary
 
 - **CLI** - Command Line Interface
@@ -342,7 +348,6 @@ add more differentiation to archived and unarchived contacts, which is currently
 - **Payroll** - The total amount of money paid to employees for their work
 
 ## FAQ
-
 
 - **Q: What is Java 11?**
     - A: Java 11 is a release of the [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) programming language and runtime environment. In the context of FnBuddy, 
