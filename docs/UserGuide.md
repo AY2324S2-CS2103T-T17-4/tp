@@ -42,7 +42,7 @@ FnBuddy is an innovative employee contact management application designed specif
 ## Quick start
 
 1. Ensure you have Java 11 or above installed on your Computer.
-2. Download the latest fnbuddy.jar from [here](https://github.com/AY2324S2-CS2103T-T17-4/tp/releases/tag/v1.2).
+2. Download the latest fnbuddy.jar from [here](https://github.com/AY2324S2-CS2103T-T17-4/tp/releases/latest/).
 3. Copy the file to the folder you want to use as the home folder for your FnBuddy.
 4. Open a command terminal, cd (change directory) into the folder you put the jar file in, and use the `java -jar fnbuddy.jar` command to run the application.
 5. A GUI similar to the one below should appear in a few seconds. For a more detailed explanation of the GUI and 
