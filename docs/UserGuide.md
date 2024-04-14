@@ -139,6 +139,11 @@ With the 3 different pages, different types of commands can also be used to navi
 - There should be spaces between the flags and the parameters. e.g., `add -fn Javier -ln Tan` is correct, while `add -fn Javier-ln Tan` is incorrect. However, extra spaces are allowed. e.g., `add    -fn    Javier    -ln    Tan` is also correct.
 - The types of commands are divided into 3 categories: Main Page Commands, Payroll Page Commands, and Schedule Page 
   Commands. For more details, refer to the [Pages](#Pages) section below.
+- If you key in any command that is not recognised by the application, the feedback panel will display an error message 
+  indicating that the command is not recognised.
+- If you key in any command that is recognised by the application but has incorrect parameters, the feedback panel will 
+  display an error message indicating that the command has incorrect parameters. Just follow the correct format and 
+  try again!
 
 ***
 
@@ -423,6 +428,11 @@ add more differentiation to archived and unarchived contacts, which is currently
 
 - **Q: Do I need to provide all the details of an employee when creating the contact?**
     - A: No, optional details do not need to be added and can be edited into the contact later on if required. Refer to the add contact feature to view which details are compulsory and optional.
+
+- **Q: Can I modify the hours worked of my staff?**
+    - A: Currently, the hours worked by an employee are calculated based on the schedule. In future updates, we will 
+      add a feature to allow users to modify the hours worked by an employee, you can see more in [Planned 
+      Enhancements](#Planned-Enhancements).
 
 <div style="page-break-after: always;"></div>
 
