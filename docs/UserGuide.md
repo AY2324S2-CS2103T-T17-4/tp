@@ -9,7 +9,7 @@ This user guide is tailored specifically for restaurant managers who are respons
 - [FnBuddy User Guide](#fnbuddy-user-guide)
   - [Table of Contents](#table-of-contents)
   - [Introduction to FnBuddy](#introduction-to-fnbuddy)
-  - [Quick start](#quick-start)
+  - [Quick Start](#quick-start)
   - [GUI Components](#gui-components)
   - [Pages](#pages)
       - [Command Type](#command-type)
@@ -29,7 +29,7 @@ This user guide is tailored specifically for restaurant managers who are respons
     - [Unschedule employees `unschedule`](#unschedule-employees-unschedule)
     - [Saving the data](#saving-the-data)
       - [Modifying saved data (For advanced users only!)](#modifying-saved-data-for-advanced-users-only)
-  - [Known issues](#known-issues)
+  - [Known Issues](#known-issues)
   - [Planned Enhancements](#planned-enhancements)
     - [Adding a `view` feature](#adding-a-view-feature)
     - [Enhancements to Archive Feature](#enhancements-to-archive-feature)
@@ -44,7 +44,7 @@ The primary purpose of this user guide is to provide you with a comprehensive re
 
 FnBuddy is an innovative employee contact management application designed specifically for restaurant managers. It offers a user-friendly interface (both CLI and GUI) that allows you to effortlessly create, manage, and maintain contact records for all your employees. With FnBuddy, you can store essential information such as contact details, banking information, and work schedules, ensuring efficient communication and accurate payroll calculations.
 
-## Quick start
+## Quick Start
 
 1. Ensure you have [Java 11](#faq) or above installed on your Computer.
 2. Download the latest fnbuddy.jar from [here](https://github.com/AY2324S2-CS2103T-T17-4/tp/releases/latest/).
@@ -296,7 +296,7 @@ If you still wish to edit the JSON files, for the schedule.json file, note that 
 - There should not be duplicate entries for the same contact on the same date.
 - There should not be duplicate entries for the same date.
 
-## Known issues
+## Known Issues
 1. When using multiple screens, if you move the application to a secondary screen and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
    a. Alternatively, for Windows users, you can press Shift and right-click the program icon on the taskbar, Select Move, and use your left or right arrow keys to move the window until the window appears.
 2. The same feedback message 'listed all employees' produced by the application when the list commands (`list all`, `list main`, `list archive`) are inputted is used. The current universal feedback message does not provide the user with enough information about which list they are viewing.
