@@ -35,7 +35,7 @@ FnBuddy is an innovative employee contact management application designed specif
 2. Download the latest fnbuddy.jar from [here](https://github.com/AY2324S2-CS2103T-T17-4/tp/releases/tag/v1.2).
 3. Copy the file to the folder you want to use as the home folder for your FnBuddy.
 4. Open a command terminal, cd (change directory) into the folder you put the jar file in, and use the `java -jar fnbuddy.jar` command to run the application.
-5. A GUI similar to the one below should appear in a few seconds. Note how the app contains some sample data.
+5. A GUI similar to the one below should appear in a few seconds. Note how the app contains some sample data. The list of contacts displayed at startup is the main list of unarchived contacts. More details in the [Features](#Features) section below.
    ![UI](./images/Ui.png)
 6. Type the command in the command box and press Enter to execute it. e.g., typing `help` and pressing Enter will open the help window.
 
@@ -43,7 +43,6 @@ Some example commands you can try:
 - `add -fn Javier -ln Tan -p 98749874 -s m -pr 10.5 -a 123 Street -b posb 420053040` : Adds a contact named Javier Tan to FnBuddy.
 - `list` : Lists all contacts.
 - `delete 98749874` : Deletes the contact associated with the phone number 98749874 from FnBuddy.
-- `view Javier Tan` : View Javier Tan’s contact and all associated information in the address book.
 - `edit 91234567 -a NUS` : Edits the address of the contact associated with phone number 91234567 to NUS.
 - `hours 91234567 50` : Saves the number of hours worked by the employee.
 - `find james` : Searches the address book for a person whose name matches “james”.
@@ -60,7 +59,7 @@ Refer to the [Features](#Features) section below for details of each command.
 - Items in square brackets are optional. e.g., `-fn FIRST_NAME -ln LAST_NAME [-t TAG]` can be used as `-fn Javier -ln Tan -t/waiter` or as `-fn Javier -ln Tan`.
 - Items with `…` after them can be used multiple times, including zero times. e.g., `[-t TAG]…` can be used as `-t cook -t waiter -t dishwasher`, etc.
 - Parameters can be in any order. e.g., if the command specifies `-fn FIRST_NAME -ln LAST_NAME`, `-ln LAST_NAME -fn FIRST_NAME` is also acceptable.
-- Extraneous parameters for commands that do not take in parameters (such as help, list, exit, and clear) will be ignored. e.g., if the command specifies `help 123`, it will be interpreted as `help`.
+- Extraneous parameters for commands that do not take in parameters (such as help, exit, and clear) will be ignored. e.g., if the command specifies `help 123`, it will be interpreted as `help`.
 - If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines, as space characters surrounding line-breaks may be omitted when copied over to the application.
 
 ### Adding a person `add`
@@ -73,7 +72,7 @@ Example:
 - `add -fn John -ln Doe -p 91860934 -s m -pr 20.50 -a 123 Main St, City`
 - `add -fn Jane -ln Smith -p 98765432 -s f -pr 25.50 -a 432 Orchard Road -b posb 123456789 -t waiter -t bartender`
 
-Note: All contacts added are compressed to only show `FIRST_NAME`, `LAST_NAME` and `PHONE_NUMBER` by default. To view all of the contact's information, simply click on the contact to expand.
+Note: All contacts added are compressed to only show `FIRST_NAME`, `LAST_NAME` and `PHONE_NUMBER` by default. To view all of the contact's information, simply click on the GUI contact to expand it.
 
 ### Listing contacts `list`
 
@@ -85,6 +84,8 @@ Example:
 - `list all` shows all contacts in FnBuddy.
 - `list main` shows all un-archived contacts in FnBuddy.
 - `list archive` shows all archived contacts in FnBuddy.
+
+Note: If unexpected extraneous parameters are added such as `list main 123`, the command will default to `list all`. (eg. you are currently viewing `list all` and want to switch to `list archive`, but typed `list archivee` instead, there will be no visible change on the GUI as it has defaulted to `list all`.)
 
 ### Deleting a person `delete`
 
@@ -186,6 +187,22 @@ FnBuddy data is stored in the hard disk automatically after any command that cha
 
 1. When using multiple screens, if you move the application to a secondary screen and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
    a. Alternatively, for Windows users, you can press Shift and right-click the program icon on the taskbar, Select Move, and use your left or right arrow keys to move the window until the window appears.
+2. The same feedback message 'listed all employees' produced by the application when the list commands (`list all`, `list main`, `list archive`) are inputted is used. The current universal feedback message does not provide the user with enough information about which list they are viewing.
+There is currently no remedy for this flaw, and it is set to be a future enhancement.
+
+## Planned Enhancements
+
+### Adding a `view` feature
+- In order to cater to the user's preference of a command line interface, we will be adding a `view` feature that will 
+allow users to view all the details of a contact without having to click on the contact card in the GUI, which is the 
+current only way to access all the details of a contact.
+
+### Enhancements to Archive Feature
+- Making the archive status of each person visible to the user on each contact card. This is to improve the usability of the archive feature and
+add more differentiation to archived and unarchived contacts, which is currently only differentiated by which list (list main OR list archive) they are viewing.
+
+### More Informative List Command Feedback
+- To provide more informative feedback to the user when they use the list command, we will be updating the feedback messages to display the list type that the user is currently viewing. This will help the user to know which list they are currently viewing, as the current feedback message is the same for all list commands.
 
 ## FAQ
 

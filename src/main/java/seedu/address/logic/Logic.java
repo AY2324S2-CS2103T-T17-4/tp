@@ -41,6 +41,9 @@ public interface Logic {
     /** Returns an unmodifiable view of the list of payrolls */
     ObservableList<PayrollWrapper> getPayrollList();
 
+    /** Returns an unmodifiable view of the list of unarchived persons */
+    ObservableList<Person> getFilteredUnarchivedPersonList();
+
     /**
      * Returns the user prefs' address book file path.
      */
