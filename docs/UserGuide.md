@@ -116,8 +116,22 @@ Command Type: Main Page Command
 Example:
 
 - `list all` shows all contacts in FnBuddy.
+
+| ![List All UI](./images/listall_screenshot.png)                  |
+|------------------------------------------------------------------|
+| _Example result panel display for a successful list all command_ |
+
 - `list main` shows all un-archived contacts in FnBuddy.
+
+| ![List Main UI](./images/listmain_screenshot.png)                 |
+|-------------------------------------------------------------------|
+| _Example result panel display for a successful list main command_ |
+
 - `list archive` shows all archived contacts in FnBuddy.
+
+| ![List Archive UI](./images/listarchive_screenshot.png)              |
+|----------------------------------------------------------------------|
+| _Example result panel display for a successful list archive command_ |
 
 Note: If unexpected extraneous parameters are added such as `list main 123`, the command will default to `list all`. (eg. you are currently viewing `list all` and want to switch to `list archive`, but typed `list archivee` instead, there will be no visible change on the GUI as it has defaulted to `list all`.)
 
