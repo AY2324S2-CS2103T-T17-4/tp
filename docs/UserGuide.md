@@ -4,6 +4,8 @@ Welcome to the FnBuddy User Guide! This comprehensive guide is designed to help 
 
 This user guide is tailored specifically for restaurant managers who are responsible for liaising with part-time employee records and managing their payroll. We assume that you have a basic understanding of using software applications and are familiar with common restaurant operations and terminology.
 
+<div style="page-break-after: always;"></div>
+
 ## Table of Contents
 
 - [FnBuddy User Guide](#fnbuddy-user-guide)
@@ -12,7 +14,7 @@ This user guide is tailored specifically for restaurant managers who are respons
   - [Quick Start](#quick-start)
   - [GUI Components](#gui-components)
   - [Pages](#pages)
-      - [Command Type](#command-type)
+    - [Command Type](#command-type)
   - [Features](#features)
     - [Notes about the command format:](#notes-about-the-command-format)
     - [Adding a person `add`](#adding-a-person-add)
@@ -34,9 +36,14 @@ This user guide is tailored specifically for restaurant managers who are respons
     - [Adding a `view` feature](#adding-a-view-feature)
     - [Enhancements to Archive Feature](#enhancements-to-archive-feature)
     - [More Informative List Command Feedback](#more-informative-list-command-feedback)
+    - [Enhancements to Scheduling and Payroll Feature](#enhancements-to-scheduling-and-payroll-feature)
   - [Glossary](#glossary)
   - [FAQ](#faq)
   - [Command summary](#command-summary)
+
+Click on any item in the table of contents to instantly navigate to that specific section.
+
+<div style="page-break-after: always;"></div>
 
 ## Introduction to FnBuddy
 
@@ -70,6 +77,8 @@ Some example commands you can try:
 
 Refer to the [Features](#Features) section below for details of each command.
 
+<div style="page-break-after: always;"></div>
+
 ## GUI Components
 | ![LabelledUi](./images/LabelledUi.png) |
 |----------------------------------------|
@@ -86,6 +95,8 @@ The names of the UI components have been labelled in the image above. The compon
    allows you to exit the application. The "Help" menu contains the "Help" option, which provides a link to this
    user guide for the application.
 
+<div style="page-break-after: always;"></div>
+
 ## Pages
 There are 3 main pages in the application:
 1. **Main Page** - This page shows all the contacts in the application. You can view the details of each contact by clicking on the contact.
@@ -93,6 +104,9 @@ There are 3 main pages in the application:
     | ![UI](./images/Ui.png)       |
     |------------------------------|
     | *FnBuddy Main Page*          |
+
+    <div style="page-break-after: always;"></div>
+
 2. **Payroll Page** - This page shows the payroll of all employees for a given date range. You can view the details of each contact by clicking on the contact.
 
    | ![Payroll Page](./images/PayrollPageSuccess.png)                |
@@ -110,6 +124,8 @@ With the 3 different pages, different types of commands can also be used to navi
 2. **Payroll Page Commands** - These commands when used will navigate to the payroll page of the application.
 3. **Schedule Page Commands** - These commands when used will navigate to the schedule page of the application.
 
+<div style="page-break-after: always;"></div>
+
 ## Features
 
 ### Notes about the command format:
@@ -124,6 +140,8 @@ With the 3 different pages, different types of commands can also be used to navi
 - The types of commands are divided into 3 categories: Main Page Commands, Payroll Page Commands, and Schedule Page 
   Commands. For more details, refer to the [Pages](#Pages) section below.
 
+***
+
 ### Adding a person `add`
 
 Adds a person’s contact to FnBuddy.
@@ -137,6 +155,8 @@ Example:
 - `add -fn Jane -ln Smith -p 98765432 -s f -pr 25.50 -a 432 Orchard Road -b posb 123456789 -t waiter -t bartender`
 
 Note: All contacts added are compressed to only show `FIRST_NAME`, `LAST_NAME` and `PHONE_NUMBER` by default. To view all of the contact's information, simply click on the GUI contact to expand it.
+
+***
 
 ### Listing contacts `list`
 
@@ -153,6 +173,8 @@ Example:
 
 Note: If unexpected extraneous parameters are added such as `list main 123`, the command will default to `list all`. (eg. you are currently viewing `list all` and want to switch to `list archive`, but typed `list archivee` instead, there will be no visible change on the GUI as it has defaulted to `list all`.)
 
+***
+
 ### Deleting a person `delete`
 
 Deletes the specified person from FnBuddy.
@@ -163,6 +185,8 @@ Command Type: Main Page Command
 
 Example:
 - `delete 91860934` deletes the person with the number 91860934 from FnBuddy.
+
+***
 
 ### Editing a person `edit`
 
@@ -180,6 +204,8 @@ Note: You can only edit contacts that are currently visible in the panel. If you
 wish to edit, use the `find` command to locate the contact first, or use the `list all` command to view all contacts 
 before editing that particular contact.
 
+***
+
 ### Locating a person by name `find`
 
 Finds persons whose names match any of the given keywords.
@@ -194,6 +220,9 @@ Example:
 | ![Find UI](./images/Find_UI.png)                             |
 |--------------------------------------------------------------|
 | *Example result panel display for a successful find command* |
+
+***
+
 ### Clear all contacts `clear`
 
 Delete all employee contacts.
@@ -204,11 +233,15 @@ Command Type: Main Page Command
 
 **WARNING!** This action is permanent and non-reversible! Make sure that you want to clear FnBuddy before you execute the command.
 
+***
+
 ### Exiting the program `exit`
 
 Exits the program.
 
 Format: `exit`
+
+***
 
 ### Archiving the person `archive`
 
@@ -221,6 +254,8 @@ Command Type: Main Page Command
 Example:
 - `archive 91860934` archives the person with the number 91860934 from FnBuddy's main list of contacts.
 
+***
+
 ### Unarchive the person `unarchive`
 
 Unarchive the person's contact so that it is shown in the main list of contacts.
@@ -231,6 +266,8 @@ Command Type: Main Page Command
 
 Example:
 - `unarchive 91860934` un-archives the person with the number 91860934 from FnBuddy's main list of contacts.
+
+***
 
 ### Retrieving payroll `payroll`
 
@@ -248,6 +285,8 @@ Example:
 | *Example result panel display for a successful payroll command* |
 
 Note: Employee's payroll is calculated by multiplying 8 to their respective `PAY_RATE`. We are assuming each shift is 8 hours.
+
+***
 
 ### Schedule employees `schedule`
 
@@ -267,6 +306,8 @@ Example:
 Note: If you add a duplicate entry in the schedule for the same date, the feedback message will not prompt this. 
 However, the schedule will not be updated with the new entry.
 
+***
+
 ### Unschedule employees `unschedule`
 
 Removes a person in FnBuddy from the schedule on a specified date.
@@ -282,6 +323,8 @@ Example:
 |--------------------------------------------------------------------|
 | *Example result panel display for a successful unschedule command* |
 
+***
+
 ### Saving the data
 
 FnBuddy data is stored in the hard disk automatically after any command that changes the data. Rest assured, there is no need to save manually.
@@ -296,11 +339,15 @@ If you still wish to edit the JSON files, for the schedule.json file, note that 
 - There should not be duplicate entries for the same contact on the same date.
 - There should not be duplicate entries for the same date.
 
+<div style="page-break-after: always;"></div>
+
 ## Known Issues
 1. When using multiple screens, if you move the application to a secondary screen and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
    a. Alternatively, for Windows users, you can press Shift and right-click the program icon on the taskbar, Select Move, and use your left or right arrow keys to move the window until the window appears.
 2. The same feedback message 'listed all employees' produced by the application when the list commands (`list all`, `list main`, `list archive`) are inputted is used. The current universal feedback message does not provide the user with enough information about which list they are viewing.
 There is currently no remedy for this flaw, and it is set to be a future enhancement.
+
+<div style="page-break-after: always;"></div>
 
 ## Planned Enhancements
 
@@ -322,16 +369,18 @@ add more differentiation to archived and unarchived contacts, which is currently
   (currently using only the schedule feature), which will be used to calculate the payroll. This will provide more 
   flexibility to the user and allow them to input the number of hours worked by the employee, which can be used to calculate the payroll more accurately.
 
+<div style="page-break-after: always;"></div>
+
 ## Glossary
 
 - **CLI** - Command Line Interface
-- A text-based interface used to interact with software applications. In the context of this application, the 
-  CLI is used to input commands to manage employee contacts. You can type commands into the command box as shown 
-  below.
+    - A text-based interface used to interact with software applications. In the context of this application, the 
+    CLI is used to input commands to manage employee contacts. You can type commands into the command box as shown 
+    below.
 
-| ![CLI](./images/CommandBox.png)      |
-|--------------------------------------|
-| *Command Box used to input commands* |
+    | ![CLI](./images/CommandBox.png)      |
+    |--------------------------------------|
+    | *Command Box used to input commands* |
 - **GUI** - Graphical User Interface
     - A visual interface that allows users to interact with software applications using graphical elements such as 
       windows, buttons, and icons. In the context of this application, the GUI provides a visual representation of 
@@ -346,6 +395,8 @@ add more differentiation to archived and unarchived contacts, which is currently
 - **Employee** - A person who works part-time at a restaurant
 - **Contact** - A record of an employee in FnBuddy
 - **Payroll** - The total amount of money paid to employees for their work
+
+<div style="page-break-after: always;"></div>
 
 ## FAQ
 
@@ -372,6 +423,8 @@ add more differentiation to archived and unarchived contacts, which is currently
 
 - **Q: Do I need to provide all the details of an employee when creating the contact?**
     - A: No, optional details do not need to be added and can be edited into the contact later on if required. Refer to the add contact feature to view which details are compulsory and optional.
+
+<div style="page-break-after: always;"></div>
 
 ## Command summary
 
