@@ -1,8 +1,9 @@
 # FnBuddy User Guide
 
-Welcome to the FnBuddy User Guide! This comprehensive guide is designed to help you navigate and utilise the FnBuddy part-time employee contact management application with ease. Whether you're a seasoned restaurant manager or new to the role, this guide will serve as your trusted companion, empowering you to streamline your operations and enhance your team management capabilities. FnBuddy can manage contacts optimised for use via a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, FnBuddy can get your contact management tasks done faster than traditional GUI apps.
+Welcome to the FnBuddy User Guide! This comprehensive guide is designed to help you navigate and utilise the FnBuddy part-time employee contact management application with ease.
+Whether you need to create, update, schedule or retrieve the payroll of your employees, or simply wish to navigate the application seamlessly, this guide will equip you with the knowledge to do so effectively.
 
-This user guide is tailored specifically for restaurant managers who are responsible for liaising with part-time employee records and managing their payroll. We assume that you have a basic understanding of using software applications and are familiar with common restaurant operations and terminology.
+Our guide assumes that you are a restaurant manager with a basic understanding of using software applications, and are familiar with common restaurant operations and terminology.
 
 ## Table of Contents
 
@@ -40,9 +41,12 @@ This user guide is tailored specifically for restaurant managers who are respons
 
 ## Introduction to FnBuddy
 
-The primary purpose of this user guide is to provide you with a comprehensive resource that will enable you to fully harness the capabilities of FnBuddy. Whether you need to create, view, update, or delete employee contacts, track working hours, assign roles, or simply navigate the application seamlessly, this guide will be your trusty companion, ensuring that you can effectively manage your team and streamline your restaurant's operations.
+Whether you're a seasoned restaurant manager or new to the role, FnBuddy will serve as your trusted companion, empowering you to streamline your operations and enhance your team management capabilities. FnBuddy  manage contacts optimised for use via a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). So if you're a fast typer, FnBuddy is just the application for you!
 
-FnBuddy is an innovative employee contact management application designed specifically for restaurant managers. It offers a user-friendly interface (both CLI and GUI) that allows you to effortlessly create, manage, and maintain contact records for all your employees. With FnBuddy, you can store essential information such as contact details, banking information, and work schedules, ensuring efficient communication and accurate payroll calculations.
+Features that FnBuddy offers with your needs in mind include: 
+- **contact creation and management** such as editing and archiving
+- **scheduling** of part-time employee contacts on specified dates
+- **payroll retrieval** that calculates the total payroll for all employees who worked within a specified date range (currently dependent on their scheduled hours).
 
 ## Quick start
 
