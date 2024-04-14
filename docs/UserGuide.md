@@ -20,6 +20,7 @@ This user guide is tailored specifically for restaurant managers who are respons
     - [Retrieving payroll: `payroll`](#retrieving-payroll-payroll)
     - [Schedule employees: `schedule`](#schedule-employees-schedule)
 - [Known issues](#known-issues)
+- [Planned Enhancements](#planned-enhancements)
 - [FAQ](#faq)
 - [Command summary](#command-summary)
 
