@@ -1,8 +1,9 @@
 # FnBuddy User Guide
 
-Welcome to the FnBuddy User Guide! This comprehensive guide is designed to help you navigate and utilise the FnBuddy part-time employee contact management application with ease. Whether you're a seasoned restaurant manager or new to the role, this guide will serve as your trusted companion, empowering you to streamline your operations and enhance your team management capabilities. FnBuddy can manage contacts optimised for use via a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, FnBuddy can get your contact management tasks done faster than traditional GUI apps.
+Welcome to the FnBuddy User Guide! This comprehensive guide is designed to help you navigate and utilise the FnBuddy part-time employee contact management application with ease.
+Whether you need to create, update, schedule or retrieve the payroll of your employees, or simply wish to navigate the application seamlessly, this guide will equip you with the knowledge to do so effectively.
 
-This user guide is tailored specifically for restaurant managers who are responsible for liaising with part-time employee records and managing their payroll. We assume that you have a basic understanding of using software applications and are familiar with common restaurant operations and terminology.
+Our guide assumes that you are a restaurant manager with a basic understanding of using software applications, and are familiar with common restaurant operations and terminology.
 
 <div style="page-break-after: always;"></div>
 
@@ -47,25 +48,43 @@ Click on any item in the table of contents to instantly navigate to that specifi
 
 ## Introduction to FnBuddy
 
-The primary purpose of this user guide is to provide you with a comprehensive resource that will enable you to fully harness the capabilities of FnBuddy. Whether you need to create, view, update, or delete employee contacts, track working hours, assign roles, or simply navigate the application seamlessly, this guide will be your trusty companion, ensuring that you can effectively manage your team and streamline your restaurant's operations.
+Whether you're a seasoned restaurant manager or new to the role, FnBuddy will serve as your trusted companion, empowering you to streamline your operations and enhance your team management capabilities. FnBuddy  manage contacts optimised for use via a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). So if you're a fast typer, FnBuddy is just the application for you!
 
-FnBuddy is an innovative employee contact management application designed specifically for restaurant managers. It offers a user-friendly interface (both CLI and GUI) that allows you to effortlessly create, manage, and maintain contact records for all your employees. With FnBuddy, you can store essential information such as contact details, banking information, and work schedules, ensuring efficient communication and accurate payroll calculations.
+Features that FnBuddy offers with your needs in mind include: 
+- **contact creation and management** such as editing and archiving
+- **scheduling** of part-time employee contacts on specified dates
+- **payroll retrieval** that calculates the total payroll for all employees who worked within a specified date range (currently dependent on their scheduled hours).
 
 ## Quick Start
 
 1. Ensure you have [Java 11](#faq) or above installed on your Computer.
 2. Download the latest fnbuddy.jar from [here](https://github.com/AY2324S2-CS2103T-T17-4/tp/releases/latest/).
-3. Copy the file to the folder you want to use as the home folder for your FnBuddy.
-4. Open a command terminal, cd (change directory) into the folder you put the jar file in, and use the `java -jar fnbuddy.jar` command to run the application.
-5. A GUI similar to the one below should appear in a few seconds. For a more detailed explanation of the GUI and 
+3. Move the fnbuddy.jar file to the directory you intend to designate as the home folder for your FnBuddy.
+4. Open the terminal on your Operating System.
+   - For Windows, press `Win + R`, type `cmd`, and press Enter.
+   - For MacOS, press `Cmd + Space`, type `Terminal`, and press Enter.
+   - For Linux, press `Ctrl + Alt + T`.
+5. You should see a terminal window similar to the one below open. (The terminal window will look different depending on your Operating System.)
+    
+    | ![Terminal](./images/Terminal.png)               |
+    |--------------------------------------------------|
+    | *Example of a terminal window on a MacOS system* |
+
+6. Type `cd` followed by the path to the folder you copied the fnbuddy.jar file to.
+   - Windows Example: `cd C:\Users\JohnDoe\Desktop\FnBuddy`.
+   - MacOS Example: `cd /Users/JohnDoe/Desktop/FnBuddy`.
+   - Linux Example: `cd /home/JohnDoe/Desktop/FnBuddy`.
+7. Type `java -jar fnbuddy.jar` to run the application.
+8. An application similar to the one below should appear in a few seconds. For a more detailed explanation of the Graphical User Interface (GUI) and 
    its components, refer to the [GUI Components](#GUI-Components). Note how the app contains some sample data. The list of contacts displayed at startup is the main list of unarchived contacts. More details in the [Features](#Features) section below.
 
-| ![UI](./images/Ui.png) |
-|------------------------|
-| *FnBuddy GUI*          |
-6. Type the command in the command box and press Enter to execute it. e.g., typing `help` and pressing Enter will open the help window.
+    | ![UI](./images/Ui.png) |
+    |------------------------|
+    | *FnBuddy GUI*          |
+9. Type the command in the command box and press Enter to execute it. e.g., typing `help` and pressing Enter will open the help window.
 
 Some example commands you can try:
+
 - `add -fn Javier -ln Tan -p 98749874 -s m -pr 10.5 -a 123 Street -b posb 420053040` : Adds a contact named Javier Tan to FnBuddy.
 - `list` : Lists all contacts.
 - `delete 98749874` : Deletes the contact associated with the phone number 98749874 from FnBuddy.
@@ -137,7 +156,7 @@ With the 3 different pages, different types of commands can also be used to navi
 - Extraneous parameters for commands that do not take in parameters (such as help, exit, and clear) will be ignored. e.g., if the command specifies `help 123`, it will be interpreted as `help`.
 - If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines, as space characters surrounding line-breaks may be omitted when copied over to the application.
 - There should be spaces between the flags and the parameters. e.g., `add -fn Javier -ln Tan` is correct, while `add -fn Javier-ln Tan` is incorrect. However, extra spaces are allowed. e.g., `add    -fn    Javier    -ln    Tan` is also correct.
-- The types of commands are divided into 3 categories: Main Page Commands, Payroll Page Commands, and Schedule Page 
+- The types of commands are divided into 3 categories: Main Page Commands, Payroll Page Commands, and Schedule Page
   Commands. For more details, refer to the [Pages](#Pages) section below.
 - If you key in any command that is not recognised by the application, the feedback panel will display an error message 
   indicating that the command is not recognised.
@@ -156,6 +175,7 @@ Format: `add -fn FIRST_NAME -ln LAST_NAME -p PHONE_NUMBER -s SEX -pr PAY_RATE -a
 Command Type: Main Page Command
 
 Example:
+
 - `add -fn John -ln Doe -p 91860934 -s m -pr 20.50 -a 123 Main St, City`
 - `add -fn Jane -ln Smith -p 98765432 -s f -pr 25.50 -a 432 Orchard Road -b posb 123456789 -t waiter -t bartender`
 
@@ -172,6 +192,7 @@ Format: `list LIST_TYPE`
 Command Type: Main Page Command
 
 Example:
+
 - `list all` shows all contacts in FnBuddy.
 - `list main` shows all un-archived contacts in FnBuddy.
 - `list archive` shows all archived contacts in FnBuddy.
@@ -189,6 +210,7 @@ Format: `delete PHONE_NUMBER`
 Command Type: Main Page Command
 
 Example:
+
 - `delete 91860934` deletes the person with the number 91860934 from FnBuddy.
 
 ***
@@ -202,11 +224,12 @@ Format: `edit PHONE_NUMBER [-fn FIRST_NAME] [-ln LAST_NAME] [-p PHONE_NUMBER] [-
 Command Type: Main Page Command
 
 Example:
+
 - `edit 91860934 -a Room 504, Marina Bay Sands -pr 25` Edits the address of the person with the phone number 91860934 to Room 504 Marina Bay Sands, and their pay rate to 25 dollars per hour, respectively.
 - `edit 98765432 -t` Clears all existing tags from the person with the phone number 98765432.
 
-Note: You can only edit contacts that are currently visible in the panel. If you are unable to find the contact you 
-wish to edit, use the `find` command to locate the contact first, or use the `list all` command to view all contacts 
+Note: You can only edit contacts that are currently visible in the panel. If you are unable to find the contact you
+wish to edit, use the `find` command to locate the contact first, or use the `list all` command to view all contacts
 before editing that particular contact.
 
 ***
@@ -220,6 +243,7 @@ Format: `find KEYWORD [MORE_KEYWORDS]`
 Command Type: Main Page Command
 
 Example:
+
 - `find tan` returns all contacts with names matching `tan`.
 
 | ![Find UI](./images/Find_UI.png)                             |
@@ -257,6 +281,7 @@ Format: `archive PHONE_NUMBER`
 Command Type: Main Page Command
 
 Example:
+
 - `archive 91860934` archives the person with the number 91860934 from FnBuddy's main list of contacts.
 
 ***
@@ -270,6 +295,7 @@ Format: `unarchive PHONE_NUMBER`
 Command Type: Main Page Command
 
 Example:
+
 - `unarchive 91860934` un-archives the person with the number 91860934 from FnBuddy's main list of contacts.
 
 ***
@@ -283,6 +309,7 @@ Format: `payroll -sd START_DATE -ed END_DATE` where `START_DATE` and `END_DATE` 
 Command Type: Payroll Command
 
 Example:
+
 - `payroll -sd 2024-04-01 -ed 2024-04-30` calculates the payroll of all employees that have worked within 1st April 2024 and 30th April 2024.
 
 | ![Payroll Page](./images/PayrollPageSuccess.png)                |
@@ -302,13 +329,14 @@ Format: `schedule PHONE_NUMBER DATE` where `DATE` is in the format `YYYY-MM-DD`.
 Command Type: Schedule Command
 
 Example:
+
 - `schedule 91860934 2024-04-01` Adds the person with the phone number 91860934 to the schedule on 4th April 2024.
 
 | ![Schedule Page](./images/SchedulePageSuccess.png)                   |
 |----------------------------------------------------------------------|
 | *Example result panel display for a successful schedule command*     |
 
-Note: If you add a duplicate entry in the schedule for the same date, the feedback message will not prompt this. 
+Note: If you add a duplicate entry in the schedule for the same date, the feedback message will not prompt this.
 However, the schedule will not be updated with the new entry.
 
 ***
@@ -322,6 +350,7 @@ Format: `unschedule PHONE_NUMBER DATE` where `DATE` is in the format `YYYY-MM-DD
 Command Type: Schedule Command
 
 Example:
+
 - `unschedule 91860934 2024-04-01` Removes the person with the phone number 91860934 from the schedule on 4th April 2024.
 
 | ![Unschedule Page](./images/UnschedulePageSuccess.png)             |
@@ -340,6 +369,7 @@ You may edit the JSON files directly in the data folder if you wish to make chan
 if the JSON files are no longer in the correct format, the app may not be able to read the data correctly and may crash or have unexpected behaviour.
 
 If you still wish to edit the JSON files, for the schedule.json file, note that there are additional constraints you must follow aside from the format:
+
 - The contact in the schedule must exist in the main list of contacts i.e. you should not add a new contact that does not exist, in the schedule.json file.
 - There should not be duplicate entries for the same contact on the same date.
 - There should not be duplicate entries for the same date.
@@ -347,25 +377,29 @@ If you still wish to edit the JSON files, for the schedule.json file, note that 
 <div style="page-break-after: always;"></div>
 
 ## Known Issues
+
 1. When using multiple screens, if you move the application to a secondary screen and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
    a. Alternatively, for Windows users, you can press Shift and right-click the program icon on the taskbar, Select Move, and use your left or right arrow keys to move the window until the window appears.
 2. The same feedback message 'listed all employees' produced by the application when the list commands (`list all`, `list main`, `list archive`) are inputted is used. The current universal feedback message does not provide the user with enough information about which list they are viewing.
-There is currently no remedy for this flaw, and it is set to be a future enhancement.
+   There is currently no remedy for this flaw, and it is set to be a future enhancement.
 
 <div style="page-break-after: always;"></div>
 
 ## Planned Enhancements
 
 ### Adding a `view` feature
-- In order to cater to the user's preference of a command line interface, we will be adding a `view` feature that will 
-allow users to view all the details of a contact without having to click on the contact card in the GUI, which is the 
-current only way to access all the details of a contact.
+
+- In order to cater to the user's preference of a command line interface, we will be adding a `view` feature that will
+  allow users to view all the details of a contact without having to click on the contact card in the GUI, which is the
+  current only way to access all the details of a contact.
 
 ### Enhancements to Archive Feature
+
 - Making the archive status of each person visible to the user on each contact card. This is to improve the usability of the archive feature and
-add more differentiation to archived and unarchived contacts, which is currently only differentiated by which list (list main OR list archive) they are viewing.
+  add more differentiation to archived and unarchived contacts, which is currently only differentiated by which list (list main OR list archive) they are viewing.
 
 ### More Informative List Command Feedback
+
 - To provide more informative feedback to the user when they use the list command, we will be updating the feedback messages to display the list type that the user is currently viewing. This will help the user to know which list they are currently viewing, as the current feedback message is the same for all list commands.
 
 ### Enhancements to Scheduling and Payroll Feature
@@ -386,16 +420,18 @@ add more differentiation to archived and unarchived contacts, which is currently
     | ![CLI](./images/CommandBox.png)      |
     |--------------------------------------|
     | *Command Box used to input commands* |
-- **GUI** - Graphical User Interface
-    - A visual interface that allows users to interact with software applications using graphical elements such as 
-      windows, buttons, and icons. In the context of this application, the GUI provides a visual representation of 
-      the employee contacts and allows users to interact with the application using buttons and text fields. However,
-      our GUI is not as feature-rich as traditional GUI applications and is designed to be used in conjunction with 
-      the CLI to provide the full functionality of the application.
 
-      | ![GUI](./images/Ui.png)                               |
-      |-------------------------------------------------------|
-      | *How the app displays information in the FnBuddy GUI* |
+- **GUI** - Graphical User Interface
+  - A visual interface that allows users to interact with software applications using graphical elements such as
+    windows, buttons, and icons. In the context of this application, the GUI provides a visual representation of
+    the employee contacts and allows users to interact with the application using buttons and text fields. However,
+    our GUI is not as feature-rich as traditional GUI applications and is designed to be used in conjunction with
+    the CLI to provide the full functionality of the application.
+
+    | ![GUI](./images/Ui.png)                               |
+    | ----------------------------------------------------- |
+    | _How the app displays information in the FnBuddy GUI_ |
+
 - **FnBuddy** - The name of the application
 - **Employee** - A person who works part-time at a restaurant
 - **Contact** - A record of an employee in FnBuddy
@@ -415,19 +451,23 @@ add more differentiation to archived and unarchived contacts, which is currently
     - A: FnBuddy stores its data in local files on your computer (JSON format).
 
 - **Q: I prefer clicking buttons to navigate applications. Will FnBuddy be upgrading its GUI to be friendlier to such users?**
-    - A: As FnBuddy is purposefully targeted towards users who prefer typing, there are currently no plans to add features that support GUI interactions to replace the command-line style of the app.
+
+  - A: As FnBuddy is purposefully targeted towards users who prefer typing, there are currently no plans to add features that support GUI interactions to replace the command-line style of the app.
 
 - **Q: Is there any quick referral in the app itself for commands that I forget?**
-    - A: Click on the help button at the top left of the application’s window for a commands list dropdown.
+
+  - A: Click on the help button at the top left of the application’s window for a commands list dropdown.
 
 - **Q: Can I list down an employee with more than 2 names?**
-    - A: As FnBuddy only supports the `FIRST_NAME` `LAST_NAME` format, the best solution currently is to list the middle name with either the first or the last. Example: Chua Xun Hao can be saved as `-fn Xun Hao -ln Chua`.
+
+  - A: As FnBuddy only supports the `FIRST_NAME` `LAST_NAME` format, the best solution currently is to list the middle name with either the first or the last. Example: Chua Xun Hao can be saved as `-fn Xun Hao -ln Chua`.
 
 - **Q: My employee uses a foreign phone number, how can that be reflected in the app?**
-    - A: FnBuddy does not currently support phone number region differentiation and only supports 8-digit inputs after the `-p` flag. In future updates, we will add contact regions as a feature.
+
+  - A: FnBuddy does not currently support phone number region differentiation and only supports 8-digit inputs after the `-p` flag. In future updates, we will add contact regions as a feature.
 
 - **Q: Do I need to provide all the details of an employee when creating the contact?**
-    - A: No, optional details do not need to be added and can be edited into the contact later on if required. Refer to the add contact feature to view which details are compulsory and optional.
+  - A: No, optional details do not need to be added and can be edited into the contact later on if required. Refer to the add contact feature to view which details are compulsory and optional.
 
 - **Q: Can I modify the hours worked of my staff?**
     - A: Currently, the hours worked by an employee are calculated based on the schedule. In future updates, we will 
@@ -441,7 +481,7 @@ add more differentiation to archived and unarchived contacts, which is currently
 Here's the updated table with the new features added:
 
 | Command                       | Description                                                                        | Format                                                                                                                                    | Examples                                                                                                                                                                                  |
-|-------------------------------|------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ----------------------------- | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Adding a person**           | Adds a person's contact to FnBuddy.                                                | `add -fn FIRST_NAME -ln LAST_NAME -p PHONE_NUMBER -s SEX -pr PAY_RATE -a ADDRESS [-b BANK_DETAILS] [-t TAG]...`                           | `add -fn John -ln Doe -p 91860934 -s m -pr 20.50 -a 123 Main St City`<br>`add -fn Jane -ln Smith -p 98765432 -s f -pr 25.50 -a 432 Orchard Road -b posb 123456789 -t waiter -t bartender` |
 | **Listing all persons**       | Shows a list of all persons in FnBuddy.                                            | `list LIST_TYPE`                                                                                                                          | 1. `list all`<br/> 2. `list archive` <br/> 3. `list main`                                                                                                                                 |
 | **Deleting a person**         | Deletes the specified person from FnBuddy.                                         | `delete PHONE_NUMBER`                                                                                                                     | `delete 91860934`                                                                                                                                                                         |
