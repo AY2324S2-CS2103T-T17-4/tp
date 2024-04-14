@@ -10,7 +10,10 @@ Our guide assumes that you are a restaurant manager with a basic understanding o
 - [FnBuddy User Guide](#fnbuddy-user-guide)
   - [Table of Contents](#table-of-contents)
   - [Introduction to FnBuddy](#introduction-to-fnbuddy)
-  - [Quick start](#quick-start)
+  - [Quick Start](#quick-start)
+  - [GUI Components](#gui-components)
+  - [Pages](#pages)
+    - [Command Type](#command-type)
   - [Features](#features)
     - [Notes about the command format](#notes-about-the-command-format)
     - [Adding a person `add`](#adding-a-person-add)
@@ -27,17 +30,20 @@ Our guide assumes that you are a restaurant manager with a basic understanding o
     - [Unschedule employees `unschedule`](#unschedule-employees-unschedule)
     - [Saving the data](#saving-the-data)
       - [Modifying saved data](#modifying-saved-data)
-  - [GUI Components](#gui-components)
-  - [Pages](#pages)
-    - [Command Type](#command-type)
-  - [Known issues](#known-issues)
+  - [Known Issues](#known-issues)
   - [Planned Enhancements](#planned-enhancements)
     - [Adding a `view` feature](#adding-a-view-feature)
     - [Enhancements to Archive Feature](#enhancements-to-archive-feature)
     - [More Informative List Command Feedback](#more-informative-list-command-feedback)
+    - [Enhancements to Scheduling and Payroll Feature](#enhancements-to-scheduling-and-payroll-feature)
+    - [Separating Multiple Tags](#separating-multiple-tags)
   - [Glossary](#glossary)
   - [FAQ](#faq)
   - [Command summary](#command-summary)
+
+Click on any item in the table of contents to instantly navigate to that specific section.
+
+<div style="page-break-after: always;"></div>
 
 ## Introduction to FnBuddy
 
@@ -48,21 +54,22 @@ Features that FnBuddy offers with your needs in mind include:
 - **scheduling** of part-time employee contacts on specified dates
 - **payroll retrieval** that calculates the total payroll for all employees who worked within a specified date range (currently dependent on their scheduled hours).
 
-## Quick start
+<div style="page-break-after: always;"></div>
 
-1. Ensure you have Java 11 or above installed on your Computer.
+## Quick Start
+
+1. Ensure you have [Java 11](#faq) or above installed on your Computer.
 2. Download the latest fnbuddy.jar from [here](https://github.com/AY2324S2-CS2103T-T17-4/tp/releases/latest/).
 3. Move the fnbuddy.jar file to the directory you intend to designate as the home folder for your FnBuddy.
 4. Open the terminal on your Operating System.
    - For Windows, press `Win + R`, type `cmd`, and press Enter.
-   - For MacOS, press `Cmd + Space`, type `Terminal`, and press Enter.
+   - For macOS, press `Cmd + Space`, type `Terminal`, and press Enter.
    - For Linux, press `Ctrl + Alt + T`.
 5. You should see a terminal window similar to the one below open. (The terminal window will look different depending on your Operating System.)
     
     | ![Terminal](./images/Terminal.png)               |
     |--------------------------------------------------|
     | *Example of a terminal window on a MacOS system* |
-
 6. Type `cd` followed by the path to the folder you copied the fnbuddy.jar file to.
    - Windows Example: `cd C:\Users\JohnDoe\Desktop\FnBuddy`.
    - MacOS Example: `cd /Users/JohnDoe/Desktop/FnBuddy`.
@@ -92,6 +99,56 @@ Some example commands you can try:
 
 Refer to the [Features](#features) section below for details of each command.
 
+<div style="page-break-after: always;"></div>
+
+## GUI Components
+| ![LabelledUi](./images/LabelledUi.png) |
+|----------------------------------------|
+| *Labelled UI Components*               |
+The names of the UI components have been labelled in the image above. The components are as follows:
+1. **Command Box** - This is where you can type commands to interact with the application.
+2. **Feedback Panel** - This panel displays feedback messages to the user. These feedback messages can be success
+   messages, error messages, or help with commands.
+3. **Navigation Buttons** - These buttons allow you to navigate between the different pages of the application. The
+   buttons are labelled "CONTACTS" and "SCHEDULE".
+4. **Results Panel** - This panel displays the currently selected page, based on the last command or button clicked. The
+   results panel will display the contacts, schedule, or payroll based on the page selected.
+5. **Menu Bar** - The menu bar contains the "File" and "Help" menus. The "File" menu contains the "Exit" option, which
+   allows you to exit the application. The "Help" menu contains the "Help" option, which provides a link to this
+   user guide for the application.
+
+<div style="page-break-after: always;"></div>
+
+## Pages
+There are 3 main pages in the application:
+1. **Main Page** - This page shows all the contacts in the application. You can view the details of each contact by clicking on the contact.
+   
+    | ![UI](./images/Ui.png)       |
+    |------------------------------|
+    | *FnBuddy Main Page*          |
+
+    <div style="page-break-after: always;"></div>
+
+2. **Payroll Page** - This page shows the payroll of all employees for the given date range in the payroll command.
+
+   | ![Payroll Page](./images/PayrollPageSuccess.png)                |
+   |-----------------------------------------------------------------|
+   | *FnBuddy Payroll Page*                                          |
+3. **Schedule Page** - This page shows the schedule of all employees for the next four weeks (including the current 
+   week).
+
+    | ![Schedule Page](./images/SchedulePageSuccess.png) |
+    |----------------------------------------------------|
+    | *FnBuddy Schedule Page*                            |
+
+### Command Type
+With the 3 different pages, different types of commands can also be used to navigate the application. These types are as follows:
+1. **Main Page Commands** - These commands when used will navigate to the main page of the application.
+2. **Payroll Page Commands** - These commands when used will navigate to the payroll page of the application.
+3. **Schedule Page Commands** - These commands when used will navigate to the schedule page of the application.
+
+<div style="page-break-after: always;"></div>
+
 ## Features
 
 ### Notes about the command format
@@ -103,8 +160,15 @@ Refer to the [Features](#features) section below for details of each command.
 - Extraneous parameters for commands that do not take in parameters (such as help, exit, and clear) will be ignored. e.g., if the command specifies `help 123`, it will be interpreted as `help`.
 - If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines, as space characters surrounding line-breaks may be omitted when copied over to the application.
 - There should be spaces between the flags and the parameters. e.g., `add -fn Javier -ln Tan` is correct, while `add -fn Javier-ln Tan` is incorrect. However, extra spaces are allowed. e.g., `add    -fn    Javier    -ln    Tan` is also correct.
-- The types of commands are divided into 3 categories: Main Page Commands, Payroll Page Commands, and Schedule Page 
-  Commands. For more details, refer to the [Pages](#pages) section below.
+- The types of commands are divided into 3 categories: Main Page Commands, Payroll Page Commands, and Schedule Page
+  Commands. For more details, refer to the [Pages](#Pages) section below.
+- If you key in any command that is not recognised by the application, the feedback panel will display an error message 
+  indicating that the command is not recognised.
+- If you key in any command that is recognised by the application but has incorrect parameters, the feedback panel will 
+  display an error message indicating that the command has incorrect parameters. Just follow the correct format and 
+  try again!
+
+***
 
 ### Adding a person `add`
 
@@ -119,7 +183,11 @@ Example:
 - `add -fn John -ln Doe -p 91860934 -s m -pr 20.50 -a 123 Main St, City`
 - `add -fn Jane -ln Smith -p 98765432 -s f -pr 25.50 -a 432 Orchard Road -b posb 123456789 -t waiter -t bartender`
 
-Note: All contacts added are compressed to only show `FIRST_NAME`, `LAST_NAME` and `PHONE_NUMBER` by default. To view all of the contact's information, simply click on the GUI contact to expand it.
+Note: All contacts added are compressed to only show `FIRST_NAME`, `LAST_NAME` and `PHONE_NUMBER` by default. To view all the contact's information, simply click on the GUI contact to expand it.
+
+***
+
+<div style="page-break-after: always;"></div>
 
 ### Listing contacts `list`
 
@@ -165,6 +233,8 @@ Example:
 
 - `delete 91860934` deletes the person with the number 91860934 from FnBuddy.
 
+***
+
 ### Editing a person `edit`
 
 Edits an existing person in FnBuddy.
@@ -182,9 +252,13 @@ Note: You can only edit contacts that are currently visible in the panel. If you
 wish to edit, use the `find` command to locate the contact first, or use the `list all` command to view all contacts
 before editing that particular contact.
 
+***
+
+<div style="page-break-after: always;"></div>
+
 ### Locating a person by name `find`
 
-Finds persons whose names match any of the given keywords. The search is case-insensitive.
+Finds persons whose names match completely any of the given keywords. The search is case-insensitive.
 
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
@@ -195,8 +269,10 @@ Example:
 - `find tan` returns all contacts with names matching `tan`.
 
 | ![Find UI](./images/Find_UI.png)                             |
-| ------------------------------------------------------------ |
-| _Example result panel display for a successful find command_ |
+|--------------------------------------------------------------|
+| *Example result panel display for a successful find command* |
+
+***
 
 ### Clear all contacts `clear`
 
@@ -208,11 +284,15 @@ Command Type: [Main Page Command](#command-type)
 
 **WARNING!** This action is permanent and non-reversible! Make sure that you want to clear FnBuddy before you execute the command.
 
+***
+
 ### Exiting the program `exit`
 
 Exits the program.
 
 Format: `exit`
+
+***
 
 ### Archiving the person `archive`
 
@@ -226,6 +306,8 @@ Example:
 
 - `archive 91860934` archives the person with the number 91860934 from FnBuddy's main list of contacts.
 
+***
+
 ### Unarchive the person `unarchive`
 
 Unarchive the person's contact so that it is shown in the main list of contacts.
@@ -237,6 +319,10 @@ Command Type: [Main Page Command](#command-type)
 Example:
 
 - `unarchive 91860934` un-archives the person with the number 91860934 from FnBuddy's main list of contacts.
+
+***
+
+<div style="page-break-after: always;"></div>
 
 ### Retrieving payroll `payroll`
 
@@ -250,7 +336,15 @@ Example:
 
 - `payroll -sd 2024-04-01 -ed 2024-04-30` calculates the payroll of all employees that have worked within 1st April 2024 and 30th April 2024.
 
+| ![Payroll Page](./images/PayrollPageSuccess.png)                |
+|-----------------------------------------------------------------|
+| *Example result panel display for a successful payroll command* |
+
 Note: Employee's payroll is calculated by multiplying 8 to their respective `PAY_RATE`. We are assuming each shift is 8 hours.
+
+***
+
+<div style="page-break-after: always;"></div>
 
 ### Schedule employees `schedule`
 
@@ -263,12 +357,16 @@ Command Type: [Schedule Command](#command-type)
 Example:
 - `schedule 91860934 2024-04-01` Adds the person with the phone number 91860934 to the schedule on 1st April 2024.
 
-| ![Schedule Page](./images/SchedulePage.png)                      |
-| ---------------------------------------------------------------- |
-| _Example result panel display for a successful schedule command_ |
+| ![Schedule Page](./images/SchedulePageSuccess.png)                   |
+|----------------------------------------------------------------------|
+| *Example result panel display for a successful schedule command*     |
 
 Note: If you add a duplicate entry in the schedule for the same date, the feedback message will not prompt this.
 However, the schedule will not be updated with the new entry.
+
+***
+
+<div style="page-break-after: always;"></div>
 
 ### Unschedule employees `unschedule`
 
@@ -280,6 +378,14 @@ Command Type: [Schedule Command](#command-type)
 
 Example:
 - `unschedule 91860934 2024-04-01` Removes the person with the phone number 91860934 from the schedule on 1st April 2024.
+
+| ![Unschedule Page](./images/UnschedulePageSuccess.png)             |
+|--------------------------------------------------------------------|
+| *Example result panel display for a successful unschedule command* |
+
+***
+
+<div style="page-break-after: always;"></div>
 
 ### Saving the data
 
@@ -298,47 +404,16 @@ If you still wish to edit the JSON files, for the schedule.json file, note that 
 - There should not be duplicate entries for the same contact on the same date.
 - There should not be duplicate entries for the same date.
 
-## GUI Components
+<div style="page-break-after: always;"></div>
 
-| ![LabelledUi](./images/LabelledUi.png) |
-| -------------------------------------- |
-| _Labelled UI Components_               |
-
-The names of the UI components have been labelled in the image above. The components are as follows:
-
-1. **Command Box** - This is where you can type commands to interact with the application.
-2. **Feedback Panel** - This panel displays feedback messages to the user. These feedback messages can be success
-   messages, error messages, or help with commands.
-3. **Navigation Buttons** - These buttons allow you to navigate between the different pages of the application. The
-   buttons are labelled "CONTACTS" and "SCHEDULE".
-4. **Results Panel** - This panel displays the currently selected page, based on the last command or button clicked. The
-   results panel will display the contacts, schedule, or payroll based on the page selected.
-5. **Menu Bar** - The menu bar contains the "File" and "Help" menus. The "File" menu contains the "Exit" option, which
-   allows you to exit the application. The "Help" menu contains the "Help" option, which provides a link to this
-   user guide for the application.
-
-## Pages
-
-There are 3 main pages in the application:
-
-1. **Main Page** - This page shows all the contacts in the application. You can view the details of each contact by clicking on the contact.
-2. **Payroll Page** - This page shows the payroll of all employees for a given date range. You can view the details of each contact by clicking on the contact.
-3. **Schedule Page** - This page shows the schedule of all employees for a given date. You can view the details of each contact by clicking on the contact.
-
-### Command Type
-
-With the 3 different pages, different types of commands can also be used to navigate the application. These types are as follows:
-
-1. **Main Page Commands** - These commands when used will navigate to the main page of the application.
-2. **Payroll Page Commands** - These commands when used will navigate to the payroll page of the application.
-3. **Schedule Page Commands** - These commands when used will navigate to the schedule page of the application.
-
-## Known issues
+## Known Issues
 
 1. When using multiple screens, if you move the application to a secondary screen and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
    a. Alternatively, for Windows users, you can press Shift and right-click the program icon on the taskbar, Select Move, and use your left or right arrow keys to move the window until the window appears.
 2. The same feedback message 'listed all employees' produced by the application when the list commands (`list all`, `list main`, `list archive`) are inputted is used. The current universal feedback message does not provide the user with enough information about which list they are viewing.
    There is currently no remedy for this flaw, and it is set to be a future enhancement.
+
+<div style="page-break-after: always;"></div>
 
 ## Planned Enhancements
 
@@ -357,23 +432,32 @@ With the 3 different pages, different types of commands can also be used to navi
 
 - To provide more informative feedback to the user when they use the list command, we will be updating the feedback messages to display the list type that the user is currently viewing. This will help the user to know which list they are currently viewing, as the current feedback message is the same for all list commands.
 
+### Enhancements to Scheduling and Payroll Feature
+- Currently, the payroll feature calculates the payroll based on the pay rate of the employee and the number of 
+  hours worked. We will be adding a feature to allow the user to modify the number of hours worked by the employee 
+  (currently using only the schedule feature), which will be used to calculate the payroll. This will provide more 
+  flexibility to the user and allow them to input the number of hours worked by the employee, which can be used to calculate the payroll more accurately.
+
 ### Separating Multiple Tags
 
 - Currently, when multiple tags are added to a contact, they are displayed as a single string. We will be improving the tag interface to allow for better visualisation of tags in the future.
 
+<div style="page-break-after: always;"></div>
+
 ## Glossary
 
 - **CLI** - Command Line Interface
-- A text-based interface used to interact with software applications. In the context of this application, the
-  CLI is used to input commands to manage employee contacts. You can type commands into the command box as shown
-  below.
+    - A text-based interface used to interact with software applications. In the context of this application, the 
+    CLI is used to input commands to manage employee contacts. You can type commands into the command box as shown 
+    below.
 
-| ![CLI](./images/CommandBox.png)      |
-| ------------------------------------ |
-| _Command Box used to input commands_ |
+    | ![CLI](./images/CommandBox.png)      |
+    |--------------------------------------|
+    | *Command Box used to input commands* |
+
+<div style="page-break-after: always;"></div>
 
 - **GUI** - Graphical User Interface
-
   - A visual interface that allows users to interact with software applications using graphical elements such as
     windows, buttons, and icons. In the context of this application, the GUI provides a visual representation of
     the employee contacts and allows users to interact with the application using buttons and text fields. However,
@@ -381,7 +465,7 @@ With the 3 different pages, different types of commands can also be used to navi
     the CLI to provide the full functionality of the application.
 
     | ![GUI](./images/Ui.png)                               |
-    | ----------------------------------------------------- |
+    |-------------------------------------------------------|
     | _How the app displays information in the FnBuddy GUI_ |
 
 - **FnBuddy** - The name of the application
@@ -389,11 +473,18 @@ With the 3 different pages, different types of commands can also be used to navi
 - **Contact** - A record of an employee in FnBuddy
 - **Payroll** - The total amount of money paid to employees for their work
 
+<div style="page-break-after: always;"></div>
+
 ## FAQ
 
-- **Q: How is the FnBuddy’s data stored?**
+- **Q: What is Java 11?**
+    - A: Java 11 is a release of the [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) programming language and runtime environment. In the context of FnBuddy, 
+  Java 11 is required to be able to run the fnbuddy.jar program that launches the application. For installation 
+      instructions, refer to this [guide](https://docs.oracle.com/en/java/javase/11/install/installation-jdk-microsoft-windows-platforms.html#GUID-A7E27B90-A28D-4237-9383-A58B416071CA)
+  to install the Java Development Kit (JDK) for Java 11.
 
-  - A: FnBuddy stores its data in a local file on your computer.
+- **Q: How is FnBuddy’s data stored?**
+    - A: FnBuddy stores its data in local files on your computer (JSON format).
 
 - **Q: I prefer clicking buttons to navigate applications. Will FnBuddy be upgrading its GUI to be friendlier to such users?**
 
@@ -414,18 +505,25 @@ With the 3 different pages, different types of commands can also be used to navi
 - **Q: Do I need to provide all the details of an employee when creating the contact?**
   - A: No, optional details do not need to be added and can be edited into the contact later on if required. Refer to the add contact feature to view which details are compulsory and optional.
 
+- **Q: Can I modify the hours worked of my staff?**
+    - A: Currently, the hours worked by an employee are calculated based on the schedule. In future updates, we will 
+      add a feature to allow users to modify the hours worked by an employee, you can see more in [Planned 
+      Enhancements](#Planned-Enhancements).
+
 - **Q: I have an archived contact, but I can't find it in the main list. How do I unarchive it?**
   - A: Use the `list archive` command to view all archived contacts. From there, you can unarchive the contact by using the `unarchive` command. You may also use the `list all` command to view all contacts, including archived ones.
 
 - **Q: I have a contact for John Doe in the main list, and a contact for another John Doe in the archive list. How do I differentiate between the two?**
   - A: Currently, the only way to differentiate between the two contacts is by viewing the list they are in, as well as clicking on them to expand their details card. We are planning to add a feature that will display the archive status of each contact on the contact card to make it easier to differentiate between archived and unarchived contacts in future versions.
 
+<div style="page-break-after: always;"></div>
+
 ## Command summary
 
 Here's the updated table with the new features added:
 
 | Command                       | Description                                                                        | Format                                                                                                                                    | Examples                                                                                                                                                                                  |
-| ----------------------------- | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|-------------------------------|------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Adding a person**           | Adds a person's contact to FnBuddy.                                                | `add -fn FIRST_NAME -ln LAST_NAME -p PHONE_NUMBER -s SEX -pr PAY_RATE -a ADDRESS [-b BANK_DETAILS] [-t TAG]...`                           | `add -fn John -ln Doe -p 91860934 -s m -pr 20.50 -a 123 Main St City`<br>`add -fn Jane -ln Smith -p 98765432 -s f -pr 25.50 -a 432 Orchard Road -b posb 123456789 -t waiter -t bartender` |
 | **Listing all persons**       | Shows a list of all persons in FnBuddy.                                            | `list LIST_TYPE`                                                                                                                          | 1. `list all`<br/> 2. `list archive` <br/> 3. `list main`                                                                                                                                 |
 | **Deleting a person**         | Deletes the specified person from FnBuddy.                                         | `delete PHONE_NUMBER`                                                                                                                     | `delete 91860934`                                                                                                                                                                         |
