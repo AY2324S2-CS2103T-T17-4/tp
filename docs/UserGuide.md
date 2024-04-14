@@ -5,8 +5,6 @@ Whether you need to create, update, schedule or retrieve the payroll of your emp
 
 Our guide assumes that you are a restaurant manager with a basic understanding of using software applications, and are familiar with common restaurant operations and terminology.
 
-<div style="page-break-after: always;"></div>
-
 ## Table of Contents
 
 - [FnBuddy User Guide](#fnbuddy-user-guide)
@@ -130,12 +128,13 @@ There are 3 main pages in the application:
 
     <div style="page-break-after: always;"></div>
 
-2. **Payroll Page** - This page shows the payroll of all employees for a given date range. You can view the details of each contact by clicking on the contact.
+2. **Payroll Page** - This page shows the payroll of all employees for the given date range in the payroll command.
 
    | ![Payroll Page](./images/PayrollPageSuccess.png)                |
    |-----------------------------------------------------------------|
    | *FnBuddy Payroll Page*                                          |
-3. **Schedule Page** - This page shows the schedule of all employees for a given date. You can view the details of each contact by clicking on the contact.
+3. **Schedule Page** - This page shows the schedule of all employees for the next four weeks (including the current 
+   week).
 
     | ![Schedule Page](./images/SchedulePageSuccess.png) |
     |----------------------------------------------------|
@@ -245,7 +244,7 @@ before editing that particular contact.
 
 ### Locating a person by name `find`
 
-Finds persons whose names match any of the given keywords.
+Finds persons whose names match completely any of the given keywords.
 
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
