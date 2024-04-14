@@ -194,6 +194,15 @@ Example:
 
 FnBuddy data is stored in the hard disk automatically after any command that changes the data. Rest assured, there is no need to save manually.
 
+#### Modifying saved data (For advanced users only!)
+
+You may edit the JSON files directly in the data folder if you wish to make changes to the data without using the app. However,
+if the JSON files are no longer in the correct format, the app may not be able to read the data correctly and may crash or have unexpected behaviour.
+
+If you still wish to edit the JSON files, for the schedule.json file, note that there are additional constraints you must follow aside from the format:
+- The contact in the schedule must exist in the main list of contacts i.e. you should not add a new contact that does not exist, in the schedule.json file.
+- There should not be duplicate entries for the same contact on the same date.
+
 ## Pages
 There are 3 main pages in the application:
 1. **Main Page** - This page shows all the contacts in the application. You can view the details of each contact by clicking on the contact.
@@ -201,7 +210,6 @@ There are 3 main pages in the application:
 3. **Schedule Page** - This page shows the schedule of all employees for a given date. You can view the details of each contact by clicking on the contact.
 
 ## Known issues
-
 1. When using multiple screens, if you move the application to a secondary screen and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
    a. Alternatively, for Windows users, you can press Shift and right-click the program icon on the taskbar, Select Move, and use your left or right arrow keys to move the window until the window appears.
 
@@ -234,9 +242,6 @@ There are 3 main pages in the application:
 
 - **Q: How is the FnBuddy’s data stored?**
     - A: FnBuddy stores its data in a local file on your computer.
-- **Q: I don’t understand the quick start guide
-  . Can there be a more detailed guide?**
-    - A: Here is a link to a more detailed quick start guide for non-tech-savvy users.
 
 - **Q: I prefer clicking buttons to navigate applications. Will FnBuddy be upgrading its GUI to be friendlier to such users?**
     - A: As FnBuddy is purposefully targeted towards users who prefer typing, there are currently no plans to add features that support GUI interactions to replace the command-line style of the app.
