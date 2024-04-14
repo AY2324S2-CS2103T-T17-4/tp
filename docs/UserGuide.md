@@ -66,12 +66,16 @@ Refer to the [Features](#Features) section below for details of each command.
 - Extraneous parameters for commands that do not take in parameters (such as help, exit, and clear) will be ignored. e.g., if the command specifies `help 123`, it will be interpreted as `help`.
 - If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines, as space characters surrounding line-breaks may be omitted when copied over to the application.
 - There should be spaces between the flags and the parameters. e.g., `add -fn Javier -ln Tan` is correct, while `add -fn Javier-ln Tan` is incorrect. However, extra spaces are allowed. e.g., `add    -fn    Javier    -ln    Tan` is also correct.
+- The types of commands are divided into 3 categories: Main Page Commands, Payroll Page Commands, and Schedule Page 
+  Commands. For more details, refer to the [Pages](#Pages) section below.
 
 ### Adding a person `add`
 
 Adds a person’s contact to FnBuddy.
 
 Format: `add -fn FIRST_NAME -ln LAST_NAME -p PHONE_NUMBER -s SEX -pr PAY_RATE [-a ADDRESS] [-b BANK_DETAILS] [-t TAG]…`
+
+Command Type: Main Page Command
 
 Example:
 - `add -fn John -ln Doe -p 91860934 -s m -pr 20.50 -a 123 Main St, City`
@@ -82,6 +86,8 @@ Example:
 Shows a list of contacts in FnBuddy depending on which you'd like to view.
 
 Format: `list LIST_TYPE`
+
+Command Type: Main Page Command
 
 Example:
 - `list all` shows all contacts in FnBuddy.
@@ -94,6 +100,8 @@ Deletes the specified person from FnBuddy.
 
 Format: `delete PHONE_NUMBER`
 
+Command Type: Main Page Command
+
 Example:
 - `delete 91860934` deletes the person with the number 91860934 from FnBuddy.
 
@@ -102,6 +110,8 @@ Example:
 Edits an existing person in FnBuddy.
 
 Format: `edit PHONE_NUMBER [-fn FIRST_NAME] [-ln LAST_NAME] [-p PHONE_NUMBER] [-s SEX] [-pr PAY_RATE] [-a ADDRESS] [-b BANK_DETAILS] [-t TAG]…`
+
+Command Type: Main Page Command
 
 Example:
 - `edit 91860934 -a Room 504, Marina Bay Sands -pr 25` Edits the address of the person with the phone number 91860934 to Room 504 Marina Bay Sands, and their pay rate to 25 dollars per hour, respectively.
@@ -126,6 +136,8 @@ Finds persons whose names contain any of the given keywords.
 
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
+Command Type: Main Page Command
+
 Example:
 - `find john tan` returns John Doe and Henry Tan.
 
@@ -136,6 +148,8 @@ Example:
 Delete all employee contacts.
 
 Format: `clear`
+
+Command Type: Main Page Command
 
 **WARNING!** This action is permanent and non-reversible! Make sure that you want to clear FnBuddy before you execute the command.
 
@@ -151,6 +165,8 @@ Archive's the person's contact so that it is hidden from the main list of contac
 
 Format: `archive PHONE_NUMBER`
 
+Command Type: Main Page Command
+
 Example:
 - `archive 91860934` archives the person with the number 91860934 from FnBuddy's main list of contacts.
 
@@ -159,6 +175,8 @@ Example:
 Un-archive's the person's contact so that it is shown in the main list of contacts.
 
 Format: `unarchive PHONE_NUMBER`
+
+Command Type: Main Page Command
 
 Example:
 - `unarchive 91860934` un-archives the person with the number 91860934 from FnBuddy's main list of contacts.
@@ -169,6 +187,8 @@ Retrieve employee's payroll for a given start and end date
 
 Format: `payroll -sd START_DATE -ed END_DATE` where `START_DATE` and `END_DATE` are in the format `YYYY-MM-DD`.
 
+Command Type: Payroll Command
+
 Example:
 - `payroll -sd 2024-04-01 -ed 2024-04-30` calculates the payroll of all employees that has worked within 1st April 2024 and 30th April 2024.
 
@@ -178,6 +198,8 @@ Adds a person in FnBuddy to the schedule on a specified date.
 
 Format: `schedule PHONE_NUMBER DATE` where `DATE` is in the format `YYYY-MM-DD`.
 
+Command Type: Schedule Command
+
 Example:
 - `schedule 91860934 2024-04-01` Adds the person with the phone number 91860934 to the schedule on 4th April 2024.
 
@@ -186,6 +208,8 @@ Example:
 Removes a person in FnBuddy from the schedule on a specified date.
 
 Format: `unschedule PHONE_NUMBER DATE` where `DATE` is in the format `YYYY-MM-DD`.
+
+Command Type: Schedule Command
 
 Example:
 - `unschedule 91860934 2024-04-01` Removes the person with the phone number 91860934 from the schedule on 4th April 2024.
@@ -208,6 +232,12 @@ There are 3 main pages in the application:
 1. **Main Page** - This page shows all the contacts in the application. You can view the details of each contact by clicking on the contact.
 2. **Payroll Page** - This page shows the payroll of all employees for a given date range. You can view the details of each contact by clicking on the contact.
 3. **Schedule Page** - This page shows the schedule of all employees for a given date. You can view the details of each contact by clicking on the contact.
+
+### Command Type
+With the 3 different pages, different types of commands can also be used to navigate the application. These types are as follows:
+1. **Main Page Commands** - These commands when used will navigate to the main page of the application.
+2. **Payroll Page Commands** - These commands when used will navigate to the payroll page of the application.
+3. **Schedule Page Commands** - These commands when used will navigate to the schedule page of the application.
 
 ## Known issues
 1. When using multiple screens, if you move the application to a secondary screen and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
