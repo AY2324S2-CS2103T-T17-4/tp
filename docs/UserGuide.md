@@ -45,7 +45,8 @@ FnBuddy is an innovative employee contact management application designed specif
 2. Download the latest fnbuddy.jar from [here](https://github.com/AY2324S2-CS2103T-T17-4/tp/releases/tag/v1.2).
 3. Copy the file to the folder you want to use as the home folder for your FnBuddy.
 4. Open a command terminal, cd (change directory) into the folder you put the jar file in, and use the `java -jar fnbuddy.jar` command to run the application.
-5. A GUI similar to the one below should appear in a few seconds. Note how the app contains some sample data.
+5. A GUI similar to the one below should appear in a few seconds. For a more detailed explanation of the GUI and 
+   its components, refer to the [GUI Components](#GUI-Components). Note how the app contains some sample data.
 
 |![UI](./images/Ui.png)|
 |------------------------------|
@@ -127,6 +128,10 @@ Command Type: Main Page Command
 Example:
 - `edit 91860934 -a Room 504, Marina Bay Sands -pr 25` Edits the address of the person with the phone number 91860934 to Room 504 Marina Bay Sands, and their pay rate to 25 dollars per hour, respectively.
 - `edit 98765432 -t` Clears all existing tags from the person with the phone number 98765432.
+
+Note: You can only edit contacts that are currently visible in the panel. If you are unable to find the contact you 
+wish to edit, use the `find` command to locate the contact first, or use the `list all` command to view all contacts 
+before editing that particular contact.
 
 ### Locating a person by name `find`
 
@@ -226,6 +231,23 @@ if the JSON files are no longer in the correct format, the app may not be able t
 If you still wish to edit the JSON files, for the schedule.json file, note that there are additional constraints you must follow aside from the format:
 - The contact in the schedule must exist in the main list of contacts i.e. you should not add a new contact that does not exist, in the schedule.json file.
 - There should not be duplicate entries for the same contact on the same date.
+- There should not be duplicate entries for the same date.
+
+## GUI Components
+| ![LabelledUi](./images/LabelledUi.png) |
+|----------------------------------------|
+| *Labelled UI Components*               |
+The names of the UI components have been labelled in the image above. The components are as follows:
+1. **Command Box** - This is where you can type commands to interact with the application.
+2. **Feedback Panel** - This panel displays feedback messages to the user. These feedback messages can be success 
+   messages, error messages, or help with commands.
+3. **Navigation Buttons** - These buttons allow you to navigate between the different pages of the application. The 
+   buttons are labelled "CONTACTS" and "SCHEDULE".
+4. **Results Panel** - This panel displays the currently selected page, based on the last command or button clicked. The 
+   results panel will display the contacts, schedule, or payroll based on the page selected. 
+5. **Menu Bar** - The menu bar contains the "File" and "Help" menus. The "File" menu contains the "Exit" option, which 
+   allows you to exit the application. The "Help" menu contains the "Help" option, which provides a link to this 
+   user guide for the application.
 
 ## Pages
 There are 3 main pages in the application:
