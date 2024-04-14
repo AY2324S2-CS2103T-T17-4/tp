@@ -19,10 +19,13 @@ public class ScheduleCommand extends Command {
 
     public static final String COMMAND_WORD = "schedule";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a person to the schedule. "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a person to the schedule.\n"
             + "Parameters: "
             + "PHONE "
-            + "DATE in the format yyyy-mm-dd";
+            + "DATE in the format yyyy-mm-dd\n"
+            + "Example: " + COMMAND_WORD + " "
+            + "91234567 "
+            + "2021-01-01";
 
     public static final String MESSAGE_SUCCESS = "Schedule: %1$s added on %2$s";
     private final Phone phoneNumber;

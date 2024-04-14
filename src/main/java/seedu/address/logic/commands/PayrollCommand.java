@@ -14,10 +14,13 @@ import seedu.address.model.Model;
  */
 public class PayrollCommand extends Command {
     public static final String COMMAND_WORD = "payroll";
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Generates a payroll for a time period. "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Generates a payroll for a time period.\n"
             + "Parameters: "
             + PREFIX_STARTDATE + "START DATE "
-            + PREFIX_ENDDATE + "END DATE ";
+            + PREFIX_ENDDATE + "END DATE\n"
+            + "Example: " + COMMAND_WORD + " "
+            + PREFIX_STARTDATE + "2021-01-01 "
+            + PREFIX_ENDDATE + "2021-01-31";
 
     public static final String MESSAGE_SUCCESS = "Payroll generated for %1$s to %2$s";
     public static final String MESSAGE_FAILURE = "Payroll generation failed";

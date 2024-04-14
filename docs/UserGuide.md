@@ -85,7 +85,7 @@ Some example commands you can try:
 - `list archive` : Lists all archived contacts.
 - `archive 98749874` : Archives the contact associated with the phone number 98749874.
 - `delete 98749874` : Deletes the contact associated with the phone number 98749874 from FnBuddy.
-- `edit 98749874 -a NUS` : Edits the address of the contact associated with phone number 91234567 to NUS.
+- `edit 98749874 -a NUS` : Edits the address of the contact associated with phone number 98749874 to NUS.
 - `find james` : Searches the address book for a person whose name matches “james”.
 - `clear` : Deletes all contacts.
 - `exit` : Exits the app.
