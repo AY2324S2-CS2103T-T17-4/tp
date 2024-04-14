@@ -6,23 +6,32 @@ This user guide is tailored specifically for restaurant managers who are respons
 
 ## Table of Contents
 
-- [Introduction to FnBuddy](#introduction-to-fnbuddy)
-- [Quick start](#quick-start)
-- [Features](#features)
-    - [Adding a person: `add`](#adding-a-person-add)
-    - [Listing all persons: `list`](#listing-all-persons-list)
-    - [Deleting a person: `delete`](#deleting-a-person-delete)
-    - [Editing a person: `edit`](#editing-a-person-edit)
-    - [Clocking an employee’s working hours: `hours`](#clocking-an-employees-working-hours-hours)
-    - [Locating a person by name: `find`](#locating-a-person-by-name-find)
-    - [Clear all contacts: `clear`](#clear-all-contacts-clear)
-    - [Exiting the program: `exit`](#exiting-the-program-exit)
-    - [Archiving the person: `archive/unarchive`](#saving-the-data)
-    - [Retrieving payroll: `payroll`](#retrieving-payroll-payroll)
-    - [Schedule employees: `schedule`](#schedule-employees-schedule)
-- [Known issues](#known-issues)
-- [FAQ](#faq)
-- [Command summary](#command-summary)
+- [FnBuddy User Guide](#fnbuddy-user-guide)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction to FnBuddy](#introduction-to-fnbuddy)
+  - [Quick start](#quick-start)
+  - [Features](#features)
+    - [ℹ️ Notes about the command format:](#ℹ️-notes-about-the-command-format)
+    - [Adding a person `add`](#adding-a-person-add)
+    - [Listing contacts `list`](#listing-contacts-list)
+    - [Deleting a person `delete`](#deleting-a-person-delete)
+    - [Editing a person `edit`](#editing-a-person-edit)
+    - [Locating a person by name `find`](#locating-a-person-by-name-find)
+    - [Clear all contacts `clear`](#clear-all-contacts-clear)
+    - [Exiting the program `exit`](#exiting-the-program-exit)
+    - [Archiving the person `archive`](#archiving-the-person-archive)
+    - [Unarchive the person `unarchive`](#unarchive-the-person-unarchive)
+    - [Retrieving payroll `payroll`](#retrieving-payroll-payroll)
+    - [Schedule employees `schedule`](#schedule-employees-schedule)
+    - [Unschedule employees `unschedule`](#unschedule-employees-unschedule)
+    - [Saving the data](#saving-the-data)
+      - [Modifying saved data (For advanced users only!)](#modifying-saved-data-for-advanced-users-only)
+  - [Pages](#pages)
+    - [Command Type](#command-type)
+  - [Known issues](#known-issues)
+  - [Glossary](#glossary)
+  - [FAQ](#faq)
+  - [Command summary](#command-summary)
 
 ## Introduction to FnBuddy
 
@@ -44,7 +53,7 @@ FnBuddy is an innovative employee contact management application designed specif
 6. Type the command in the command box and press Enter to execute it. e.g., typing `help` and pressing Enter will open the help window.
 
 Some example commands you can try:
-- `add -fn Javier -ln Tan -p 98749874 -s m -pr 10.5 -a 123 Street -b 420053040` : Adds a contact named Javier Tan to FnBuddy.
+- `add -fn Javier -ln Tan -p 98749874 -s m -pr 10.5 -a 123 Street -b posb 420053040` : Adds a contact named Javier Tan to FnBuddy.
 - `list` : Lists all contacts.
 - `delete 98749874` : Deletes the contact associated with the phone number 98749874 from FnBuddy.
 - `edit 91234567 -a NUS` : Edits the address of the contact associated with phone number 91234567 to NUS.
@@ -73,13 +82,15 @@ Refer to the [Features](#Features) section below for details of each command.
 
 Adds a person’s contact to FnBuddy.
 
-Format: `add -fn FIRST_NAME -ln LAST_NAME -p PHONE_NUMBER -s SEX -pr PAY_RATE [-a ADDRESS] [-b BANK_DETAILS] [-t TAG]…`
+Format: `add -fn FIRST_NAME -ln LAST_NAME -p PHONE_NUMBER -s SEX -pr PAY_RATE -a ADDRESS [-b BANK_DETAILS] [-t TAG]…`
 
 Command Type: Main Page Command
 
 Example:
 - `add -fn John -ln Doe -p 91860934 -s m -pr 20.50 -a 123 Main St, City`
-- `add -fn Jane -ln Smith -p 98765432 -s f -pr 25.50 -a 432 Orchard Road -b 123456789 -t waiter -t bartender`
+- `add -fn Jane -ln Smith -p 98765432 -s f -pr 25.50 -a 432 Orchard Road -b posb 123456789 -t waiter -t bartender`
+
+Note: All contacts added are compressed to only show `FIRST_NAME`, `LAST_NAME` and `PHONE_NUMBER` by default. To view all of the contact's information, simply click on the contact to expand.
 
 ### Listing contacts `list`
 
@@ -117,29 +128,16 @@ Example:
 - `edit 91860934 -a Room 504, Marina Bay Sands -pr 25` Edits the address of the person with the phone number 91860934 to Room 504 Marina Bay Sands, and their pay rate to 25 dollars per hour, respectively.
 - `edit 98765432 -t` Clears all existing tags from the person with the phone number 98765432.
 
-Note:
-- At least one field to edit must be provided.
-- Only contacts currently visible in the list can be edited.
-
-### Clocking an employee’s working hours `hours`
-
-Saves the number of hours worked by an employee to FnBuddy.
-
-Format: `hours PHONE_NUMBER HOURS_WORKED`
-
-Example:
-- `hours 12345678 50`
-
 ### Locating a person by name `find`
 
-Finds persons whose names contain any of the given keywords.
+Finds persons whose names match any of the given keywords.
 
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
 Command Type: Main Page Command
 
 Example:
-- `find john tan` returns John Doe and Henry Tan.
+- `find tan` returns all contacts with names matching `tan`.
 
 ![Find UI](./images/Find_UI.png)
 
@@ -161,7 +159,7 @@ Format: `exit`
 
 ### Archiving the person `archive`
 
-Archive's the person's contact so that it is hidden from the main list of contacts.
+Archives the person's contact so that it is hidden from the main list of contacts.
 
 Format: `archive PHONE_NUMBER`
 
@@ -170,9 +168,9 @@ Command Type: Main Page Command
 Example:
 - `archive 91860934` archives the person with the number 91860934 from FnBuddy's main list of contacts.
 
-### Un-archiving the person `unarchive`
+### Unarchive the person `unarchive`
 
-Un-archive's the person's contact so that it is shown in the main list of contacts.
+Unarchive the person's contact so that it is shown in the main list of contacts.
 
 Format: `unarchive PHONE_NUMBER`
 
@@ -190,7 +188,9 @@ Format: `payroll -sd START_DATE -ed END_DATE` where `START_DATE` and `END_DATE` 
 Command Type: Payroll Command
 
 Example:
-- `payroll -sd 2024-04-01 -ed 2024-04-30` calculates the payroll of all employees that has worked within 1st April 2024 and 30th April 2024.
+- `payroll -sd 2024-04-01 -ed 2024-04-30` calculates the payroll of all employees that have worked within 1st April 2024 and 30th April 2024.
+
+Note: Employee's payroll is calculated by multiplying 8 to their respective `PAY_RATE`. We are assuming each shift is 8 hours.
 
 ### Schedule employees `schedule`
 
@@ -292,18 +292,17 @@ With the 3 different pages, different types of commands can also be used to navi
 
 Here's the updated table with the new features added:
 
-| Command | Description | Format | Examples |
-|---------|-------------|--------|----------|
-| **Adding a person** | Adds a person's contact to FnBuddy. | `add -fn FIRST_NAME -ln LAST_NAME -p PHONE_NUMBER -s SEX -pr PAY_RATE [-a ADDRESS] [-b BANK_DETAILS] [-t TAG]...` | `add -fn John -ln Doe -p 91860934 -s m -pr 20.50 -a 123 Main St City`<br>`add -fn Jane -ln Smith -p 98765432 -s f -pr 25.50 -a 432 Orchard Road -b 123456789 -t waiter -t bartender` |
-| **Listing all persons** | Shows a list of all persons in FnBuddy. | `list` | - |
-| **Deleting a person** | Deletes the specified person from FnBuddy. | `delete PHONE_NUMBER` | `delete 91860934` |
-| **Editing a person** | Edits an existing person in FnBuddy. | `edit PHONE_NUMBER [-fn FIRST_NAME] [-ln LAST_NAME] [-p PHONE_NUMBER] [-s SEX] [-pr PAY_RATE] [-a ADDRESS] [-b BANK_DETAILS] [-t TAG]...` | `edit 91860934 -a Room 504 Marina Bay Sands -pr 25`<br>`edit 98765432 -t` |
-| **Clocking an employee's working hours** | Saves the number of hours worked by an employee to FnBuddy. | `hours PHONE_NUMBER HOURS_WORKED` | `hours 12345678 50` |
-| **Locating a person by name** | Finds persons whose names contain any of the given keywords. | `find KEYWORD [MORE_KEYWORDS]` | `find john tan` |
-| **Clear all contacts** | Delete all employee contacts. | `clear` | - |
-| **Exiting the program** | Exits the program. | `exit` | - |
-| **Archiving a person** | Archives the person's contact so that it is hidden from the main list of contacts. | `archive PHONE_NUMBER` | `archive 91860934` |
-| **Un-archiving a person** | Un-archives the person's contact so that it is shown in the main list of contacts. | `unarchive PHONE_NUMBER` | `unarchive 91860934` |
-| **Retrieving payroll** | Retrieve employee's payroll for a given start and end date. | `payroll -sd START_DATE -ed END_DATE` | `payroll -sd 2024-04-01 -ed 2024-04-30` |
-| **Schedule employees** | Adds a person in FnBuddy to the schedule on a specified date. | `schedule PHONE_NUMBER DATE` | `schedule 91860934 2024-04-01` |
-| **Unschedule employees** | Removes a person in FnBuddy from the schedule on a specified date. | `unschedule PHONE_NUMBER DATE` | `unschedule 91860934 2024-04-01` |
+| Command | Description                                                                        | Format | Examples                                                                                                                                                                                  |
+|---------|------------------------------------------------------------------------------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Adding a person** | Adds a person's contact to FnBuddy.                                                | `add -fn FIRST_NAME -ln LAST_NAME -p PHONE_NUMBER -s SEX -pr PAY_RATE -a ADDRESS [-b BANK_DETAILS] [-t TAG]...` | `add -fn John -ln Doe -p 91860934 -s m -pr 20.50 -a 123 Main St City`<br>`add -fn Jane -ln Smith -p 98765432 -s f -pr 25.50 -a 432 Orchard Road -b posb 123456789 -t waiter -t bartender` |
+| **Listing all persons** | Shows a list of all persons in FnBuddy.                                            | `list` | 1. `list all`<br/> 2. `list archive` <br/> 3. `list main`                                                                                                                                 |
+| **Deleting a person** | Deletes the specified person from FnBuddy.                                         | `delete PHONE_NUMBER` | `delete 91860934`                                                                                                                                                                         |
+| **Editing a person** | Edits an existing person in FnBuddy.                                               | `edit PHONE_NUMBER [-fn FIRST_NAME] [-ln LAST_NAME] [-p PHONE_NUMBER] [-s SEX] [-pr PAY_RATE] [-a ADDRESS] [-b BANK_DETAILS] [-t TAG]...` | `edit 91860934 -a Room 504 Marina Bay Sands -pr 25`<br>`edit 98765432 -t`                                                                                                                 |
+| **Locating a person by name** | Finds persons whose names match any of the given keywords.                         | `find KEYWORD [MORE_KEYWORDS]` | `find john tan`                                                                                                                                                                           |
+| **Clear all contacts** | Delete all employee contacts.                                                      | `clear` | -                                                                                                                                                                                         |
+| **Exiting the program** | Exits the program.                                                                 | `exit` | -                                                                                                                                                                                         |
+| **Archiving a person** | Archives the person's contact so that it is hidden from the main list of contacts. | `archive PHONE_NUMBER` | `archive 91860934`                                                                                                                                                                        |
+| **Un-archiving a person** | Un-archives the person's contact so that it is shown in the main list of contacts. | `unarchive PHONE_NUMBER` | `unarchive 91860934`                                                                                                                                                                      |
+| **Retrieving payroll** | Retrieve employee's payroll for a given start and end date.                        | `payroll -sd START_DATE -ed END_DATE` | `payroll -sd 2024-04-01 -ed 2024-04-30`                                                                                                                                                   |
+| **Schedule employees** | Adds a person in FnBuddy to the schedule on a specified date.                      | `schedule PHONE_NUMBER DATE` | `schedule 91860934 2024-04-01`                                                                                                                                                            |
+| **Unschedule employees** | Removes a person in FnBuddy from the schedule on a specified date.                 | `unschedule PHONE_NUMBER DATE` | `unschedule 91860934 2024-04-01`                                                                                                                                                          |
