@@ -31,6 +31,9 @@ public class PayrollCommandParser implements Parser<PayrollCommand> {
         }
         LocalDate startDate = ParserUtil.parseDate(argMultimap.getValue(PREFIX_STARTDATE).get());
         LocalDate endDate = ParserUtil.parseDate(argMultimap.getValue(PREFIX_ENDDATE).get());
+        if (startDate.isAfter(endDate)) {
+            throw new ParseException("Start date cannot be after end date");
+        }
         return new PayrollCommand(startDate, endDate);
     }
 }

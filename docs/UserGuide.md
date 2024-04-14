@@ -36,6 +36,7 @@ Our guide assumes that you are a restaurant manager with a basic understanding o
     - [Enhancements to Archive Feature](#enhancements-to-archive-feature)
     - [More Informative List Command Feedback](#more-informative-list-command-feedback)
     - [Enhancements to Scheduling and Payroll Feature](#enhancements-to-scheduling-and-payroll-feature)
+    - [Separating Multiple Tags](#separating-multiple-tags)
   - [Glossary](#glossary)
   - [FAQ](#faq)
   - [Command summary](#command-summary)
@@ -190,7 +191,7 @@ Note: All contacts added are compressed to only show `FIRST_NAME`, `LAST_NAME` a
 
 ### Listing contacts `list`
 
-Shows a list of contacts in FnBuddy depending on which you'd like to view.
+Shows a list of contacts in FnBuddy depending on which you'd like to view. On launch of the application, the default list shows all un-archived contacts only.
 
 Format: `list LIST_TYPE`
 
@@ -206,6 +207,8 @@ Note: If unexpected extraneous parameters are added such as `list main 123`, the
 (e.g. you are currently viewing `list all` and want to switch to `list archive`, but typed `list archivee` instead, there will be no visible change on the GUI as it has defaulted to `list all`.)
 
 ***
+
+Note: We understand that the current feedback messages for the list command may not be sufficient to inform you which list you are currently viewing. As we continue to strive and improve your experience with us in upcoming versions, we seek your understanding on this for FnBuddy's current version and have addressed some possible scenarios in the [FAQ](#FAQ) section.
 
 ### Deleting a person `delete`
 
@@ -244,7 +247,7 @@ before editing that particular contact.
 
 ### Locating a person by name `find`
 
-Finds persons whose names match completely any of the given keywords.
+Finds persons whose names match completely any of the given keywords. The search is case-insensitive.
 
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
@@ -424,6 +427,10 @@ If you still wish to edit the JSON files, for the schedule.json file, note that 
   (currently using only the schedule feature), which will be used to calculate the payroll. This will provide more 
   flexibility to the user and allow them to input the number of hours worked by the employee, which can be used to calculate the payroll more accurately.
 
+### Separating Multiple Tags
+
+- Currently, when multiple tags are added to a contact, they are displayed as a single string. We will be improving the tag interface to allow for better visualisation of tags in the future.
+
 <div style="page-break-after: always;"></div>
 
 ## Glossary
@@ -491,6 +498,12 @@ If you still wish to edit the JSON files, for the schedule.json file, note that 
     - A: Currently, the hours worked by an employee are calculated based on the schedule. In future updates, we will 
       add a feature to allow users to modify the hours worked by an employee, you can see more in [Planned 
       Enhancements](#Planned-Enhancements).
+
+- **Q: I have an archived contact, but I can't find it in the main list. How do I unarchive it?**
+  - A: Use the `list archive` command to view all archived contacts. From there, you can unarchive the contact by using the `unarchive` command. You may also use the `list all` command to view all contacts, including archived ones.
+
+- **Q: I have a contact for John Doe in the main list, and a contact for another John Doe in the archive list. How do I differentiate between the two?**
+  - A: Currently, the only way to differentiate between the two contacts is by viewing the list they are in, as well as clicking on them to expand their details card. We are planning to add a feature that will display the archive status of each contact on the contact card to make it easier to differentiate between archived and unarchived contacts in future versions.
 
 <div style="page-break-after: always;"></div>
 
