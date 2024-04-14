@@ -11,7 +11,7 @@ This user guide is tailored specifically for restaurant managers who are respons
   - [Introduction to FnBuddy](#introduction-to-fnbuddy)
   - [Quick start](#quick-start)
   - [Features](#features)
-    - [ℹ️ Notes about the command format:](#ℹ️-notes-about-the-command-format)
+    - [Notes about the command format:](#notes-about-the-command-format)
     - [Adding a person `add`](#adding-a-person-add)
     - [Listing contacts `list`](#listing-contacts-list)
     - [Deleting a person `delete`](#deleting-a-person-delete)
@@ -26,6 +26,7 @@ This user guide is tailored specifically for restaurant managers who are respons
     - [Unschedule employees `unschedule`](#unschedule-employees-unschedule)
     - [Saving the data](#saving-the-data)
       - [Modifying saved data (For advanced users only!)](#modifying-saved-data-for-advanced-users-only)
+  - [GUI Components](#gui-components)
   - [Pages](#pages)
     - [Command Type](#command-type)
   - [Known issues](#known-issues)
@@ -67,7 +68,7 @@ Refer to the [Features](#Features) section below for details of each command.
 
 ## Features
 
-### ℹ️ Notes about the command format:
+### Notes about the command format:
 
 - Words in UPPER_CASE are the parameters to be supplied by the user. e.g., in `add -fn FIRST_NAME -ln LAST_NAME`, FIRST_NAME and LAST_NAME are parameters which can be used as `add -fn Javier -ln Tan`.
 - Items in square brackets are optional. e.g., `-fn FIRST_NAME -ln LAST_NAME [-t TAG]` can be used as `-fn Javier -ln Tan -t/waiter` or as `-fn Javier -ln Tan`.
