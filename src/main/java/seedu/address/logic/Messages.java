@@ -19,7 +19,6 @@ public class Messages {
     public static final String MESSAGE_PERSON_NOT_ARCHIVED = "The person does not exist in the archives";
     public static final String MESSAGE_DUPLICATE_FIELDS =
             "Multiple values specified for the following single-valued field(s): ";
-    public static final String MESSAGE_INVALID_HOURS_WORKED = "Hours clocked can only contain numbers and no spaces.";
 
     /**
      * Returns an error message indicating the duplicate prefixes.
