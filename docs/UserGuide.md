@@ -48,15 +48,29 @@ FnBuddy is an innovative employee contact management application designed specif
 
 1. Ensure you have Java 11 or above installed on your Computer.
 2. Download the latest fnbuddy.jar from [here](https://github.com/AY2324S2-CS2103T-T17-4/tp/releases/latest/).
-3. Copy the file to the folder you want to use as the home folder for your FnBuddy.
-4. Open a command terminal, cd (change directory) into the folder you put the jar file in, and use the `java -jar fnbuddy.jar` command to run the application.
-5. A GUI similar to the one below should appear in a few seconds. For a more detailed explanation of the GUI and 
+3. Move the fnbuddy.jar file to the directory you intend to designate as the home folder for your FnBuddy.
+4. Open the terminal on your Operating System.
+   - For Windows, press `Win + R`, type `cmd`, and press Enter.
+   - For MacOS, press `Cmd + Space`, type `Terminal`, and press Enter.
+   - For Linux, press `Ctrl + Alt + T`.
+5. You should see a terminal window similar to the one below open. (The terminal window will look different depending on your Operating System.)
+    
+    | ![Terminal](./images/Terminal.png)               |
+    |--------------------------------------------------|
+    | *Example of a terminal window on a MacOS system* |
+
+6. Type `cd` followed by the path to the folder you copied the fnbuddy.jar file to.
+   - Windows Example: `cd C:\Users\JohnDoe\Desktop\FnBuddy`.
+   - MacOS Example: `cd /Users/JohnDoe/Desktop/FnBuddy`.
+   - Linux Example: `cd /home/JohnDoe/Desktop/FnBuddy`.
+7. Type `java -jar fnbuddy.jar` to run the application.
+8. An application similar to the one below should appear in a few seconds. For a more detailed explanation of the Graphical User Interface (GUI) and 
    its components, refer to the [GUI Components](#GUI-Components). Note how the app contains some sample data. The list of contacts displayed at startup is the main list of unarchived contacts. More details in the [Features](#Features) section below.
 
-|![UI](./images/Ui.png)|
-|------------------------------|
-|            *FnBuddy GUI*             |
-6. Type the command in the command box and press Enter to execute it. e.g., typing `help` and pressing Enter will open the help window.
+    | ![UI](./images/Ui.png) |
+    |------------------------|
+    | *FnBuddy GUI*          |
+9. Type the command in the command box and press Enter to execute it. e.g., typing `help` and pressing Enter will open the help window.
 
 Some example commands you can try:
 - `add -fn Javier -ln Tan -p 98749874 -s m -pr 10.5 -a 123 Street -b posb 420053040` : Adds a contact named Javier Tan to FnBuddy.
