@@ -168,7 +168,7 @@ before editing that particular contact.
 
 ### Locating a person by name `find`
 
-Finds persons whose names match any of the given keywords.
+Finds persons whose names match any of the given keywords. The search is case-insensitive.
 
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
@@ -340,6 +340,10 @@ With the 3 different pages, different types of commands can also be used to navi
 ### More Informative List Command Feedback
 
 - To provide more informative feedback to the user when they use the list command, we will be updating the feedback messages to display the list type that the user is currently viewing. This will help the user to know which list they are currently viewing, as the current feedback message is the same for all list commands.
+
+### Separating Multiple Tags
+
+- Currently, when multiple tags are added to a contact, they are displayed as a single string. We will be improving the tag interface to allow for better visualisation of tags in the future.
 
 ## Glossary
 
