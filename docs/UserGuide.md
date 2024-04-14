@@ -46,7 +46,7 @@ FnBuddy is an innovative employee contact management application designed specif
 
 ## Quick start
 
-1. Ensure you have Java 11 or above installed on your Computer.
+1. Ensure you have [Java 11](#faq) or above installed on your Computer.
 2. Download the latest fnbuddy.jar from [here](https://github.com/AY2324S2-CS2103T-T17-4/tp/releases/latest/).
 3. Copy the file to the folder you want to use as the home folder for your FnBuddy.
 4. Open a command terminal, cd (change directory) into the folder you put the jar file in, and use the `java -jar fnbuddy.jar` command to run the application.
@@ -216,9 +216,9 @@ Command Type: Schedule Command
 Example:
 - `schedule 91860934 2024-04-01` Adds the person with the phone number 91860934 to the schedule on 4th April 2024.
 
-| ![Schedule Page](./images/SchedulePage.png)                      |
-|------------------------------------------------------------------|
-| *Example result panel display for a successful schedule command* |
+| ![Schedule Page](./images/SchedulePageSuccess.png)                   |
+|----------------------------------------------------------------------|
+| *Example result panel display for a successful schedule command*     |
 
 Note: If you add a duplicate entry in the schedule for the same date, the feedback message will not prompt this. 
 However, the schedule will not be updated with the new entry.
@@ -233,6 +233,10 @@ Command Type: Schedule Command
 
 Example:
 - `unschedule 91860934 2024-04-01` Removes the person with the phone number 91860934 from the schedule on 4th April 2024.
+
+| ![Unschedule Page](./images/UnschedulePageSuccess.png)             |
+|--------------------------------------------------------------------|
+| *Example result panel display for a successful unschedule command* |
 
 ### Saving the data
 
@@ -323,8 +327,15 @@ add more differentiation to archived and unarchived contacts, which is currently
 
 ## FAQ
 
-- **Q: How is the FnBuddy’s data stored?**
-    - A: FnBuddy stores its data in a local file on your computer.
+
+- **Q: What is Java 11?**
+    - A: Java 11 is a release of the [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) programming language and runtime environment. In the context of FnBuddy, 
+  Java 11 is required to be able to run the fnbuddy.jar program that launches the application. For installation 
+      instructions, refer to this [guide](https://docs.oracle.com/en/java/javase/11/install/installation-jdk-microsoft-windows-platforms.html#GUID-A7E27B90-A28D-4237-9383-A58B416071CA)
+  to install the Java Development Kit (JDK) for Java 11.
+
+- **Q: How is FnBuddy’s data stored?**
+    - A: FnBuddy stores its data in local files on your computer (JSON format).
 
 - **Q: I prefer clicking buttons to navigate applications. Will FnBuddy be upgrading its GUI to be friendlier to such users?**
     - A: As FnBuddy is purposefully targeted towards users who prefer typing, there are currently no plans to add features that support GUI interactions to replace the command-line style of the app.
