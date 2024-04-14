@@ -43,7 +43,6 @@ Some example commands you can try:
 - `add -fn Javier -ln Tan -p 98749874 -s m -pr 10.5 -a 123 Street -b posb 420053040` : Adds a contact named Javier Tan to FnBuddy.
 - `list` : Lists all contacts.
 - `delete 98749874` : Deletes the contact associated with the phone number 98749874 from FnBuddy.
-- `view Javier Tan` : View Javier Tan’s contact and all associated information in the address book.
 - `edit 91234567 -a NUS` : Edits the address of the contact associated with phone number 91234567 to NUS.
 - `hours 91234567 50` : Saves the number of hours worked by the employee.
 - `find james` : Searches the address book for a person whose name matches “james”.
@@ -73,7 +72,7 @@ Example:
 - `add -fn John -ln Doe -p 91860934 -s m -pr 20.50 -a 123 Main St, City`
 - `add -fn Jane -ln Smith -p 98765432 -s f -pr 25.50 -a 432 Orchard Road -b posb 123456789 -t waiter -t bartender`
 
-Note: All contacts added are compressed to only show `FIRST_NAME`, `LAST_NAME` and `PHONE_NUMBER` by default. To view all of the contact's information, simply click on the contact to expand.
+Note: All contacts added are compressed to only show `FIRST_NAME`, `LAST_NAME` and `PHONE_NUMBER` by default. To view all of the contact's information, simply click on the GUI contact to expand it.
 
 ### Listing contacts `list`
 
@@ -186,6 +185,17 @@ FnBuddy data is stored in the hard disk automatically after any command that cha
 
 1. When using multiple screens, if you move the application to a secondary screen and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
    a. Alternatively, for Windows users, you can press Shift and right-click the program icon on the taskbar, Select Move, and use your left or right arrow keys to move the window until the window appears.
+
+## Planned Enhancements
+
+### Adding a `view` feature
+- In order to cater to the user's preference of a command line interface, we will be adding a `view` feature that will 
+allow users to view all the details of a contact without having to click on the contact card in the GUI, which is the 
+current only way to access all the details of a contact.
+
+### Enhancements to Archive Feature
+- Making the archive status of each person visible to the user on each contact card. This is to improve the usability of the archive feature and
+add more differentiation to archived and unarchived contacts, which is currently only differentiated by which list (list main OR list archive) they are viewing.
 
 ## FAQ
 
