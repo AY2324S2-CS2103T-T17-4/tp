@@ -12,7 +12,7 @@ Our guide assumes that you are a restaurant manager with a basic understanding o
   - [Introduction to FnBuddy](#introduction-to-fnbuddy)
   - [Quick start](#quick-start)
   - [Features](#features)
-    - [Notes about the command format:](#notes-about-the-command-format)
+    - [Notes about the command format](#notes-about-the-command-format)
     - [Adding a person `add`](#adding-a-person-add)
     - [Listing contacts `list`](#listing-contacts-list)
     - [Deleting a person `delete`](#deleting-a-person-delete)
@@ -26,7 +26,7 @@ Our guide assumes that you are a restaurant manager with a basic understanding o
     - [Schedule employees `schedule`](#schedule-employees-schedule)
     - [Unschedule employees `unschedule`](#unschedule-employees-unschedule)
     - [Saving the data](#saving-the-data)
-      - [Modifying saved data (For advanced users only!)](#modifying-saved-data-for-advanced-users-only)
+      - [Modifying saved data](#modifying-saved-data)
   - [GUI Components](#gui-components)
   - [Pages](#pages)
     - [Command Type](#command-type)
@@ -69,29 +69,32 @@ Features that FnBuddy offers with your needs in mind include:
    - Linux Example: `cd /home/JohnDoe/Desktop/FnBuddy`.
 7. Type `java -jar fnbuddy.jar` to run the application.
 8. An application similar to the one below should appear in a few seconds. For a more detailed explanation of the Graphical User Interface (GUI) and 
-   its components, refer to the [GUI Components](#GUI-Components). Note how the app contains some sample data. The list of contacts displayed at startup is the main list of unarchived contacts. More details in the [Features](#Features) section below.
+   its components, refer to the [GUI Components](#gui-components). Note how the app contains some sample data. The list of contacts displayed at startup is the main list of unarchived contacts. More details in the [Features](#features) section below.
 
     | ![UI](./images/Ui.png) |
     |------------------------|
     | *FnBuddy GUI*          |
+
 9. Type the command in the command box and press Enter to execute it. e.g., typing `help` and pressing Enter will open the help window.
 
 Some example commands you can try:
 
 - `add -fn Javier -ln Tan -p 98749874 -s m -pr 10.5 -a 123 Street -b posb 420053040` : Adds a contact named Javier Tan to FnBuddy.
-- `list` : Lists all contacts.
+- `list all` : Lists all contacts.
+- `list main` : Lists all un-archived contacts.
+- `list archive` : Lists all archived contacts.
+- `archive 98749874` : Archives the contact associated with the phone number 98749874.
 - `delete 98749874` : Deletes the contact associated with the phone number 98749874 from FnBuddy.
-- `edit 91234567 -a NUS` : Edits the address of the contact associated with phone number 91234567 to NUS.
-- `hours 91234567 50` : Saves the number of hours worked by the employee.
+- `edit 98749874 -a NUS` : Edits the address of the contact associated with phone number 98749874 to NUS.
 - `find james` : Searches the address book for a person whose name matches “james”.
 - `clear` : Deletes all contacts.
 - `exit` : Exits the app.
 
-Refer to the [Features](#Features) section below for details of each command.
+Refer to the [Features](#features) section below for details of each command.
 
 ## Features
 
-### Notes about the command format:
+### Notes about the command format
 
 - Words in UPPER_CASE are the parameters to be supplied by the user. e.g., in `add -fn FIRST_NAME -ln LAST_NAME`, FIRST_NAME and LAST_NAME are parameters which can be used as `add -fn Javier -ln Tan`.
 - Items in square brackets are optional. e.g., `-fn FIRST_NAME -ln LAST_NAME [-t TAG]` can be used as `-fn Javier -ln Tan -t/waiter` or as `-fn Javier -ln Tan`.
@@ -100,8 +103,8 @@ Refer to the [Features](#Features) section below for details of each command.
 - Extraneous parameters for commands that do not take in parameters (such as help, exit, and clear) will be ignored. e.g., if the command specifies `help 123`, it will be interpreted as `help`.
 - If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines, as space characters surrounding line-breaks may be omitted when copied over to the application.
 - There should be spaces between the flags and the parameters. e.g., `add -fn Javier -ln Tan` is correct, while `add -fn Javier-ln Tan` is incorrect. However, extra spaces are allowed. e.g., `add    -fn    Javier    -ln    Tan` is also correct.
-- The types of commands are divided into 3 categories: Main Page Commands, Payroll Page Commands, and Schedule Page
-  Commands. For more details, refer to the [Pages](#Pages) section below.
+- The types of commands are divided into 3 categories: Main Page Commands, Payroll Page Commands, and Schedule Page 
+  Commands. For more details, refer to the [Pages](#pages) section below.
 
 ### Adding a person `add`
 
@@ -109,7 +112,7 @@ Adds a person’s contact to FnBuddy.
 
 Format: `add -fn FIRST_NAME -ln LAST_NAME -p PHONE_NUMBER -s SEX -pr PAY_RATE -a ADDRESS [-b BANK_DETAILS] [-t TAG]…`
 
-Command Type: Main Page Command
+Command Type: [Main Page Command](#command-type)
 
 Example:
 
@@ -124,7 +127,7 @@ Shows a list of contacts in FnBuddy depending on which you'd like to view.
 
 Format: `list LIST_TYPE`
 
-Command Type: Main Page Command
+Command Type: [Main Page Command](#command-type)
 
 Example:
 
@@ -140,7 +143,7 @@ Deletes the specified person from FnBuddy.
 
 Format: `delete PHONE_NUMBER`
 
-Command Type: Main Page Command
+Command Type: [Main Page Command](#command-type)
 
 Example:
 
@@ -152,12 +155,12 @@ Edits an existing person in FnBuddy.
 
 Format: `edit PHONE_NUMBER [-fn FIRST_NAME] [-ln LAST_NAME] [-p PHONE_NUMBER] [-s SEX] [-pr PAY_RATE] [-a ADDRESS] [-b BANK_DETAILS] [-t TAG]…`
 
-Command Type: Main Page Command
+Command Type: [Main Page Command](#command-type)
 
 Example:
 
 - `edit 91860934 -a Room 504, Marina Bay Sands -pr 25` Edits the address of the person with the phone number 91860934 to Room 504 Marina Bay Sands, and their pay rate to 25 dollars per hour, respectively.
-- `edit 98765432 -t` Clears all existing tags from the person with the phone number 98765432.
+- `edit 98765432 -t ` Clears all existing tags from the person with the phone number 98765432. Take note to put an additional space after the `-t` flag to clear all tags.
 
 Note: You can only edit contacts that are currently visible in the panel. If you are unable to find the contact you
 wish to edit, use the `find` command to locate the contact first, or use the `list all` command to view all contacts
@@ -169,7 +172,7 @@ Finds persons whose names match any of the given keywords.
 
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
-Command Type: Main Page Command
+Command Type: [Main Page Command](#command-type)
 
 Example:
 
@@ -185,7 +188,7 @@ Delete all employee contacts.
 
 Format: `clear`
 
-Command Type: Main Page Command
+Command Type: [Main Page Command](#command-type)
 
 **WARNING!** This action is permanent and non-reversible! Make sure that you want to clear FnBuddy before you execute the command.
 
@@ -201,7 +204,7 @@ Archives the person's contact so that it is hidden from the main list of contact
 
 Format: `archive PHONE_NUMBER`
 
-Command Type: Main Page Command
+Command Type: [Main Page Command](#command-type)
 
 Example:
 
@@ -213,7 +216,7 @@ Unarchive the person's contact so that it is shown in the main list of contacts.
 
 Format: `unarchive PHONE_NUMBER`
 
-Command Type: Main Page Command
+Command Type: [Main Page Command](#command-type)
 
 Example:
 
@@ -225,7 +228,7 @@ Retrieve employee's payroll for a given start and end date
 
 Format: `payroll -sd START_DATE -ed END_DATE` where `START_DATE` and `END_DATE` are in the format `YYYY-MM-DD`.
 
-Command Type: Payroll Command
+Command Type: [Payroll Command](#command-type)
 
 Example:
 
@@ -239,11 +242,10 @@ Adds a person in FnBuddy to the schedule on a specified date.
 
 Format: `schedule PHONE_NUMBER DATE` where `DATE` is in the format `YYYY-MM-DD`.
 
-Command Type: Schedule Command
+Command Type: [Schedule Command](#command-type)
 
 Example:
-
-- `schedule 91860934 2024-04-01` Adds the person with the phone number 91860934 to the schedule on 4th April 2024.
+- `schedule 91860934 2024-04-01` Adds the person with the phone number 91860934 to the schedule on 1st April 2024.
 
 | ![Schedule Page](./images/SchedulePage.png)                      |
 | ---------------------------------------------------------------- |
@@ -258,17 +260,18 @@ Removes a person in FnBuddy from the schedule on a specified date.
 
 Format: `unschedule PHONE_NUMBER DATE` where `DATE` is in the format `YYYY-MM-DD`.
 
-Command Type: Schedule Command
+Command Type: [Schedule Command](#command-type)
 
 Example:
-
-- `unschedule 91860934 2024-04-01` Removes the person with the phone number 91860934 from the schedule on 4th April 2024.
+- `unschedule 91860934 2024-04-01` Removes the person with the phone number 91860934 from the schedule on 1st April 2024.
 
 ### Saving the data
 
 FnBuddy data is stored in the hard disk automatically after any command that changes the data. Rest assured, there is no need to save manually.
 
-#### Modifying saved data (For advanced users only!)
+#### Modifying saved data
+
+⚠️ **For advanced users only!**
 
 You may edit the JSON files directly in the data folder if you wish to make changes to the data without using the app. However,
 if the JSON files are no longer in the correct format, the app may not be able to read the data correctly and may crash or have unexpected behaviour.
@@ -400,7 +403,7 @@ Here's the updated table with the new features added:
 | **Adding a person**           | Adds a person's contact to FnBuddy.                                                | `add -fn FIRST_NAME -ln LAST_NAME -p PHONE_NUMBER -s SEX -pr PAY_RATE -a ADDRESS [-b BANK_DETAILS] [-t TAG]...`                           | `add -fn John -ln Doe -p 91860934 -s m -pr 20.50 -a 123 Main St City`<br>`add -fn Jane -ln Smith -p 98765432 -s f -pr 25.50 -a 432 Orchard Road -b posb 123456789 -t waiter -t bartender` |
 | **Listing all persons**       | Shows a list of all persons in FnBuddy.                                            | `list LIST_TYPE`                                                                                                                          | 1. `list all`<br/> 2. `list archive` <br/> 3. `list main`                                                                                                                                 |
 | **Deleting a person**         | Deletes the specified person from FnBuddy.                                         | `delete PHONE_NUMBER`                                                                                                                     | `delete 91860934`                                                                                                                                                                         |
-| **Editing a person**          | Edits an existing person in FnBuddy.                                               | `edit PHONE_NUMBER [-fn FIRST_NAME] [-ln LAST_NAME] [-p PHONE_NUMBER] [-s SEX] [-pr PAY_RATE] [-a ADDRESS] [-b BANK_DETAILS] [-t TAG]...` | `edit 91860934 -a Room 504 Marina Bay Sands -pr 25`<br>`edit 98765432 -t`                                                                                                                 |
+| **Editing a person**          | Edits an existing person in FnBuddy.                                               | `edit PHONE_NUMBER [-fn FIRST_NAME] [-ln LAST_NAME] [-p PHONE_NUMBER] [-s SEX] [-pr PAY_RATE] [-a ADDRESS] [-b BANK_DETAILS] [-t TAG]...` | `edit 91860934 -a Room 504 Marina Bay Sands -pr 25`<br>`edit 98765432 -t `                                                                                                                |
 | **Locating a person by name** | Finds persons whose names match any of the given keywords.                         | `find KEYWORD [MORE_KEYWORDS]`                                                                                                            | `find john tan`                                                                                                                                                                           |
 | **Clear all contacts**        | Delete all employee contacts.                                                      | `clear`                                                                                                                                   | -                                                                                                                                                                                         |
 | **Exiting the program**       | Exits the program.                                                                 | `exit`                                                                                                                                    | -                                                                                                                                                                                         |
