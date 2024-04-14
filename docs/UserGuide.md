@@ -144,8 +144,9 @@ Command Type: Main Page Command
 Example:
 - `find tan` returns all contacts with names matching `tan`.
 
-![Find UI](./images/Find_UI.png)
-
+| ![Find UI](./images/Find_UI.png)                             |
+|--------------------------------------------------------------|
+| *Example result panel display for a successful find command* |
 ### Clear all contacts `clear`
 
 Delete all employee contacts.
@@ -207,6 +208,13 @@ Command Type: Schedule Command
 
 Example:
 - `schedule 91860934 2024-04-01` Adds the person with the phone number 91860934 to the schedule on 4th April 2024.
+
+| ![Schedule Page](./images/SchedulePage.png)                      |
+|------------------------------------------------------------------|
+| *Example result panel display for a successful schedule command* |
+
+Note: If you add a duplicate entry in the schedule for the same date, the feedback message will not prompt this. 
+However, the schedule will not be updated with the new entry.
 
 ### Unschedule employees `unschedule`
 
