@@ -55,6 +55,8 @@ Features that FnBuddy offers with your needs in mind include:
 - **scheduling** of part-time employee contacts on specified dates
 - **payroll retrieval** that calculates the total payroll for all employees who worked within a specified date range (currently dependent on their scheduled hours).
 
+<div style="page-break-after: always;"></div>
+
 ## Quick Start
 
 1. Ensure you have [Java 11](#faq) or above installed on your Computer.
@@ -69,7 +71,6 @@ Features that FnBuddy offers with your needs in mind include:
     | ![Terminal](./images/Terminal.png)               |
     |--------------------------------------------------|
     | *Example of a terminal window on a MacOS system* |
-
 6. Type `cd` followed by the path to the folder you copied the fnbuddy.jar file to.
    - Windows Example: `cd C:\Users\JohnDoe\Desktop\FnBuddy`.
    - MacOS Example: `cd /Users/JohnDoe/Desktop/FnBuddy`.
@@ -183,6 +184,8 @@ Note: All contacts added are compressed to only show `FIRST_NAME`, `LAST_NAME` a
 
 ***
 
+<div style="page-break-after: always;"></div>
+
 ### Listing contacts `list`
 
 Shows a list of contacts in FnBuddy depending on which you'd like to view.
@@ -233,6 +236,8 @@ wish to edit, use the `find` command to locate the contact first, or use the `li
 before editing that particular contact.
 
 ***
+
+<div style="page-break-after: always;"></div>
 
 ### Locating a person by name `find`
 
@@ -300,6 +305,8 @@ Example:
 
 ***
 
+<div style="page-break-after: always;"></div>
+
 ### Retrieving payroll `payroll`
 
 Retrieve employee's payroll for a given start and end date
@@ -319,6 +326,8 @@ Example:
 Note: Employee's payroll is calculated by multiplying 8 to their respective `PAY_RATE`. We are assuming each shift is 8 hours.
 
 ***
+
+<div style="page-break-after: always;"></div>
 
 ### Schedule employees `schedule`
 
@@ -341,6 +350,8 @@ However, the schedule will not be updated with the new entry.
 
 ***
 
+<div style="page-break-after: always;"></div>
+
 ### Unschedule employees `unschedule`
 
 Removes a person in FnBuddy from the schedule on a specified date.
@@ -358,6 +369,8 @@ Example:
 | *Example result panel display for a successful unschedule command* |
 
 ***
+
+<div style="page-break-after: always;"></div>
 
 ### Saving the data
 
@@ -420,6 +433,8 @@ If you still wish to edit the JSON files, for the schedule.json file, note that 
     | ![CLI](./images/CommandBox.png)      |
     |--------------------------------------|
     | *Command Box used to input commands* |
+
+<div style="page-break-after: always;"></div>
 
 - **GUI** - Graphical User Interface
   - A visual interface that allows users to interact with software applications using graphical elements such as
