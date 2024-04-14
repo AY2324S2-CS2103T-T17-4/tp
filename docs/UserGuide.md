@@ -10,6 +10,9 @@ This user guide is tailored specifically for restaurant managers who are respons
   - [Table of Contents](#table-of-contents)
   - [Introduction to FnBuddy](#introduction-to-fnbuddy)
   - [Quick start](#quick-start)
+  - [GUI Components](#gui-components)
+  - [Pages](#pages)
+      - [Command Type](#command-type)
   - [Features](#features)
     - [Notes about the command format:](#notes-about-the-command-format)
     - [Adding a person `add`](#adding-a-person-add)
@@ -26,9 +29,6 @@ This user guide is tailored specifically for restaurant managers who are respons
     - [Unschedule employees `unschedule`](#unschedule-employees-unschedule)
     - [Saving the data](#saving-the-data)
       - [Modifying saved data (For advanced users only!)](#modifying-saved-data-for-advanced-users-only)
-  - [GUI Components](#gui-components)
-  - [Pages](#pages)
-    - [Command Type](#command-type)
   - [Known issues](#known-issues)
   - [Planned Enhancements](#planned-enhancements)
     - [Adding a `view` feature](#adding-a-view-feature)
@@ -53,9 +53,9 @@ FnBuddy is an innovative employee contact management application designed specif
 5. A GUI similar to the one below should appear in a few seconds. For a more detailed explanation of the GUI and 
    its components, refer to the [GUI Components](#GUI-Components). Note how the app contains some sample data. The list of contacts displayed at startup is the main list of unarchived contacts. More details in the [Features](#Features) section below.
 
-|![UI](./images/Ui.png)|
-|------------------------------|
-|            *FnBuddy GUI*             |
+| ![UI](./images/Ui.png) |
+|------------------------|
+| *FnBuddy GUI*          |
 6. Type the command in the command box and press Enter to execute it. e.g., typing `help` and pressing Enter will open the help window.
 
 Some example commands you can try:
@@ -69,6 +69,46 @@ Some example commands you can try:
 - `exit` : Exits the app.
 
 Refer to the [Features](#Features) section below for details of each command.
+
+## GUI Components
+| ![LabelledUi](./images/LabelledUi.png) |
+|----------------------------------------|
+| *Labelled UI Components*               |
+The names of the UI components have been labelled in the image above. The components are as follows:
+1. **Command Box** - This is where you can type commands to interact with the application.
+2. **Feedback Panel** - This panel displays feedback messages to the user. These feedback messages can be success
+   messages, error messages, or help with commands.
+3. **Navigation Buttons** - These buttons allow you to navigate between the different pages of the application. The
+   buttons are labelled "CONTACTS" and "SCHEDULE".
+4. **Results Panel** - This panel displays the currently selected page, based on the last command or button clicked. The
+   results panel will display the contacts, schedule, or payroll based on the page selected.
+5. **Menu Bar** - The menu bar contains the "File" and "Help" menus. The "File" menu contains the "Exit" option, which
+   allows you to exit the application. The "Help" menu contains the "Help" option, which provides a link to this
+   user guide for the application.
+
+## Pages
+There are 3 main pages in the application:
+1. **Main Page** - This page shows all the contacts in the application. You can view the details of each contact by clicking on the contact.
+   
+    | ![UI](./images/Ui.png)       |
+    |------------------------------|
+    | *FnBuddy Main Page*          |
+2. **Payroll Page** - This page shows the payroll of all employees for a given date range. You can view the details of each contact by clicking on the contact.
+
+   | ![Payroll Page](./images/PayrollPageSuccess.png)                |
+   |-----------------------------------------------------------------|
+   | *FnBuddy Payroll Page*                                          |
+3. **Schedule Page** - This page shows the schedule of all employees for a given date. You can view the details of each contact by clicking on the contact.
+
+    | ![Schedule Page](./images/SchedulePageSuccess.png) |
+    |----------------------------------------------------|
+    | *FnBuddy Schedule Page*                            |
+
+### Command Type
+With the 3 different pages, different types of commands can also be used to navigate the application. These types are as follows:
+1. **Main Page Commands** - These commands when used will navigate to the main page of the application.
+2. **Payroll Page Commands** - These commands when used will navigate to the payroll page of the application.
+3. **Schedule Page Commands** - These commands when used will navigate to the schedule page of the application.
 
 ## Features
 
@@ -203,6 +243,10 @@ Command Type: Payroll Command
 Example:
 - `payroll -sd 2024-04-01 -ed 2024-04-30` calculates the payroll of all employees that have worked within 1st April 2024 and 30th April 2024.
 
+| ![Payroll Page](./images/PayrollPageSuccess.png)                |
+|-----------------------------------------------------------------|
+| *Example result panel display for a successful payroll command* |
+
 Note: Employee's payroll is calculated by multiplying 8 to their respective `PAY_RATE`. We are assuming each shift is 8 hours.
 
 ### Schedule employees `schedule`
@@ -251,34 +295,6 @@ If you still wish to edit the JSON files, for the schedule.json file, note that 
 - The contact in the schedule must exist in the main list of contacts i.e. you should not add a new contact that does not exist, in the schedule.json file.
 - There should not be duplicate entries for the same contact on the same date.
 - There should not be duplicate entries for the same date.
-
-## GUI Components
-| ![LabelledUi](./images/LabelledUi.png) |
-|----------------------------------------|
-| *Labelled UI Components*               |
-The names of the UI components have been labelled in the image above. The components are as follows:
-1. **Command Box** - This is where you can type commands to interact with the application.
-2. **Feedback Panel** - This panel displays feedback messages to the user. These feedback messages can be success 
-   messages, error messages, or help with commands.
-3. **Navigation Buttons** - These buttons allow you to navigate between the different pages of the application. The 
-   buttons are labelled "CONTACTS" and "SCHEDULE".
-4. **Results Panel** - This panel displays the currently selected page, based on the last command or button clicked. The 
-   results panel will display the contacts, schedule, or payroll based on the page selected. 
-5. **Menu Bar** - The menu bar contains the "File" and "Help" menus. The "File" menu contains the "Exit" option, which 
-   allows you to exit the application. The "Help" menu contains the "Help" option, which provides a link to this 
-   user guide for the application.
-
-## Pages
-There are 3 main pages in the application:
-1. **Main Page** - This page shows all the contacts in the application. You can view the details of each contact by clicking on the contact.
-2. **Payroll Page** - This page shows the payroll of all employees for a given date range. You can view the details of each contact by clicking on the contact.
-3. **Schedule Page** - This page shows the schedule of all employees for a given date. You can view the details of each contact by clicking on the contact.
-
-### Command Type
-With the 3 different pages, different types of commands can also be used to navigate the application. These types are as follows:
-1. **Main Page Commands** - These commands when used will navigate to the main page of the application.
-2. **Payroll Page Commands** - These commands when used will navigate to the payroll page of the application.
-3. **Schedule Page Commands** - These commands when used will navigate to the schedule page of the application.
 
 ## Known issues
 1. When using multiple screens, if you move the application to a secondary screen and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
