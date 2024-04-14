@@ -123,7 +123,7 @@ Note: All contacts added are compressed to only show `FIRST_NAME`, `LAST_NAME` a
 
 ### Listing contacts `list`
 
-Shows a list of contacts in FnBuddy depending on which you'd like to view.
+Shows a list of contacts in FnBuddy depending on which you'd like to view. On launch of the application, the default list shows all un-archived contacts only.
 
 Format: `list LIST_TYPE`
 
@@ -136,6 +136,8 @@ Example:
 - `list archive` shows all archived contacts in FnBuddy.
 
 Note: If unexpected extraneous parameters are added such as `list main 123`, the command will default to `list all`. (eg. you are currently viewing `list all` and want to switch to `list archive`, but typed `list archivee` instead, there will be no visible change on the GUI as it has defaulted to `list all`.)
+
+Note: We understand that the current feedback messages for the list command may not be sufficient to inform you which list you are currently viewing. As we continue to strive and improve your experience with us in upcoming versions, we seek your understanding on this for FnBuddy's current version and have addressed some possible scenarios in the [FAQ](#FAQ) section.
 
 ### Deleting a person `delete`
 
@@ -397,6 +399,12 @@ With the 3 different pages, different types of commands can also be used to navi
 
 - **Q: Do I need to provide all the details of an employee when creating the contact?**
   - A: No, optional details do not need to be added and can be edited into the contact later on if required. Refer to the add contact feature to view which details are compulsory and optional.
+
+- **Q: I have an archived contact, but I can't find it in the main list. How do I unarchive it?**
+  - A: Use the `list archive` command to view all archived contacts. From there, you can unarchive the contact by using the `unarchive` command. You may also use the `list all` command to view all contacts, including archived ones.
+
+- **Q: I have a contact for John Doe in the main list, and a contact for another John Doe in the archive list. How do I differentiate between the two?**
+  - A: Currently, the only way to differentiate between the two contacts is by viewing the list they are in, as well as clicking on them to expand their details card. We are planning to add a feature that will display the archive status of each contact on the contact card to make it easier to differentiate between archived and unarchived contacts in future versions.
 
 ## Command summary
 
