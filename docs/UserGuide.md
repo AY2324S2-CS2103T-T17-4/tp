@@ -412,6 +412,9 @@ If you still wish to edit the JSON files, for the schedule.json file, note that 
    a. Alternatively, for Windows users, you can press Shift and right-click the program icon on the taskbar, Select Move, and use your left or right arrow keys to move the window until the window appears.
 2. The same feedback message 'listed all employees' produced by the application when the list commands (`list all`, `list main`, `list archive`) are inputted is used. The current universal feedback message does not provide the user with enough information about which list they are viewing.
    There is currently no remedy for this flaw, and it is set to be a future enhancement.
+3. The `schedule` and `payroll` feature currently lets you schedule and calculate payroll for employees who are not in the main list of contacts. There is no current remedy for this flaw apart from you as a user being mindful of not scheduling an archived contact.
+4. The `payroll` feature currently calculates the payroll based on the pay rate of each employee and assumes that each shift is 8 hours. This may not be accurate for all employees, especially if they work different hours or have different pay rates.
+5. The `payroll` feature currently accepts invalid date ranges, such as end dates that are before the start date. This may lead to incorrect payroll calculations. There is no current remedy for this flaw apart from you as a user being mindful of the date ranges you input.
 
 <div style="page-break-after: always;"></div>
 
@@ -432,11 +435,17 @@ If you still wish to edit the JSON files, for the schedule.json file, note that 
 
 - To provide more informative feedback to the user when they use the list command, we will be updating the feedback messages to display the list type that the user is currently viewing. This will help the user to know which list they are currently viewing, as the current feedback message is the same for all list commands.
 
-### Enhancements to Scheduling and Payroll Feature
-- Currently, the payroll feature calculates the payroll based on the pay rate of the employee and the number of 
-  hours worked. We will be adding a feature to allow the user to modify the number of hours worked by the employee 
-  (currently using only the schedule feature), which will be used to calculate the payroll. This will provide more 
-  flexibility to the user and allow them to input the number of hours worked by the employee, which can be used to calculate the payroll more accurately.
+### Stricter Validations for Schedule and Payroll Features
+
+- To prevent users from scheduling or calculating payroll for contacts that are supposed to be archived, we will be adding validation checks to ensure that only contacts in the main list can be scheduled or used for payroll calculations.
+- To ensure that only valid date ranges are used for payroll calculations, we will be adding validation checks to ensure that the start date is before the end date.
+
+### Enhanced Flexibility for Schedule Feature
+
+- Currently, the application calendar only allows users to view the next real time four weeks, without the option to toggle to the previous or next months. We will be adding the ability to toggle between months to
+allow users to view and schedule employees for any date in the future. This will also allow users more flexibility with the scheduling feature.
+
+- In order to cater to employees having differing shift hours, we will be adding the ability to input and modify the number of hours worked by each employee during a shift. This will allow for more accurate payroll calculations and better tracking of employee work hours as compared to the current restricted 8 hours per shift assumption.
 
 ### Separating Multiple Tags
 

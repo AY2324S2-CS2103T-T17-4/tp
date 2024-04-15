@@ -401,37 +401,33 @@ _{more aspects and alternatives to be added}_
 
 **Target user profile**:
 
-* has a need to manage a significant number of employee contacts and banking details
-* has a need to track employee worked hours
-* has a need to tabulate payroll for employees with different pay rates
+* has a need to manage a significant number of part-time employee contacts and banking details
+* has a need to track and schedule part-time employee work hours
+* has a need to tabulate payroll for part-time employees with different pay rates
 * prefer desktop apps over other types
 * can type fast
 * prefers typing to mouse interactions
 * is reasonably comfortable using CLI apps
 
-**Value proposition**: manage employee salary disbursement faster than a typical exel sheet with manual calculations.
+**Value proposition**: manage part-time employee salary disbursement faster than a typical exel sheet with manual calculations.
 
 ### User stories
 
 Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
 
-| Priority | As a …​                                                        | I want to …​                                       | So that I can…​                                                       |
-|----------|----------------------------------------------------------------|----------------------------------------------------|-----------------------------------------------------------------------|
-| `* *`    | new user                                                       | see a tutorial and usage instructions              | familiarise with FnBuddy' features                                    |
-| `* * *`  | user                                                           | add an employee contact with banking details       | quickly access the employee's banking details for salary disbursement |
-| `* * *`  | user                                                           | delete an employee contact                         | remove entries that I no longer need                                  |
-| `* * *`  | user                                                           | view all employee contacts                         |                                                                       |
-| `* *`    | user                                                           | track an employee's weekly worked hours            | access it for employee salary calculation                             |
-| `* *`    | user handling employees with a variety of employment contracts | tag an employee contact with their employment type | retrieve the salary rate of the employee                              |
-| `* *`    | user with human error tendencies                               | retrieve an employee's calculated pay              | avoid paying out an incorrect salary amount                           |
-| `* *`    | user                                                           | edit an employee contact details                   | keep the employee's details up to date                                |
-| `* *`    | user                                                           | schedule my employee shifts                        | plan workload more easily                                             |
-| `*`      | user with many employees                                       | sort employees contacts by name                    | locate the employee contact easily                                    |
-| `*`      | user with potential returning employees                        | archive an employee contact                        | reopen the employee's details when they return easily                 |
-| `*`      | user with forgetfulness                                        | search for contacts by keyword                     | find contacts without needing to provide their full name              |
-| `*`      | user with many employees                                       | filter employee contacts by tag(s)                 | identify which employee(s) are of that employment type                |
+| Priority  | As a …​                                                        | I want to …​                                 | So that I can…​                                                     |
+|-----------|----------------------------------------------------------------|----------------------------------------------|------------------------------------------------------------------------------|
+| `* *`     | new user                                                       | see a tutorial and usage instructions        | familiarise with FnBuddy' features                                           |
+| `* * *`   | user                                                           | add an employee contact with banking details | quickly access the employee's banking details for salary disbursement        |
+| `* * *`   | user                                                           | delete an employee contact                   | remove entries that I no longer need                                         |
+| `* * *`   | user                                                           | view all employee contacts                   |                                                                              |
+| `* *`     | user                                                           | schedule an employee to work on a certain date | keep track of the employee's work schedule                                 |
+| `* *`     | user with human error tendencies                               | retrieve an employee's calculated pay        | avoid paying out an incorrect salary amount                                  |
+| `* *`     | user                                                           | edit an employee contact details             | keep the employee's details up to date                                       |
+| `*`       | user with many employees                                       | find employees contacts by name              | locate the employee contact easily                                           |
+| `*`       | user with potential returning employees                        | archive an employee contact                  | have the option to un-archive the employee's details when they return easily |
+| `*`       | user with many employees                                       | filter employee contacts by tag(s)           | identify which employee(s) are of that employment type                       |
 
-*{More to be added}*
 
 ### Use cases
 
@@ -497,14 +493,14 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case ends
 
-**Use case: Track employee's work hours**
+**Use case: Schedule employee's shift**
 
 **MSS**
 
-1.  User requests to add employee's work hours
-2.  FnBuddy requests employee contact and work hours
+1.  User requests to add employee shift on specified date
+2.  FnBuddy requests employee contact and shift date
 3.  User provides required information
-4.  FnBuddy tracks the employee's work hours
+4.  FnBuddy adds employee shift on specified date
 
     Use case ends.
 
@@ -513,17 +509,56 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * 2a. The contact book is empty.
     * 2a1. FnBuddy shows an error message.
 
-      Use case ends
+      Use case ends.
 
 
-* 3a. The given contact information or working hours is invalid.
+* 3a. The given contact information or shift date is invalid.
+    * 3a1. FnBuddy shows an error message.
 
+      Use case resumes at step 2.
+  
+
+* 3b. The given shift date is in the past or too far in the future.
+    * 3b1. FnBuddy adds employee shift on specified date but will not be reflected in the UI calendar.
+
+      Use case ends.
+  
+
+* 3c. The given shift date is already occupied by given contact.
+    * 3c1. No visible changes are made to the UI calendar.
+
+      Use case ends.
+
+**Use case: Retrieve calculated employees' payroll**
+
+**MSS**
+
+1.  User requests to retrieve payroll of all employees within specified date range
+2.  FnBuddy requests start and end date
+3.  User provides required information
+4.  FnBuddy calculates all employees' payroll within specified date range
+5.  FnBuddy displays list of all affected employees' payroll
+
+    Use case ends.
+
+**Extensions**
+
+* 1a. The contact book is empty.
+    * 1a1. FnBuddy shows an error message.
+
+      Use case ends.
+  
+
+* 3a. The given start and end date is invalid.
     * 3a1. FnBuddy shows an error message.
 
       Use case resumes at step 2.
 
 
-*{More to be added}*
+* 3b. No employees have worked within the specified date range.
+    * 3b1. FnBuddy shows an empty contact list.
+
+      Use case ends.
 
 ### Non-Functional Requirements
 
@@ -538,8 +573,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * **Mainstream OS**: Windows, Linux, Unix, MacOS
 * **Private contact detail**: A contact detail that is not meant to be shared with others
-* **Worked hours**: The number of hours an employee has spent working in a month
-* **Bank Details**: Account number for salary disbursement, 7-11 digits in length.
+* **Bank Details**: Bank name followed by account number for salary disbursement, the valid digit length of the 
+account number is dependent on the bank it is registered to (eg. POSB accounts have 9 digits, OCBC accounts have 10 
+digits).
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -568,25 +604,21 @@ testers are expected to do more *exploratory* testing.
     1. Re-launch the app by double-clicking the jar file.<br>
        Expected: The most recent window size and location is retained.
 
-1. _{ more test cases …​ }_
-
 ### Deleting a person
 
 1. Deleting a person while all persons are being shown
 
-    1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+    1. Prerequisites: List all persons using the `list all` command. Multiple persons in the list.
 
-    1. Test case: `delete 1`<br>
-       Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message.
+    1. Test case: `delete 98765432`<br>
+       Expected: Contact with `phone` field = "98765432" is deleted from the list. Details of the deleted contact shown in the status message.
        Timestamp in the status bar is updated.
 
-    1. Test case: `delete 0`<br>
+    1. Test case: `delete 00000000`<br>
        Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.
 
     1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
        Expected: Similar to previous.
-
-1. _{ more test cases …​ }_
 
 ### Saving data
 
@@ -594,4 +626,3 @@ testers are expected to do more *exploratory* testing.
 
     1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
 
-1. _{ more test cases …​ }_
