@@ -106,8 +106,7 @@ The `UI` component,
 
 ### Logic component
 
-**API
-** : [`Logic.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/Logic.java)
+The **API** of this component is specified in [`Logic.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/Logic.java)
 
 Here's a (partial) class diagram of the `Logic` component:
 
@@ -196,6 +195,34 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 ## **Implementation**
 
 This section describes some noteworthy details on how certain features are implemented.
+
+### \[Implemented\] Contact archiving
+#### Proposed Implementation
+
+The current implementation of contact archiving (and by virtue un-archiving) is facilitated by the `ArchiveCommand`
+and `UnarchiveCommand`. It extends `Command` and is responsible for updating the `Person` object's `Archive` field.
+
+Given below is an example usage scenario and how the archive/unarchive mechanism behaves at each step.
+
+Step 1. The user launches the application. Existing contacts in storage are loaded into the `AddressBook`, the `ModelManager`
+is then initialised with the `AddressBook`. The `Person` objects in the `AddressBook` that have `ArchiveStatus` field set to 'false' 
+are filtered by `ModelManager` into the `ObservableList<Person>` to be displayed in the UI.
+
+Step 2. The user executes `archive 98765432` command to archive the person in the address book. The `archive` command 
+creates a new `Person` object that corresponds to all of the selected `Person` object's fields, except for the 
+`ArchiveStatus` field which it intialises as 'true'. The old `Person` object is then updated in the `AddressBook` through 
+the calling of `Model#archivePerson()`. The UI updates the `ObservableList<Person>` to reflect the changes made.
+
+<img src="images/ArchiveSequenceDiagram.png"/>
+
+Step 3. The user decides that he would like to view the archived contact. The user executes `list archive` command to
+view all archived contacts. The `list archive` command filters the `Person` objects in the `AddressBook` that have 
+`ArchiveStatus` field set to 'true' into the `ObservableList<Person>` to be displayed in the UI.
+
+Step 4. The employee of the archived contact decides to return to the company. The user executes `unarchive 98765432`
+command to unarchive the person in the address book. The `unarchive` command creates a new `Person` object that 
+corresponds to all of the selected `Person` object's fields, except for the `ArchiveStatus` field which it intialises
+as 'false'. The old `Person` object is then updated in the `AddressBook` through the calling of `Model#archivePerson()`.
 
 ### \[Proposed\] Undo/redo feature
 
@@ -297,11 +324,6 @@ The following activity diagram summarizes what happens when a user executes a ne
     * Cons: We must ensure that the implementation of each individual command are correct.
 
 _{more aspects and alternatives to be added}_
-
-### \[Proposed\] Data archiving
-
-_{Explain here how the data archiving feature will be implemented}_
-
 
 --------------------------------------------------------------------------------------------------------------------
 

@@ -24,9 +24,6 @@ Class "<<interface>>\nStorage" as Storage
 Class StorageManager
 }
 
-Class HiddenOutside #FFFFFF
-HiddenOutside ..> Logic
-
 LogicManager .up.|> Logic
 ModelManager .up.|> Model
 StorageManager .up.|> Storage
@@ -34,5 +31,5 @@ UiManager .up.|> Ui
 
 LogicManager --> Model
 LogicManager --> Storage
-UiManager --> Logic
+UiManager ..> Logic
 @enduml

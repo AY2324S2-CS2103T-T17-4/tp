@@ -26,6 +26,7 @@ Class Phone
 Class HoursWorked
 Class Tag
 Class PayrollWrapper
+Class ArchiveStatus
 
 Class I #FFFFFF
 }
@@ -55,6 +56,7 @@ Person *--> EmploymentType
 Person *--> Sex
 Person *--> Address
 Person *--> HoursWorked
+Person *--> ArchiveStatus
 Person *--> "*" Tag
 
 Person -[hidden]up--> I
@@ -67,6 +69,7 @@ Sex -[hidden]right-> EmploymentType
 EmploymentType -[hidden]right-> Address
 Address -[hidden]right-> BankDetails
 BankDetails -[hidden]right-> HoursWorked
+HoursWorked -[hidden]right-> ArchiveStatus
 
 ModelManager --> "~* filtered" Person
 ModelManager --> "~* filtered" PayrollWrapper
