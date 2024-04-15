@@ -4,7 +4,34 @@ title: Developer Guide
 ---
 
 * Table of Contents
-  {:toc}
+    * [**Acknowledgements**](#Acknowledgements)
+    * [**Setting up, getting started**](#Setting-up-getting-started)
+    * [**Design**](#Design)
+        * [Architecture](#Architecture)
+        * [UI component](#UI-component)
+        * [Logic component](#Logic-component)
+        * [Model component](#Model-component)
+        * [Storage component](#Storage-component)
+        * [Common classes](#Common-classes)
+    * [**Implementation**](#Implementation)
+        * [\[Implemented\] Schedule feature](#implemented-schedule-feature)
+            * [Proposed Implementation](#proposed-implementation)
+        * [\[Implemented\] Contact archiving](#implemented-contact-archiving)
+            * [Proposed Implementation](#proposed-implementation)
+        * [\[Proposed\] Undo/redo feature](#proposed-undoredo-feature)
+            * [Proposed Implementation](#proposed-implementation)
+            * [Design considerations:](#design-considerations)
+    * [**Documentation, logging, testing, configuration, dev-ops**](#documentation-logging-testing-configuration-dev-ops)
+    * [**Appendix: Requirements**](#appendix-requirements)
+        * [Product scope](#product-scope)
+        * [User stories](#user-stories)
+        * [Use cases](#use-cases)
+        * [Non-Functional Requirements](#non-functional-requirements)
+        * [Glossary](#glossary)
+    * [**Appendix: Instructions for manual testing**](#appendix-instructions-for-manual-testing)
+        * [Launch and shutdown](#launch-and-shutdown)
+        * [Deleting a person](#deleting-a-person)
+        * [Saving data](#saving-data)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -390,7 +417,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 | Priority | As a …​                                                        | I want to …​                                       | So that I can…​                                                       |
 |----------|----------------------------------------------------------------|----------------------------------------------------|-----------------------------------------------------------------------|
-| `* *`    | new user                                                       | see a tutorial and usage instructions              | familiarise with FnBuddy' features                                 |
+| `* *`    | new user                                                       | see a tutorial and usage instructions              | familiarise with FnBuddy' features                                    |
 | `* * *`  | user                                                           | add an employee contact with banking details       | quickly access the employee's banking details for salary disbursement |
 | `* * *`  | user                                                           | delete an employee contact                         | remove entries that I no longer need                                  |
 | `* * *`  | user                                                           | view all employee contacts                         |                                                                       |
@@ -398,6 +425,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* *`    | user handling employees with a variety of employment contracts | tag an employee contact with their employment type | retrieve the salary rate of the employee                              |
 | `* *`    | user with human error tendencies                               | retrieve an employee's calculated pay              | avoid paying out an incorrect salary amount                           |
 | `* *`    | user                                                           | edit an employee contact details                   | keep the employee's details up to date                                |
+| `* *`    | user                                                           | schedule my employee shifts                        | plan workload more easily                                             |
 | `*`      | user with many employees                                       | sort employees contacts by name                    | locate the employee contact easily                                    |
 | `*`      | user with potential returning employees                        | archive an employee contact                        | reopen the employee's details when they return easily                 |
 | `*`      | user with forgetfulness                                        | search for contacts by keyword                     | find contacts without needing to provide their full name              |
