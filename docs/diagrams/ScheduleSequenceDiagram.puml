@@ -1,0 +1,76 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Logic LOGIC_COLOR_T1
+participant ":LogicManager" as LogicManager LOGIC_COLOR
+participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
+participant ":ScheduleCommandParser" as ScheduleCommandParser LOGIC_COLOR
+participant "a:ScheduleCommand" as ScheduleCommand LOGIC_COLOR
+participant "r:CommandResult" as CommandResult LOGIC_COLOR
+end box
+
+box Model MODEL_COLOR_T1
+participant "m:Model" as Model MODEL_COLOR
+end box
+
+[-> LogicManager : execute("schedule 98765432 2024-04-15")
+activate LogicManager
+
+LogicManager -> AddressBookParser : parseCommand("schedule 98765432 2024-04-15")
+activate AddressBookParser
+
+create ScheduleCommandParser
+AddressBookParser -> ScheduleCommandParser
+activate ScheduleCommandParser
+
+ScheduleCommandParser --> AddressBookParser
+deactivate ScheduleCommandParser
+
+AddressBookParser -> ScheduleCommandParser : parse("98765432 2024-04-15")
+activate ScheduleCommandParser
+
+create ScheduleCommand
+ScheduleCommandParser -> ScheduleCommand
+activate ScheduleCommand
+
+ScheduleCommand --> ScheduleCommandParser :
+deactivate ScheduleCommand
+
+ScheduleCommandParser --> AddressBookParser : a
+deactivate ScheduleCommandParser
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+ScheduleCommandParser -[hidden]-> AddressBookParser
+destroy ScheduleCommandParser
+
+AddressBookParser --> LogicManager : a
+deactivate AddressBookParser
+
+LogicManager -> ScheduleCommand : execute(m)
+activate ScheduleCommand
+
+ScheduleCommand -> Model : getPersonByPhoneNumber("98765432")
+activate Model
+
+Model --> ScheduleCommand : p1
+deactivate Model
+
+ScheduleCommand -> Model : addPersonToSchedule(p1, "2024-04-15")
+activate Model
+
+Model --> ScheduleCommand
+deactivate Model
+
+create CommandResult
+ScheduleCommand -> CommandResult
+activate CommandResult
+
+CommandResult --> ScheduleCommand
+deactivate CommandResult
+
+ScheduleCommand --> LogicManager : r
+deactivate ScheduleCommand
+
+[<--LogicManager
+deactivate LogicManager
+@enduml

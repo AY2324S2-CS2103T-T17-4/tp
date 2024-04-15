@@ -4,14 +4,40 @@ title: Developer Guide
 ---
 
 * Table of Contents
-  {:toc}
+    * [**Acknowledgements**](#Acknowledgements)
+    * [**Setting up, getting started**](#Setting-up-getting-started)
+    * [**Design**](#Design)
+        * [Architecture](#Architecture)
+        * [UI component](#UI-component)
+        * [Logic component](#Logic-component)
+        * [Model component](#Model-component)
+        * [Storage component](#Storage-component)
+        * [Common classes](#Common-classes)
+    * [**Implementation**](#Implementation)
+        * [\[Implemented\] Schedule feature](#implemented-schedule-feature)
+            * [Proposed Implementation](#proposed-implementation)
+        * [\[Implemented\] Contact archiving](#implemented-contact-archiving)
+            * [Proposed Implementation](#proposed-implementation)
+        * [\[Proposed\] Undo/redo feature](#proposed-undoredo-feature)
+            * [Proposed Implementation](#proposed-implementation)
+            * [Design considerations:](#design-considerations)
+    * [**Documentation, logging, testing, configuration, dev-ops**](#documentation-logging-testing-configuration-dev-ops)
+    * [**Appendix: Requirements**](#appendix-requirements)
+        * [Product scope](#product-scope)
+        * [User stories](#user-stories)
+        * [Use cases](#use-cases)
+        * [Non-Functional Requirements](#non-functional-requirements)
+        * [Glossary](#glossary)
+    * [**Appendix: Instructions for manual testing**](#appendix-instructions-for-manual-testing)
+        * [Launch and shutdown](#launch-and-shutdown)
+        * [Deleting a person](#deleting-a-person)
+        * [Saving data](#saving-data)
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Acknowledgements**
 
-* {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the
-  original source as well}
+* Calendar for Schedule feature adapted from: https://gist.github.com/Da9el00/f4340927b8ba6941eb7562a3306e93b6
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -41,8 +67,8 @@ Given below is a quick overview of main components and how they interact with ea
 **Main components of the architecture**
 
 **`Main`** (consisting of
-classes [`Main`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/Main.java)
-and [`MainApp`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/MainApp.java)) is
+classes [`Main`](https://github.com/AY2324S2-CS2103T-T17-4/tp/tree/master/src/main/java/seedu/address/Main.java)
+and [`MainApp`](https://github.com/AY2324S2-CS2103T-T17-4/tp/tree/master/src/main/java/seedu/address/MainApp.java)) is
 in charge of the app launch and shut down.
 
 * At app launch, it initializes the other components in the correct sequence, and connects them up with each other.
@@ -82,7 +108,7 @@ The sections below give more details of each component.
 ### UI component
 
 The **API** of this component is specified
-in [`Ui.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/Ui.java)
+in [`Ui.java`](https://github.com/AY2324S2-CS2103T-T17-4/tp/tree/master/src/main/java/seedu/address/ui/Ui.java)
 
 ![Structure of the UI Component](images/UiClassDiagram.png)
 
@@ -93,9 +119,9 @@ visible GUI.
 
 The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that
 are in the `src/main/resources/view` folder. For example, the layout of
-the [`MainWindow`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/ui/MainWindow.java)
+the [`MainWindow`](https://github.com/AY2324S2-CS2103T-T17-4/tp/tree/master/src/main/java/seedu/address/ui/MainWindow.java)
 is specified
-in [`MainWindow.fxml`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/resources/view/MainWindow.fxml)
+in [`MainWindow.fxml`](https://github.com/AY2324S2-CS2103T-T17-4/tp/tree/master/src/main/resources/view/MainWindow.fxml)
 
 The `UI` component,
 
@@ -106,7 +132,7 @@ The `UI` component,
 
 ### Logic component
 
-The **API** of this component is specified in [`Logic.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/Logic.java)
+The **API** of this component is specified in [`Logic.java`](https://github.com/AY2324S2-CS2103T-T17-4/tp/tree/master/src/main/java/seedu/address/logic/Logic.java)
 
 Here's a (partial) class diagram of the `Logic` component:
 
@@ -147,7 +173,7 @@ How the parsing works:
 ### Model component
 
 **API
-** : [`Model.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/Model.java)
+** : [`Model.java`](https://github.com/AY2324S2-CS2103T-T17-4/tp/tree/master/src/main/java/seedu/address/model/Model.java)
 
 <img src="images/ModelClassDiagram.png" width="450" />
 
@@ -173,7 +199,7 @@ The `Model` component,
 ### Storage component
 
 **API
-** : [`Storage.java`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/storage/Storage.java)
+** : [`Storage.java`](https://github.com/AY2324S2-CS2103T-T17-4/tp/tree/master/src/main/java/seedu/address/storage/Storage.java)
 
 <img src="images/StorageClassDiagram.png" width="550" />
 
@@ -195,6 +221,38 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 ## **Implementation**
 
 This section describes some noteworthy details on how certain features are implemented.
+
+### \[Implemented\] Schedule feature
+#### Proposed Implementation
+
+The current implementation of the schedule feature is facilitated by the `Schedule` interface. It contains a 
+`Set<ScheduleDate>`, which contains the `ScheduleDate` objects that represent the dates in the schedule and hold a
+list of who is working on that particular date.
+
+Given below is an example usage scenario and how the schedule mechanism behaves at each step.
+
+Step 1. The user launches the application for the first time. A concrete class implementing `Schedule` will be 
+initialised with an empty set of `ScheduleDate` objects. The `ModelManager` is then initialised with the `Schedule`. 
+
+Step 2. The user executes `schedule 98765432 2024-04-15` command to add a schedule entry for the person with phone 
+number `98765432` on the date `2024-04-15`. The old `Schedule` object is then updated in the `Model` through the calling 
+of `Model#addPersonToSchedule()`, which creates a new `ScheduleDate` object that corresponds to the date 
+`2024-04-15`, and adds the person with phone number `98765432` to the list of people working on that date. The UI 
+changes screen to show the updated schedule.
+
+<img src="images/ScheduleSequenceDiagram.png"/>
+
+Step 3. The user decides that he would like to add another person on the same date. The user executes `schedule 
+92345678 2024-04-15` command to add a schedule entry for the person with phone number `92345678` on the date 
+`2024-04-15`. The old `Schedule` object is then updated in the `Model` through the calling of 
+`Model#addPersonToSchedule()`, which uses the existing `ScheduleDate` object associated with `2024-04-15` that 
+corresponds to the date `2024-04-15`, and adds the person with phone number `98765432` to the list of people working 
+on that date. The UI changes screen to show the updated schedule.
+
+Step 4. The user decides that he would like to remove the schedule entry. The user executes `unschedule 98765432 
+2024-04-15` command to remove the schedule entry for the person with phone number `98765432` on the date 
+`2024-04-15`. The `unschedule` command removes a person with phone number `98765432` from the existing 
+`ScheduleDate` with date `2024-04-15`. The UI changes screen to show the updated schedule.
 
 ### \[Implemented\] Contact archiving
 #### Proposed Implementation
@@ -369,6 +427,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `*`       | user with many employees                                       | find employees contacts by name              | locate the employee contact easily                                           |
 | `*`       | user with potential returning employees                        | archive an employee contact                  | have the option to un-archive the employee's details when they return easily |
 | `*`       | user with many employees                                       | filter employee contacts by tag(s)           | identify which employee(s) are of that employment type                       |
+
 
 ### Use cases
 
