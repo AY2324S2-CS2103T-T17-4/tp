@@ -17,7 +17,7 @@ Person -up-> "*" Tag
 Person *--> FirstName
 Person *--> LastName
 Person *--> Sex
-Person *--> EmploymentType
+Person *--> PayRate
 Person *--> BankDetails
 Person *--> Phone
 Person *--> Address
@@ -27,8 +27,8 @@ Person *--> ArchiveStatus
 FirstName -[hidden]right-> LastName
 LastName -[hidden]right-> Phone
 Phone -[hidden]right-> Sex
-Sex -[hidden]right-> EmploymentType
-EmploymentType -[hidden]right-> Address
+Sex -[hidden]right-> PayRate
+PayRate -[hidden]right-> Address
 Address -[hidden]right-> BankDetails
 BankDetails -[hidden]right-> HoursWorked
 HoursWorked -[hidden]right-> ArchiveStatus
