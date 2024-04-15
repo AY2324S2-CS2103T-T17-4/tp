@@ -195,6 +195,38 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 
 This section describes some noteworthy details on how certain features are implemented.
 
+### \[Implemented\] Schedule feature
+#### Proposed Implementation
+
+The current implementation of the schedule feature is facilitated by the `Schedule` interface. It contains a 
+`Set<ScheduleDate>`, which contains the `ScheduleDate` objects that represent the dates in the schedule and hold a
+list of who is working on that particular date.
+
+Given below is an example usage scenario and how the schedule mechanism behaves at each step.
+
+Step 1. The user launches the application for the first time. A concrete class implementing `Schedule` will be 
+initialised with an empty set of `ScheduleDate` objects. The `ModelManager` is then initialised with the `Schedule`. 
+
+Step 2. The user executes `schedule 98765432 2024-04-15` command to add a schedule entry for the person with phone 
+number `98765432` on the date `2024-04-15`. The old `Schedule` object is then updated in the `Model` through the calling 
+of `Model#addPersonToSchedule()`, which creates a new `ScheduleDate` object that corresponds to the date 
+`2024-04-15`, and adds the person with phone number `98765432` to the list of people working on that date. The UI 
+changes screen to show the updated schedule.
+
+<img src="images/ScheduleSequenceDiagram.png"/>
+
+Step 3. The user decides that he would like to add another person on the same date. The user executes `schedule 
+92345678 2024-04-15` command to add a schedule entry for the person with phone number `92345678` on the date 
+`2024-04-15`. The old `Schedule` object is then updated in the `Model` through the calling of 
+`Model#addPersonToSchedule()`, which uses the existing `ScheduleDate` object associated with `2024-04-15` that 
+corresponds to the date `2024-04-15`, and adds the person with phone number `98765432` to the list of people working 
+on that date. The UI changes screen to show the updated schedule.
+
+Step 4. The user decides that he would like to remove the schedule entry. The user executes `unschedule 98765432 
+2024-04-15` command to remove the schedule entry for the person with phone number `98765432` on the date 
+`2024-04-15`. The `unschedule` command removes a person with phone number `98765432` from the existing 
+`ScheduleDate` with date `2024-04-15`. The UI changes screen to show the updated schedule.
+
 ### \[Implemented\] Contact archiving
 #### Proposed Implementation
 
